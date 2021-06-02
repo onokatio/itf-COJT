@@ -19,76 +19,77 @@
 
 module mult
   (
-    input [7:0] A,
-    input [7:0] B,
-    output [15:0] C
+    input [7:0] a,
+    input [7:0] b,
+    output [15:0] x
   );
   
-  //for i in `seq 0 7`;do for j in `seq 1 8`;do echo "  wire A${i}B${j} = A[$i] & B[$j];";done;done
-  wire A0B0 = A[0] & B[0];
-  wire A0B1 = A[0] & B[1];
-  wire A0B2 = A[0] & B[2];
-  wire A0B3 = A[0] & B[3];
-  wire A0B4 = A[0] & B[4];
-  wire A0B5 = A[0] & B[5];
-  wire A0B6 = A[0] & B[6];
-  wire A0B7 = A[0] & B[7];
-  wire A1B0 = A[1] & B[0];
-  wire A1B1 = A[1] & B[1];
-  wire A1B2 = A[1] & B[2];
-  wire A1B3 = A[1] & B[3];
-  wire A1B4 = A[1] & B[4];
-  wire A1B5 = A[1] & B[5];
-  wire A1B6 = A[1] & B[6];
-  wire A1B7 = A[1] & B[7];
-  wire A2B0 = A[2] & B[0];
-  wire A2B1 = A[2] & B[1];
-  wire A2B2 = A[2] & B[2];
-  wire A2B3 = A[2] & B[3];
-  wire A2B4 = A[2] & B[4];
-  wire A2B5 = A[2] & B[5];
-  wire A2B6 = A[2] & B[6];
-  wire A2B7 = A[2] & B[7];
-  wire A3B0 = A[3] & B[0];
-  wire A3B1 = A[3] & B[1];
-  wire A3B2 = A[3] & B[2];
-  wire A3B3 = A[3] & B[3];
-  wire A3B4 = A[3] & B[4];
-  wire A3B5 = A[3] & B[5];
-  wire A3B6 = A[3] & B[6];
-  wire A3B7 = A[3] & B[7];
-  wire A4B0 = A[4] & B[0];
-  wire A4B1 = A[4] & B[1];
-  wire A4B2 = A[4] & B[2];
-  wire A4B3 = A[4] & B[3];
-  wire A4B4 = A[4] & B[4];
-  wire A4B5 = A[4] & B[5];
-  wire A4B6 = A[4] & B[6];
-  wire A4B7 = A[4] & B[7];
-  wire A5B0 = A[5] & B[0];
-  wire A5B1 = A[5] & B[1];
-  wire A5B2 = A[5] & B[2];
-  wire A5B3 = A[5] & B[3];
-  wire A5B4 = A[5] & B[4];
-  wire A5B5 = A[5] & B[5];
-  wire A5B6 = A[5] & B[6];
-  wire A5B7 = A[5] & B[7];
-  wire A6B0 = A[6] & B[0];
-  wire A6B1 = A[6] & B[1];
-  wire A6B2 = A[6] & B[2];
-  wire A6B3 = A[6] & B[3];
-  wire A6B4 = A[6] & B[4];
-  wire A6B5 = A[6] & B[5];
-  wire A6B6 = A[6] & B[6];
-  wire A6B7 = A[6] & B[7];
-  wire A7B0 = A[7] & B[0];
-  wire A7B1 = A[7] & B[1];
-  wire A7B2 = A[7] & B[2];
-  wire A7B3 = A[7] & B[3];
-  wire A7B4 = A[7] & B[4];
-  wire A7B5 = A[7] & B[5];
-  wire A7B6 = A[7] & B[6];
-  wire A7B7 = A[7] & B[7];
+  //for i in `seq 0 7`;do for j in `seq 0 7`;do echo "  wire A${i}B${j} = A[$i] & B[$j];";done;done
+  wire A0B0 = a[0] & b[0];
+  wire A0B1 = a[0] & b[1];
+  wire A0B2 = a[0] & b[2];
+  wire A0B3 = a[0] & b[3];
+  wire A0B4 = a[0] & b[4];
+  wire A0B5 = a[0] & b[5];
+  wire A0B6 = a[0] & b[6];
+  wire A0B7 = a[0] & b[7];
+  wire A1B0 = a[1] & b[0];
+  wire A1B1 = a[1] & b[1];
+  wire A1B2 = a[1] & b[2];
+  wire A1B3 = a[1] & b[3];
+  wire A1B4 = a[1] & b[4];
+  wire A1B5 = a[1] & b[5];
+  wire A1B6 = a[1] & b[6];
+  wire A1B7 = a[1] & b[7];
+  wire A2B0 = a[2] & b[0];
+  wire A2B1 = a[2] & b[1];
+  wire A2B2 = a[2] & b[2];
+  wire A2B3 = a[2] & b[3];
+  wire A2B4 = a[2] & b[4];
+  wire A2B5 = a[2] & b[5];
+  wire A2B6 = a[2] & b[6];
+  wire A2B7 = a[2] & b[7];
+  wire A3B0 = a[3] & b[0];
+  wire A3B1 = a[3] & b[1];
+  wire A3B2 = a[3] & b[2];
+  wire A3B3 = a[3] & b[3];
+  wire A3B4 = a[3] & b[4];
+  wire A3B5 = a[3] & b[5];
+  wire A3B6 = a[3] & b[6];
+  wire A3B7 = a[3] & b[7];
+  wire A4B0 = a[4] & b[0];
+  wire A4B1 = a[4] & b[1];
+  wire A4B2 = a[4] & b[2];
+  wire A4B3 = a[4] & b[3];
+  wire A4B4 = a[4] & b[4];
+  wire A4B5 = a[4] & b[5];
+  wire A4B6 = a[4] & b[6];
+  wire A4B7 = a[4] & b[7];
+  wire A5B0 = a[5] & b[0];
+  wire A5B1 = a[5] & b[1];
+  wire A5B2 = a[5] & b[2];
+  wire A5B3 = a[5] & b[3];
+  wire A5B4 = a[5] & b[4];
+  wire A5B5 = a[5] & b[5];
+  wire A5B6 = a[5] & b[6];
+  wire A5B7 = a[5] & b[7];
+  wire A6B0 = a[6] & b[0];
+  wire A6B1 = a[6] & b[1];
+  wire A6B2 = a[6] & b[2];
+  wire A6B3 = a[6] & b[3];
+  wire A6B4 = a[6] & b[4];
+  wire A6B5 = a[6] & b[5];
+  wire A6B6 = a[6] & b[6];
+  wire A6B7 = a[6] & b[7];
+  wire A7B0 = a[7] & b[0];
+  wire A7B1 = a[7] & b[1];
+  wire A7B2 = a[7] & b[2];
+  wire A7B3 = a[7] & b[3];
+  wire A7B4 = a[7] & b[4];
+  wire A7B5 = a[7] & b[5];
+  wire A7B6 = a[7] & b[6];
+  wire A7B7 = a[7] & b[7];
+
 
   wire S1[13:1];
   wire S2[10:4];
@@ -170,7 +171,7 @@ module mult
     wire [15:0] L1 = { 1'b0  ,S7[14],S7[13],S7[12],S7[11],S7[10],S7[9],S7[8],S7[7],S7[6],S7[5],S7[4],S6[3],S4[2],S1[1],A0B0 };
     wire [15:0] L2 = { C7[14],C7[13],C7[12],C7[11],C7[10],C7[9] ,C7[8],C7[7],C7[6],C7[5],C7[4],1'b0 ,1'b0 ,1'b0 ,1'b0 ,1'b0};
     
-    assign C = L1 + L2;
+    assign x = L1 + L2;
 endmodule
 
 

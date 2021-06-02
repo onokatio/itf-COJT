@@ -14,7 +14,7 @@ module tb_mult;
    reg [15:0] real_x;
 
    // テスト対象回路 x = a * b(乗算器)
-   mult mult_instance (.A(a),.B(b),.C(x));
+   mult mult_instance (.a(a),.b(b),.x(x));
 
    // クロック定義(テストサイクル)
    always #(CYCLE/2)  clk = ~clk;
