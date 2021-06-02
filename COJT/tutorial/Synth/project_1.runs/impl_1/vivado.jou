@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Apr 21 12:45:18 2021
+# Process ID: 2348154
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT/0421/project_1/project_1.runs/impl_1
+# Command line: vivado -log ripple_adder.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source ripple_adder.tcl -notrace
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/0421/project_1/project_1.runs/impl_1/ripple_adder.vdi
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/0421/project_1/project_1.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source ripple_adder.tcl -notrace
