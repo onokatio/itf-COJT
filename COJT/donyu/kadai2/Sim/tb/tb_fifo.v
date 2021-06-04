@@ -38,113 +38,109 @@ module tb_fifo;
    wire [2:0] WritePoint = fifo_instance.WritePoint;
 
    initial begin
-        clk = 1;
-        RST = 1'b1;
-        @(posedge clk);
-        RST = 1'b0;
+        clk = 1'b1;
 
-      // EMPTY read test
-      #(CYCLE/2);
-        RD = 1'b1;
-        @(posedge clk);
+        #(CYCLE/10);
+        RST = 1'b1;
+
+        #(CYCLE*2);
+        RST = 1'b0;
+        
+        #CYCLE;
+        for ( i = 0 ; i <= 10 ; i = i+1 ) begin
+          #CYCLE;
+          WR = 1;
+          DIN = i;
+        end
+        
+        #CYCLE;
+        WR = 0;
+
+        for ( i = 0 ; i <= 11 ; i = i+1 ) begin
+          #CYCLE;
+          RD = 1;
+          if (i == 4 || i == 5) begin
+            DIN = i;
+            WR = 1;
+          end
+          else begin
+            WR = 0;
+          end
+        end
 
       // EMPTY read & write test
-      #(CYCLE/2);
-        RD = 1'b1;
-        WR = 1'b1;
-        DIN = 16'h5;
-        @(posedge clk);
+      #CYCLE;
+      RD = 1'b1;
+      WR = 1'b1;
+      DIN = 16'hc;
+      
+      // check data
+      #CYCLE;
+      RD = 1'b1;
+      WR = 0;
+
+      // prepare almost EMPTY
+      #CYCLE;
+      RD = 1'b0;
+      WR = 1'b1;
+      DIN = 16'ha;
 
       // almost EMPTY read & write test
-      #(CYCLE/2);
-        RD = 1'b1;
+      #CYCLE;
+      WR = 1'b1;
+      RD = 1'b1;
+      DIN = 16'hb;
+
+      // check data
+      #CYCLE;
+      RD = 1'b1;
+      WR = 0;
+
+      // set almost full data
+      #CYCLE;
+        RD = 0;
+        for ( i = 0 ; i <= 6 ; i = i+1 ) begin
+          #CYCLE;
+          WR = 1;
+          DIN = i;
+        end
+
+      // almost FULL read & write
+      #CYCLE;
         WR = 1'b1;
-        DIN = 16'h9;
-        @(posedge clk);
-
-      // almost EMPTY read test
-      #(CYCLE/2);
-        WR = 1'b0;
         RD = 1'b1;
-        @(posedge clk);
+        DIN = 8'hc;
 
-      // almost EMPTY read test
-      #(CYCLE/2);
-        DIN = 16'ha;
-        RD <= 1'b1;
-        WR = 1'b0;
-        @(posedge clk);
+      // check data
+      #CYCLE;
+      RD = 1'b1;
+      WR = 0;
 
-      // almost FULL read & write test
-      #(CYCLE/2);
-        RD <= 1'b0;
-        WR <= 1'b0;
-        RST <= 1'b1;
-        @(posedge clk);
-      #(CYCLE/2);
-        RST <= 1'b0;
-        WR <= 1'b1;
-        @(posedge clk);
-      for ( i = 0 ; i < 15 ; i = i+1 ) begin
-      #(CYCLE/2);
-        DIN <= i;
-        @(posedge clk);
-      end
-      WR <= 1'b0;
-      #(CYCLE/2);
-        WR <= 1'b1;
-        RD <= 1'b1;
-        @(posedge clk);
-        
-      // almost FULL read 
-      #(CYCLE/2);
-        WR <= 1'b0;
-        RD <= 1'b1;
-        @(posedge clk);
+      // add data to make full
+      #CYCLE;
+        WR = 1'b1;
+        RD = 1'b0;
+        DIN = 15'hd;
+      #CYCLE;
+        WR = 1'b1;
+        RD = 1'b0;
+        DIN = 15'he;
 
       // FULL write & read test
-      #(CYCLE/2);
-        RD <= 1'b0;
-        WR <= 1'b0;
-        RST <= 1'b1;
-        @(posedge clk);
-      #(CYCLE/2);
-        RST <= 1'b0;
-        WR <= 1'b1;
-        @(posedge clk);
-      for ( i = 0 ; i < 16 ; i = i+1 ) begin
-      #(CYCLE/2);
-        DIN <= i;
-        @(posedge clk);
-      end
-      #(CYCLE/2);
-        WR <= 1'b1;
-        RD <= 1'b1;
-        @(posedge clk);
+      #CYCLE;
+        RD = 1'b1;
+        WR = 1'b1;
+        DIN = 15'hf;
 
-      // FULL read test
-      #(CYCLE/2);
-        RD <= 1'b0;
-        WR <= 1'b0;
-        RST <= 1'b1;
-        @(posedge clk);
-      #(CYCLE/2);
-        RST <= 1'b0;
-        WR <= 1'b1;
-        @(posedge clk);
-      for ( i = 0 ; i < 16 ; i = i+1 ) begin
-      #(CYCLE/2);
-        DIN <= i;
-        @(posedge clk);
-      end
-      WR <= 1'b0;
-      #(CYCLE/2);
-        RD <= 1'b1;
-        @(posedge clk);
+      // check data
+      #CYCLE;
+      RD = 1'b1;
+      WR = 0;
+
       //if ( x !== real_x ) begin
       //$display("error! %h(%b) * %h(%b) = expval=%h(%b) result=%h(%b)", a,a,b,b,real_x,real_x, x,x);
       //$stop;
-      @(posedge clk);
+      #(CYCLE*1)
       $display("finish¥n");
       $finish;
       $stop;

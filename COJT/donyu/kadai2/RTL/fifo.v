@@ -57,9 +57,9 @@ module fifo
   always @ (posedge CLK) begin
 	if ( RST )
 		almostFULL <= 1'b0;
-	else if ( WritePoint - ReadPoint == 6 && WR && ~RD )
+	else if ( WritePoint - ReadPoint == 3'h6 && WR && ~RD )
 		almostFULL <= 1'b1;
-	else if ( WritePoint - ReadPoint == 7 && ~WR && RD )
+	else if ( WritePoint - ReadPoint == 3'h7 && ~WR && RD )
 		almostFULL <= 1'b0;
   end
 
@@ -114,12 +114,10 @@ module fifo
   end
   
   always @ (posedge CLK) begin
-	if ( RD && !EMPTY )
+    if ( RST )
+    	DOUT <= 16'b0;
+    else if ( RD && !EMPTY )
 		DOUT <= mem[ReadPoint];
   end
   
-  always @ (posedge CLK) begin
-	if ( RST )
-		DOUT <= 16'b0;
-  end
 endmodule
