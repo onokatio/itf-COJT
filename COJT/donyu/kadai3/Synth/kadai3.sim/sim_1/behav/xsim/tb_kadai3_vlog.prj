@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../kadai2/RTL/fifo.v" \
+"../../../../../../adder/full_adder.v" \
+"../../../../../../adder/half_adder.v" \
+"../../../../../RTL/kadai3.v" \
+"../../../../../../kadai1/Synth/kadai1-new.srcs/sources_1/new/mult.v" \
+"../../../../../Sim/tb/tb_kadai3.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
