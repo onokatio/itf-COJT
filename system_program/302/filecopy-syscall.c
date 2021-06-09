@@ -3,9 +3,11 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+#define BUFSIZE 100
+
 int main(void)
 {
-        char c;
+        char c[BUFSIZE];
         int fps, fpd;
         int count;
 
@@ -22,8 +24,8 @@ int main(void)
                 exit(1);
         }
 
-        while ((count = read(fps, &c, 1)) > 0) {
-                if (write(fpd, &c, count) < 0) {
+        while ((count = read(fps, c, BUFSIZE)) > 0) {
+                if (write(fpd, c, count) < 0) {
                         perror("write");
 			close(fpd);
 			close(fps);
