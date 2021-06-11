@@ -34,45 +34,67 @@ module kadai4
     output REQ_AB
   );
   
-  wire [15:0] DOUT_fifo1;
-  wire [15:0] DIN_fifo2;
-  wire almostFULL_fifo2;
-  wire EMPTY_fifo1;
-  wire RD_fifo1;
-  wire VALID_fifo1;
+  reg [2:0] NXT;
+  reg [2:0] CUR; //2bitでも良いかも
+  parameter S_IDLE = 3'b000;
+  parameter S_INPUT = 3'b001;
+  parameter S_EXEC = 3'b010;
+  parameter S_OUTPUT = 3'b011;
+  
+  wire FULL0;
+  wire FULL1;
+  wire [15:0] DOUT_fifo;
+  wire [15:0] DIN_fifo;
+  wire VALID0;
+  wire EMPTY0;
+  wire EMPTY1;
+  
+  wire WR0 = ACK;
+  wire WR1 = VALID0;
+  wire RD0 = (CUR==S_EXEC) & ~FULL1 & ~EMPTY0;
+  wire RD1 = (CUR==S_OUTPUT) & ~EMPTY0;
+  
+  assign REQ_AB = (CUR==S_INPUT) & ~ACK & ~FULL0;
+  wire FIFO_RST = RST || (CUR==S_IDLE);
+  
     
      fifo u_fifo0 (
      .DIN({A,B}),
-     .WR(ACK),
+     .WR(WR0),
      .CLK(CLK),
-     .RST(RST),
-     .RD(RD_fifo1),
-     .FULL(FULL),
+     .RST(FIFO_RST),
+     .RD(RD0),
+     .FULL(FULL0),
      .almostFULL(),
-     .DOUT(DOUT_fifo1),
-     .EMPTY(EMPTY_fifo1),
+     .DOUT(DOUT_fifo),
+     .EMPTY(EMPTY0),
      .UNDER(),
      .OVER(),
-     .VALID(VALID_fifo1));
+     .VALID(VALID0));
      
-     mult mult1 (.a(DOUT_fifo1[15:8]),.b(DOUT_fifo1[7:0]),.x(DIN_fifo2));
+     mult mult1 (.a(DOUT_fifo[15:8]),.b(DOUT_fifo[7:0]),.x(DIN_fifo));
   
      fifo u_fifo1 (
-     .DIN(DIN_fifo2),
-     .WR(VALID_fifo1),
+     .DIN(DIN_fifo),
+     .WR(WR1),
      .CLK(CLK),
-     .RST(RST),
-     .RD(RD),
-     .FULL(),
-     .almostFULL(almostFULL_fifo2),
-     .DOUT(DOUT),
-     .EMPTY(EMPTY),
+     .RST(FIFO_RST),
+     .RD(RD1),
+     .FULL(FULL1),
+     .almostFULL(),
+     .DOUT(X),
+     .EMPTY(EMPTY1),
      .UNDER(),
      .OVER(),
-     .VALID(VALID));
+     .VALID(X_VALID));
      
-     assign RD_fifo1 = ~EMPTY_fifo1 & ~almostFULL_fifo2;
-
+     always @(posedge CLK) begin
+         if (RST)
+             CUR <= S_IDLE;
+         else
+             CUR <= NXT;
+     end
+     
      always @* begin
          case ( CUR )
              S_IDLE:
@@ -87,23 +109,22 @@ module kadai4
                      NXT <= S_EXEC;
                  else
                      NXT <= S_INPUT;
-         S_EXEC:
-             if ( HALT )
-                 NXT <= S_IDLE;
-             else if ( FULL1 )
-                 NXT <= S_OUTPUT;
-        else
-            NXT <= S_EXEC;
-        S_OUTPUT:
-            if ( HALT )
-                NXT <= S_IDLE;
-            else if ( EMPTY1 )
-                NXT <= S_IDLE;
-            else
-                NXT <= S_OUTPUT;
-            default:  NXT <= S_IDLE;
-            end
-            case
-            end
-  
+             S_EXEC:
+                 if ( HALT )
+                     NXT <= S_IDLE;
+                 else if ( FULL1 )
+                     NXT <= S_OUTPUT;
+                 else
+                     NXT <= S_EXEC;
+             S_OUTPUT:
+                 if ( HALT )
+                     NXT <= S_IDLE;
+                 else if ( EMPTY1 )
+                     NXT <= S_IDLE;
+                 else
+                     NXT <= S_OUTPUT;
+                 default:  NXT <= S_IDLE;
+         endcase
+     end
+
 endmodule
