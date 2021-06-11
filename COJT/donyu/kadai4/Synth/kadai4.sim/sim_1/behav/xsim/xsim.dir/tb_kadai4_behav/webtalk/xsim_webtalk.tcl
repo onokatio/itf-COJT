@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai4/Synth/kadai4.sim/sim_1/behav/xsim/xsim.dir/tb_kadai4_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Fri Jun 11 23:45:04 2021" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Sat Jun 12 00:17:27 2021" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2019.1 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2552052" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "LIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "acdaed82-eaf8-48c5-b9e8-774e0be09562" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "b80f6a6e435f4c1fbf5646fc20282eca" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "7" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "24" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Arch" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "Arch Linux" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz" -context "user_environment"
@@ -33,10 +33,10 @@ webtalk_add_data -client xsim -key Debug -value "typical" -context "xsim\\comman
 webtalk_add_data -client xsim -key Simulation_Image_Code -value "71 KB" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Simulation_Image_Data -value "12 KB" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Nets -value "0" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Total_Processes -value "235" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Total_Processes -value "238" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Total_Instances -value "61" -context "xsim\\usage"
 webtalk_add_data -client xsim -key Xilinx_HDL_Libraries_Used -value "secureip unimacro_ver unisims_ver " -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Time -value "0.96_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Compiler_Memory -value "202996_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 2133513547 -regid "" -xml /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai4/Synth/kadai4.sim/sim_1/behav/xsim/xsim.dir/tb_kadai4_behav/webtalk/usage_statistics_ext_xsim.xml -html /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai4/Synth/kadai4.sim/sim_1/behav/xsim/xsim.dir/tb_kadai4_behav/webtalk/usage_statistics_ext_xsim.html -wdm /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai4/Synth/kadai4.sim/sim_1/behav/xsim/xsim.dir/tb_kadai4_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Compiler_Time -value "0.97_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Compiler_Memory -value "203188_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 2208404253 -regid "" -xml /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai4/Synth/kadai4.sim/sim_1/behav/xsim/xsim.dir/tb_kadai4_behav/webtalk/usage_statistics_ext_xsim.xml -html /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai4/Synth/kadai4.sim/sim_1/behav/xsim/xsim.dir/tb_kadai4_behav/webtalk/usage_statistics_ext_xsim.html -wdm /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai4/Synth/kadai4.sim/sim_1/behav/xsim/xsim.dir/tb_kadai4_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

@@ -52,7 +52,7 @@ module kadai4
   wire WR0 = ACK;
   wire WR1 = VALID0;
   wire RD0 = (CUR==S_EXEC) & ~FULL1 & ~EMPTY0;
-  wire RD1 = (CUR==S_OUTPUT) & ~EMPTY0;
+  wire RD1 = (CUR==S_OUTPUT) & ~EMPTY1;
   
   assign REQ_AB = (CUR==S_INPUT) & ~ACK & ~FULL0;
   wire FIFO_RST = RST || (CUR==S_IDLE);
@@ -123,7 +123,8 @@ module kadai4
                      NXT <= S_IDLE;
                  else
                      NXT <= S_OUTPUT;
-                 default:  NXT <= S_IDLE;
+             default:
+                 NXT <= S_IDLE;
          endcase
      end
 

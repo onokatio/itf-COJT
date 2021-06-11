@@ -15,6 +15,10 @@ module tb_kadai4;
     reg HALT;
     wire X_VALID;
     wire [15:0] X;
+    
+    wire [2:0] debug_mode = kadai4_instance.CUR;
+    wire [2:0] debug_rd1 = kadai4_instance.RD1;
+    wire [2:0] debug_empty0 = kadai4_instance.EMPTY0;
 
     kadai4 kadai4_instance
   (
@@ -43,24 +47,24 @@ module tb_kadai4;
         RST = 1'b0;
         
         #CYCLE;
-        START <= 1;
+        START <= 1'b1;
+        HALT <= 1'b0;
+        A <= 8'h4a;
+        B <= 8'h5b;
 
         for(i = 0; ; i=i+1) begin
             #CYCLE
-            if(REQ_AB == 1'b1) begin           
+            if(REQ_AB == 1'b1) begin
                 ACK <= 1'b1;
-                A <= 8'h4a;
-                B <= 8'h5b;
-                #CYCLE
-                ACK <= 1'b0;
+                A <= A + i;
+                B <= B + i;
             end
             else 
                 ACK <= 1'b0;
+
+            #CYCLE
+            ACK <= 1'b0;
         end
-        
-        #CYCLE
-        ACK <= 1'b0;
-        
         
    end
   
