@@ -25,16 +25,14 @@ module patgen(
 
 `include "syncgen_param.vh"
 
-/* DCLKで同期化したリセット信号DRSTの作成 */
 reg [1:0]   drst_ff;
 
 always @( posedge DCLK ) begin
-    drst_ff <= { drst_ff[0], ‾ARESETN };
+    drst_ff <= { drst_ff[0], ~ARESETN };
 end
 
 wire DRST = drst_ff[1];
 
-/* 同期信号生成回路の接続 */
 wire    [10:0]  HCNT, VCNT;
 wire            DSP_preDE;
 
