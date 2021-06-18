@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Title       : ƒpƒ^[ƒ“•\¦‰ñ˜HióuÒİŒv‘ÎÛj
+// Title       : ãƒ‘ã‚¿ãƒ¼ãƒ³è¡¨ç¤ºå›è·¯ï¼ˆå—è¬›è€…è¨­è¨ˆå¯¾è±¡ï¼‰
 // Project     : pattern
 // Filename    : patgen.v
 //-----------------------------------------------------------------------------
@@ -25,7 +25,6 @@ module patgen(
 
 `include "syncgen_param.vh"
 
-/* DCLK‚Å“¯Šú‰»‚µ‚½ƒŠƒZƒbƒgM†DRST‚Ìì¬ */
 reg [1:0]   drst_ff;
 
 always @( posedge DCLK ) begin
@@ -34,7 +33,6 @@ end
 
 wire DRST = drst_ff[1];
 
-/* “¯ŠúM†¶¬‰ñ˜H‚ÌÚ‘± */
 wire    [10:0]  HCNT, VCNT;
 wire            DSP_preDE;
 
