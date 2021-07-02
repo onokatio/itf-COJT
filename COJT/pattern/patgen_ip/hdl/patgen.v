@@ -49,5 +49,12 @@ syncgen syncgen(
     .VCNT       (VCNT)
 );
 
+always @(posedge DCLK) begin
+	if(DSP_preDE == 1'b1) begin
+
+	end
+end
+
+
 
 endmodule
