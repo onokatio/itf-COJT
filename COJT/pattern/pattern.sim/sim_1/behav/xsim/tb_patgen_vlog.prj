@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../pattern.srcs/sources_1/bd/design_1/ipshared/cd1e/hdl/dclkgen" --include "../../../../pattern.srcs/sources_1/bd/design_1/ipshared/23ce/hdl" --include "../../../../pattern.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../pattern.srcs/sources_1/bd/design_1/ipshared/8c62/hdl" --include "/home/katio/Xilinx-bin/Vivado/2019.1/data/xilinx_vip/include" \
+"../../../../SIM/tb/tb_patgen.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

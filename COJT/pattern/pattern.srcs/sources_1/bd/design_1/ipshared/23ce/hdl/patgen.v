@@ -49,5 +49,48 @@ syncgen syncgen(
     .VCNT       (VCNT)
 );
 
+function [7:0] getPixelR (input [10:0] x, y);
+begin
+	case ((x * 8) / HDO - (y * 4) / VDO)
+		3'd0: getPixelR = 8'hff;
+		3'd3: getPixelR = 8'hff;
+		3'd4: getPixelR = 8'hff;
+		3'd7: getPixelR = 8'hff;
+		default: getPixelR = 8'h00;
+	endcase
+end
+endfunction
+
+function [7:0] getPixelG (input [10:0] x, y);
+begin
+	case ((x * 8) / HDO - (y * 4) / VDO)
+		3'd1: getPixelG = 8'hff;
+		3'd4: getPixelG = 8'hff;
+		3'd5: getPixelG = 8'hff;
+		3'd7: getPixelG = 8'hff;
+		default: getPixelG = 8'h00;
+	endcase
+end
+endfunction
+
+function [7:0] getPixelB (input [10:0] x, input [10:0] y);
+begin
+	case ((x * 8) / HDO - (y * 4) / VDO)
+		3'd2: getPixelB = 8'hff;
+		3'd3: getPixelB = 8'hff;
+		3'd5: getPixelB = 8'hff;
+		3'd7: getPixelB = 8'hff;
+		default: getPixelB = 8'h00;
+	endcase
+end
+endfunction
+
+always @(posedge DCLK) begin
+	if(DSP_preDE == 1'b1) begin
+		DSP_R <= getPixelR(HCNT,VCNT);
+		DSP_G <= getPixelG(HCNT,VCNT);
+		DSP_B <= getPixelB(HCNT,VCNT);
+	end
+end
 
 endmodule

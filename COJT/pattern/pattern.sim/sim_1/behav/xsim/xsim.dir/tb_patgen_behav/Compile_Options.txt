@@ -1,0 +1,1 @@
+-wto "5f8d642a0f7e45b3bc0af5c7dafc8c07" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "xilinx_vip" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "tb_patgen_behav" "xil_defaultlib.tb_patgen" "xil_defaultlib.glbl" -log "elaborate.log" 

@@ -11,7 +11,6 @@
 // 202?/??/??  1.00     ???????????   Created
 //-----------------------------------------------------------------------------
 
-
 module syncgen(
     input               DCLK,
     input               DRST,
@@ -25,57 +24,56 @@ module syncgen(
 
 `include "syncgen_param.vh"
 
-assign RESOL = P_RESOL_VGA;
+initial begin
+	VCNT = 0;
+	HCNT = 0;
+	DSP_HSYNC_X = 0;
+	DSP_VSYNC_X = 0;
+	DSP_preDE = 0;
+end
 
-reg [1:0] STATE_V;
-parameter SV_VFP = 2'b00;
-parameter SV_VPW = 2'b01;
-parameter SV_VBP = 2'b10;
-parameter SV_VDO = 2'b11;
-
-reg [1:0] STATE_H;
-parameter SH_HFP = 2'b00;
-parameter SH_HPW = 2'b01;
-parameter SH_HBP = 2'b10;
-parameter SH_HDO = 2'b11;
-
-reg [HSC:0] DCLK_count = 0'b0;
-
-always @(posadge DCLK) begin
-	DCLK_count = DCLK_count + 0'b1;
-	if (STATE_H == SH_HFP && DCLK_count == HFP) begin
-		STATE_H <= SH_HPW;
-		DCLK_count <= 0'b0;
+always @(posedge DCLK) begin
+	if (HFP <= HCNT && HCNT < HFP+HPW) begin
+		DSP_HSYNC_X <= 1'b0;
 	end
-	if (STATE_H == SH_HPW && DCLK_count == HPW) begin
-		STATE_H <= SH_HBP;
-		DCLK_count <= 0'b0;
+	if (HFP+HPW <= HCNT && HCNT < HFP+HPW+HBP) begin
+		DSP_HSYNC_X <= 1'b1;
 	end
-	if (STATE_H == SH_HBP && DCLK_count == HBP) begin
-		STATE_H <= SH_HDO;
-		DCLK_count <= 0'b0;
+	HCNT <= HCNT + 1'b1;
+end
+
+always @(posedge DCLK) begin
+	if (HCNT == HSC - 10'd2) begin
+		DSP_preDE <= 1'b0;
 	end
-	if (STATE_H == SH_HDO && DCLK_count == HDO) begin
-		STATE_H <= SH_HFP;
-		DCLK_count <= 0'b0;
+	if (HCNT == HFP+HPW+HBP - 10'd2) begin
+		DSP_preDE <= 1'b1;
 	end
 end
 
-always @(posedge STATE_H == SH_HFP) begin
-	HCNT = HCNT + 
+always @(posedge DCLK) begin
+	if (HCNT == HSC - 1'b1) begin
+		VCNT <= VCNT + 1'b1;
+	end
 end
 
-always @(posadge DCLK) begin
+always @(posedge DCLK) begin
+	if (VCNT < VFP) begin
+		//HFP
+		DSP_VSYNC_X <= 1'b1;
+	end
+	if (VFP <= VCNT && VCNT < VFP+VPW) begin
+		//HPW
+		DSP_VSYNC_X <= 1'b0;
+	end
+	if (VFP+VPW <= VCNT && VCNT < VFP+VPW+VBP) begin
+		//HBP
+		DSP_VSYNC_X <= 1'b1;
+	end
+	if (VFP+VPW+VBP <= VCNT) begin
+		//HDO
+		DSP_VSYNC_X <= 1'b1;
+	end
 end
 
-
-reg HFP_count = 0;
-reg HPW_count = 0;
-reg HBP_count = 0;
-reg HDO_count = 0;
-
-reg VFP_count = 0;
-reg VPW_count = 0;
-reg VBP_count = 0;
-reg VDO_count = 0;
 endmodule

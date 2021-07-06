@@ -12,7 +12,6 @@
       "axi_gpio_0": "",
       "axi_iic_0": "",
       "dispsub_0": "",
-      "patgen_0": "",
       "processing_system7_0": "",
       "ps7_0_axi_periph": {
         "xbar": "",
@@ -23,7 +22,8 @@
         "m01_couplers": {}
       },
       "rst_ps7_0_125M": "",
-      "util_reduced_logic_0": ""
+      "util_reduced_logic_0": "",
+      "patgen_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -137,10 +137,6 @@
       "dispsub_0": {
         "vlnv": "xilinx.com:user:dispsub:1.0",
         "xci_name": "design_1_dispsub_0_0"
-      },
-      "patgen_0": {
-        "vlnv": "xilinx.com:user:patgen:1.0",
-        "xci_name": "design_1_patgen_0_0"
       },
       "processing_system7_0": {
         "vlnv": "xilinx.com:ip:processing_system7:5.5",
@@ -1149,16 +1145,16 @@
               }
             },
             "interface_nets": {
-              "auto_pc_to_s00_couplers": {
-                "interface_ports": [
-                  "M_AXI",
-                  "auto_pc/M_AXI"
-                ]
-              },
               "s00_couplers_to_auto_pc": {
                 "interface_ports": [
                   "S_AXI",
                   "auto_pc/S_AXI"
+                ]
+              },
+              "auto_pc_to_s00_couplers": {
+                "interface_ports": [
+                  "M_AXI",
+                  "auto_pc/M_AXI"
                 ]
               }
             },
@@ -1287,16 +1283,10 @@
           }
         },
         "interface_nets": {
-          "s00_couplers_to_xbar": {
+          "xbar_to_m00_couplers": {
             "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
-            ]
-          },
-          "xbar_to_m01_couplers": {
-            "interface_ports": [
-              "xbar/M01_AXI",
-              "m01_couplers/S_AXI"
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
             ]
           },
           "ps7_0_axi_periph_to_s00_couplers": {
@@ -1305,10 +1295,16 @@
               "s00_couplers/S_AXI"
             ]
           },
-          "xbar_to_m00_couplers": {
+          "m01_couplers_to_ps7_0_axi_periph": {
             "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
+              "M01_AXI",
+              "m01_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m01_couplers": {
+            "interface_ports": [
+              "xbar/M01_AXI",
+              "m01_couplers/S_AXI"
             ]
           },
           "m00_couplers_to_ps7_0_axi_periph": {
@@ -1317,10 +1313,10 @@
               "m00_couplers/M_AXI"
             ]
           },
-          "m01_couplers_to_ps7_0_axi_periph": {
+          "s00_couplers_to_xbar": {
             "interface_ports": [
-              "M01_AXI",
-              "m01_couplers/M_AXI"
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
             ]
           }
         },
@@ -1363,6 +1359,10 @@
             "value": "1"
           }
         }
+      },
+      "patgen_0": {
+        "vlnv": "xilinx.com:user:patgen:1.0",
+        "xci_name": "design_1_patgen_0_0"
       }
     },
     "interface_nets": {
@@ -1370,12 +1370,6 @@
         "interface_ports": [
           "axi_gpio_0/S_AXI",
           "ps7_0_axi_periph/M00_AXI"
-        ]
-      },
-      "processing_system7_0_FIXED_IO": {
-        "interface_ports": [
-          "FIXED_IO",
-          "processing_system7_0/FIXED_IO"
         ]
       },
       "ps7_0_axi_periph_M01_AXI": {
@@ -1394,6 +1388,12 @@
         "interface_ports": [
           "DVI",
           "axi_iic_0/IIC"
+        ]
+      },
+      "processing_system7_0_FIXED_IO": {
+        "interface_ports": [
+          "FIXED_IO",
+          "processing_system7_0/FIXED_IO"
         ]
       },
       "processing_system7_0_DDR": {
@@ -1520,11 +1520,11 @@
           "axi_gpio_0/s_axi_aresetn",
           "axi_iic_0/s_axi_aresetn",
           "dispsub_0/ARESETN",
-          "patgen_0/ARESETN",
           "ps7_0_axi_periph/ARESETN",
           "ps7_0_axi_periph/M00_ARESETN",
           "ps7_0_axi_periph/M01_ARESETN",
-          "ps7_0_axi_periph/S00_ARESETN"
+          "ps7_0_axi_periph/S00_ARESETN",
+          "patgen_0/ARESETN"
         ]
       },
       "util_reduced_logic_0_Res": {
