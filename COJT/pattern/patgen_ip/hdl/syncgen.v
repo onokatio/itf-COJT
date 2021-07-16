@@ -24,56 +24,66 @@ module syncgen(
 
 `include "syncgen_param.vh"
 
-initial begin
-	VCNT = 0;
-	HCNT = 0;
-	DSP_HSYNC_X = 0;
-	DSP_VSYNC_X = 0;
-	DSP_preDE = 0;
+always @(posedge DCLK) begin
+    if (DRST == 1) begin
+        VCNT = 11'b0;
+    end else begin
+        if (HCNT == HSC - 1'd1) begin
+            if (VCNT == VSC - 1'd1) begin
+                VCNT <= 11'b0;
+	        end else begin
+                VCNT <= VCNT + 11'b1;
+            end
+	    end
+    end
 end
 
 always @(posedge DCLK) begin
-	if (HFP <= HCNT && HCNT < HFP+HPW) begin
-		DSP_HSYNC_X <= 1'b0;
-	end
-	if (HFP+HPW <= HCNT && HCNT < HFP+HPW+HBP) begin
-		DSP_HSYNC_X <= 1'b1;
-	end
-	HCNT <= HCNT + 1'b1;
+	if (DRST == 1) begin
+		HCNT = 11'b0;
+	end else begin
+    	if (HCNT == HSC - 1'd1) begin
+	   	   HCNT <= 11'b0;
+	    end else begin
+		   HCNT <= HCNT + 11'b1;
+ 	    end
+    end
 end
 
 always @(posedge DCLK) begin
-	if (HCNT == HSC - 10'd2) begin
-		DSP_preDE <= 1'b0;
-	end
-	if (HCNT == HFP+HPW+HBP - 10'd2) begin
-		DSP_preDE <= 1'b1;
-	end
+	if (DRST == 1) begin
+		DSP_HSYNC_X = 1'b1;
+	end else begin
+	   if (HCNT == HFP) begin
+	       DSP_HSYNC_X <= 1'b0;
+	   end else if (HCNT == HFP+HPW) begin
+	   	   DSP_HSYNC_X <= 1'b1;
+	   end
+    end
 end
 
 always @(posedge DCLK) begin
-	if (HCNT == HSC - 1'b1) begin
-		VCNT <= VCNT + 1'b1;
-	end
+    if (DRST == 1) begin
+		DSP_VSYNC_X = 1'b1;
+	end else begin
+    	if (VCNT == VFP) begin
+	   	   DSP_VSYNC_X <= 1'b0;
+	    end else if (VCNT == VFP+VPW) begin
+		   DSP_VSYNC_X <= 1'b1;
+	   end
+    end
 end
 
 always @(posedge DCLK) begin
-	if (VCNT < VFP) begin
-		//HFP
-		DSP_VSYNC_X <= 1'b1;
-	end
-	if (VFP <= VCNT && VCNT < VFP+VPW) begin
-		//HPW
-		DSP_VSYNC_X <= 1'b0;
-	end
-	if (VFP+VPW <= VCNT && VCNT < VFP+VPW+VBP) begin
-		//HBP
-		DSP_VSYNC_X <= 1'b1;
-	end
-	if (VFP+VPW+VBP <= VCNT) begin
-		//HDO
-		DSP_VSYNC_X <= 1'b1;
-	end
+    if (DRST == 1) begin
+		DSP_preDE = 1'b0;
+	end else if (VCNT >= VFP+VPW+VBP) begin
+    	if (HCNT == HSC - 10'd2) begin
+	       	DSP_preDE <= 1'b0;
+	    end else if (HCNT == HFP+HPW+HBP - 10'd2) begin
+		    DSP_preDE <= 1'b1;
+	    end
+    end
 end
 
 endmodule

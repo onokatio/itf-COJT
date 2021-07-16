@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_patgen_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_patgen" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="19636866666666fs"></ZoomStartTime>
+      <ZoomEndTime time="19979866666667fs"></ZoomEndTime>
+      <Cursor1Time time="20160200000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="138"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject type="logic" fp_name="/tb_patgen/DCLK">
+      <obj_property name="ElementShortName">DCLK</obj_property>
+      <obj_property name="ObjectShortName">DCLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_patgen/ARESETN">
+      <obj_property name="ElementShortName">ARESETN</obj_property>
+      <obj_property name="ObjectShortName">ARESETN</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_patgen/RESOL">
+      <obj_property name="ElementShortName">RESOL[1:0]</obj_property>
+      <obj_property name="ObjectShortName">RESOL[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_patgen/DSP_VSYNC_X">
+      <obj_property name="ElementShortName">DSP_VSYNC_X</obj_property>
+      <obj_property name="ObjectShortName">DSP_VSYNC_X</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_patgen/DSP_HSYNC_X">
+      <obj_property name="ElementShortName">DSP_HSYNC_X</obj_property>
+      <obj_property name="ObjectShortName">DSP_HSYNC_X</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_patgen/DSP_DE">
+      <obj_property name="ElementShortName">DSP_DE</obj_property>
+      <obj_property name="ObjectShortName">DSP_DE</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_patgen/patgen/DSP_preDE">
+      <obj_property name="ElementShortName">DSP_preDE</obj_property>
+      <obj_property name="ObjectShortName">DSP_preDE</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_patgen/DSP_R">
+      <obj_property name="ElementShortName">DSP_R[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DSP_R[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_patgen/DSP_G">
+      <obj_property name="ElementShortName">DSP_G[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DSP_G[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_patgen/DSP_B">
+      <obj_property name="ElementShortName">DSP_B[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DSP_B[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_patgen/patgen/HCNT">
+      <obj_property name="ElementShortName">HCNT[10:0]</obj_property>
+      <obj_property name="ObjectShortName">HCNT[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_patgen/patgen/VCNT">
+      <obj_property name="ElementShortName">VCNT[10:0]</obj_property>
+      <obj_property name="ObjectShortName">VCNT[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

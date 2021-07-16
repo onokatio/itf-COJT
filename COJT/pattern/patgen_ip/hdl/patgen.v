@@ -51,7 +51,7 @@ syncgen syncgen(
 
 function [7:0] getPixelR (input [10:0] x, y);
 begin
-	case ((x * 8) / HDO - (y * 4) / VDO)
+	case (((x * 8) / HDO - (y * 4) / VDO) & 3'h7)
 		3'd0: getPixelR = 8'hff;
 		3'd3: getPixelR = 8'hff;
 		3'd4: getPixelR = 8'hff;
@@ -63,7 +63,7 @@ endfunction
 
 function [7:0] getPixelG (input [10:0] x, y);
 begin
-	case ((x * 8) / HDO - (y * 4) / VDO)
+	case (((x * 8) / HDO - (y * 4) / VDO) & 3'h7)
 		3'd1: getPixelG = 8'hff;
 		3'd4: getPixelG = 8'hff;
 		3'd5: getPixelG = 8'hff;
@@ -75,7 +75,7 @@ endfunction
 
 function [7:0] getPixelB (input [10:0] x, input [10:0] y);
 begin
-	case ((x * 8) / HDO - (y * 4) / VDO)
+	case (((x * 8) / HDO - (y * 4) / VDO) & 3'h7)
 		3'd2: getPixelB = 8'hff;
 		3'd3: getPixelB = 8'hff;
 		3'd5: getPixelB = 8'hff;
@@ -87,9 +87,15 @@ endfunction
 
 always @(posedge DCLK) begin
 	if(DSP_preDE == 1'b1) begin
-		DSP_R <= getPixelR(HCNT,VCNT);
-		DSP_G <= getPixelG(HCNT,VCNT);
-		DSP_B <= getPixelB(HCNT,VCNT);
+		DSP_R <= getPixelR(HCNT-HFP-HPW-HBP+1,VCNT-VFP-VPW-VBP);
+		DSP_G <= getPixelG(HCNT-HFP-HPW-HBP+1,VCNT-VFP-VPW-VBP);
+		DSP_B <= getPixelB(HCNT-HFP-HPW-HBP+1,VCNT-VFP-VPW-VBP);
+		DSP_DE <= 1'b1;
+	end else begin
+	    DSP_R <= 8'h0;
+	    DSP_G <= 8'h0;
+	    DSP_B <= 8'h0;
+		DSP_DE <= 1'b0;
 	end
 end
 

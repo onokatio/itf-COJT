@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../patgen_ip/hdl" \
+"../../../../../patgen_ip/hdl/patgen.v" \
+"../../../../../patgen_ip/hdl/syncgen.v" \
+"../../../../tb/tb_patgen.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

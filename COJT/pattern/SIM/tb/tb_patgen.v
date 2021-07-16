@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Title       : patgen‚ÌƒeƒXƒgƒxƒ“ƒ`
+// Title       : patgenï¿½Ìƒeï¿½Xï¿½gï¿½xï¿½ï¿½ï¿½`
 // Project     : pattern
 // Filename    : tb_patgen.v
 //-----------------------------------------------------------------------------
@@ -9,7 +9,7 @@
 // Revisions   :
 // Date        Version  Author        Description
 // 2014/04/03  1.00     M.Kobayashi   Created
-// 2016/01/11  1.10     M.Kobayashi   Sim‚·‚éƒNƒƒbƒN”‚ğ‰ğ‘œ“x‘Î‰‚ÉC³ ‘¼
+// 2016/01/11  1.10     M.Kobayashi   Simï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ğ‘œ“xï¿½Î‰ï¿½ï¿½ÉCï¿½ï¿½ ï¿½ï¿½
 //-----------------------------------------------------------------------------
 
 `timescale 1ns/1ps
@@ -49,7 +49,7 @@ always begin
 end
 
 initial begin
-    RESOL = P_RESOL_VGA;   /* RESOL‚É—^‚¦‚éƒpƒ‰ƒ[ƒ^‚ğ•ÏX‚µ‚ÄSim‚µ’¼‚· */
+    RESOL = P_RESOL_VGA;   /* RESOLï¿½É—^ï¿½ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½ï¿½ÏXï¿½ï¿½ï¿½ï¿½Simï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     fd = $fopen(filename);
     vflag = 0;
     ARESETN = 1;
@@ -57,7 +57,6 @@ initial begin
     CLOCKNUM = patgen.syncgen.HSC * patgen.syncgen.VSC;
     #(STEP*4) ARESETN = 1;
     #(STEP*CLOCKNUM*1.2);
-    $fclose(fd);
     $stop;
 end
 
