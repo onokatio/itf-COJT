@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 2
 create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -45,10 +46,10 @@ set_property used_in_implementation false [get_files -all /home/katio/script/git
 set_property used_in_implementation false [get_files -all /home/katio/script/github.com/onokatio/itf/COJT/pattern/pattern.srcs/sources_1/bd/design_1/ip/design_1_axi_iic_0_0/design_1_axi_iic_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/katio/script/github.com/onokatio/itf/COJT/pattern/pattern.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all /home/katio/script/github.com/onokatio/itf/COJT/pattern/pattern.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all /home/katio/script/github.com/onokatio/itf/COJT/pattern/pattern.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/katio/script/github.com/onokatio/itf/COJT/pattern/pattern.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_125M_0/design_1_rst_ps7_0_125M_0_board.xdc]
 set_property used_in_implementation false [get_files -all /home/katio/script/github.com/onokatio/itf/COJT/pattern/pattern.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_125M_0/design_1_rst_ps7_0_125M_0.xdc]
 set_property used_in_implementation false [get_files -all /home/katio/script/github.com/onokatio/itf/COJT/pattern/pattern.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_125M_0/design_1_rst_ps7_0_125M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/katio/script/github.com/onokatio/itf/COJT/pattern/pattern.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/katio/script/github.com/onokatio/itf/COJT/pattern/pattern.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being

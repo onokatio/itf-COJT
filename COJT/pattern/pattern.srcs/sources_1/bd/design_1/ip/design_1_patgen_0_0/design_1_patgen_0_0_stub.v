@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Wed Jul  7 05:23:15 2021
+// Date        : Fri Jul 16 16:29:47 2021
 // Host        : archlinux running 64-bit Arch Linux
-// Command     : write_verilog -force -mode synth_stub -rename_top design_1_patgen_0_0 -prefix
-//               design_1_patgen_0_0_ design_1_patgen_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               /home/katio/script/github.com/onokatio/itf/COJT/pattern/pattern.srcs/sources_1/bd/design_1/ip/design_1_patgen_0_0/design_1_patgen_0_0_stub.v
 // Design      : design_1_patgen_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1
