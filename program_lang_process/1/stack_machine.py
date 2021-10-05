@@ -1,5 +1,5 @@
 # 仮想マシンの命令
-# Push, Add
+# Push, Add, Sub, Mul, Div
 
 def execute(code):
     stack = []
