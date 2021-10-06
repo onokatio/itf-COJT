@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Title       : •\¦‰ñ˜HióuÒİŒv‘ÎÛj
+// Title       : è¡¨ç¤ºå›è·¯ï¼ˆå—è¬›è€…è¨­è¨ˆå¯¾è±¡ï¼‰
 // Project     : display
 // Filename    : display.v
 //-----------------------------------------------------------------------------
@@ -18,8 +18,8 @@ module display #
     parameter integer C_M_AXI_DATA_WIDTH            = 64,
     parameter integer C_M_AXI_AWUSER_WIDTH          = 1,
     parameter integer C_M_AXI_ARUSER_WIDTH          = 1,
-    parameter integer C_M_AXI_WUSER_WIDTH           = 8,    // Warning‘Îô
-    parameter integer C_M_AXI_RUSER_WIDTH           = 8,    // Warning‘Îô
+    parameter integer C_M_AXI_WUSER_WIDTH           = 8,    // Warningå¯¾ç­–
+    parameter integer C_M_AXI_RUSER_WIDTH           = 8,    // Warningå¯¾ç­–
     parameter integer C_M_AXI_BUSER_WIDTH           = 1
    )
   (
@@ -82,18 +82,18 @@ module display #
     input  wire                                  M_AXI_RVALID,
     output wire                                  M_AXI_RREADY,
 
-    /* •\¦ƒNƒƒbƒNAŠ„‚è‚İ */
+    /* è¡¨ç¤ºã‚¯ãƒ­ãƒƒã‚¯ã€å‰²ã‚Šè¾¼ã¿ */
     input               DCLK,
     output              DSP_IRQ,
 
-    /* ‰ğ‘œ“xØ‚è‘Ö‚¦ */
+    /* è§£åƒåº¦åˆ‡ã‚Šæ›¿ãˆ */
     input   [1:0]       RESOL,
 
-    /* ‰æ‘œo—Í */
+    /* ç”»åƒå‡ºåŠ› */
     output  [7:0]       DSP_R, DSP_G, DSP_B,
     output              DSP_DE, DSP_HSYNC_X, DSP_VSYNC_X,
 
-    /* ƒŒƒWƒXƒ^ƒoƒX */
+    /* ãƒ¬ã‚¸ã‚¹ã‚¿ãƒã‚¹ */
     input   [15:0]      WRADDR,
     input   [3:0]       BYTEEN,
     input               WREN,
@@ -102,7 +102,7 @@ module display #
     input               RDEN,
     output  [31:0]      RDATA,
 
-    /* FIFOƒtƒ‰ƒO */
+    /* FIFOãƒ•ãƒ©ã‚° */
     output              DSP_FIFO_OVER, DSP_FIFO_UNDER
     ); 
 
@@ -130,18 +130,18 @@ assign M_AXI_WVALID = 0;
 assign M_AXI_BREADY = 0;
 
 // Read Address (AR)
-/* šˆÈ‰º‚Ì3‚©Š‚Ì???‚ğA³‚µ‚¢İ’è’l‚É‚µ‚Ä‚¨‚­š */
+/* â˜…ä»¥ä¸‹ã®3ã‹æ‰€ã®???ã‚’ã€æ­£ã—ã„è¨­å®šå€¤ã«ã—ã¦ãŠãâ˜… */
 assign M_AXI_ARID    = 'b0;
 assign M_AXI_ARLEN   = ???
 assign M_AXI_ARSIZE  = ???
-assign M_AXI_ARBURST = ???
+assign M_AXI_ARBURST = 2'b01;
 assign M_AXI_ARLOCK  = 1'b0;
 assign M_AXI_ARCACHE = 4'b0011;
 assign M_AXI_ARPROT  = 3'h0;
 assign M_AXI_ARQOS   = 4'h0;
 assign M_AXI_ARUSER  = 'b0;
 
-/* ACLK‚Å“¯Šú‰»‚µ‚½ƒŠƒZƒbƒgM†ARST‚Ìì¬ */
+/* ACLKã§åŒæœŸåŒ–ã—ãŸãƒªã‚»ãƒƒãƒˆä¿¡å·ARSTã®ä½œæˆ */
 reg [1:0]   arst_ff;
 
 always @( posedge ACLK ) begin
@@ -150,7 +150,7 @@ end
 
 wire ARST = arst_ff[1];
 
-/* DCLK‚Å“¯Šú‰»‚µ‚½ƒŠƒZƒbƒgM†DRST‚Ìì¬ */
+/* DCLKã§åŒæœŸåŒ–ã—ãŸãƒªã‚»ãƒƒãƒˆä¿¡å·DRSTã®ä½œæˆ */
 reg [1:0]   drst_ff;
 
 always @( posedge DCLK ) begin
@@ -159,7 +159,7 @@ end
 
 wire DRST = drst_ff[1];
 
-/* ƒuƒƒbƒNŠÔÚ‘±M† */
+/* ãƒ–ãƒ­ãƒƒã‚¯é–“æ¥ç¶šä¿¡å· */
 wire            DSP_preDE, VRSTART;
 wire            DISPON, BUF_UNDER, BUF_OVER, BUF_WREADY;
 wire    [28:0]  DISPADDR;
@@ -211,8 +211,8 @@ disp_buffer disp_buffer (
     .DSP_DE     (DSP_DE)
 ); 
 
-/* VRAM§Œä•”‚ÌARADDR‚ÉVRAMCTRL_ARADDR‚ğÚ‘±‚·‚é‚±‚Æ‚Å */
-/* ƒAƒNƒZƒX”ÍˆÍ‚ğ0x20000000`0x3FFFFFFF‚ÉŒÀ’è‚·‚é      */
+/* VRAMåˆ¶å¾¡éƒ¨ã®ARADDRã«VRAMCTRL_ARADDRã‚’æ¥ç¶šã™ã‚‹ã“ã¨ã§ */
+/* ã‚¢ã‚¯ã‚»ã‚¹ç¯„å›²ã‚’0x20000000ã€œ0x3FFFFFFFã«é™å®šã™ã‚‹      */
 wire    [31:0] VRAMCTRL_ARADDR;
 assign M_AXI_ARADDR = {3'b001, VRAMCTRL_ARADDR[28:0]};
 
@@ -232,7 +232,7 @@ disp_vramctrl disp_vramctrl (
     .BUF_WREADY (BUF_WREADY)
 );
 
-/* ƒfƒoƒbƒO—p */
+/* ãƒ‡ãƒãƒƒã‚°ç”¨ */
 assign DSP_FIFO_UNDER = BUF_UNDER;
 assign DSP_FIFO_OVER  = BUF_OVER;
 

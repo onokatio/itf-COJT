@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Title       : VRAM§ŒäióuÒİŒv‘ÎÛj
+// Title       : VRAMåˆ¶å¾¡ï¼ˆå—è¬›è€…è¨­è¨ˆå¯¾è±¡ï¼‰
 // Project     : display
 // Filename    : disp_vramctrl.v
 //-----------------------------------------------------------------------------
@@ -26,15 +26,63 @@ module disp_vramctrl
     input           RVALID,
     output          RREADY,
 
-    /* ‰ğ‘œ“xØ‚è‘Ö‚¦ */
+    /* è§£åƒåº¦åˆ‡ã‚Šæ›¿ãˆ */
     input   [1:0]   RESOL,
 
-    /* ‘¼ƒuƒƒbƒN‚©‚ç‚ÌM† */
+    /* ä»–ãƒ–ãƒ­ãƒƒã‚¯ã‹ã‚‰ã®ä¿¡å· */
     input           VRSTART,
     input           DISPON,
     input   [28:0]  DISPADDR,
     input           BUF_WREADY
 );
 
+parameter S_IDLE = 2'b00;
+parameter S_SETADDR = 2'b01;
+parameter S_READ = 2'b10;
+parameter S_WAIT = 2'b11;
+
+reg [1:0] STATE;
+reg [1:0] STATE_NEXT;
+
+always @(posedge ACLK) begin
+    if (ARST) begin
+        STATE <= S_IDLE;
+    end else begin
+        STATE <= STATE_NEXT;
+    end
+end
+
+always @* begin
+    case(STATE)
+        S_IDLE:
+            if (VRSTART) begin
+                STATE_NEXT <= S_SETADDR;
+            end else begin
+                STATE_NEXT <= S_IDLE;
+            end
+        S_SETADDR:
+            if (ARREADY) begin
+                STATE_NEXT <= S_READ;
+            end else begin
+                STATE_NEXT <= S_SETADDR;
+            end
+        S_READ:
+            if (RLAST) begin
+                if (fifo_is_ok) begin
+                    STATE_NEXT <= S_SETADDR;
+                end else begin
+                    STATE_NEXT <= S_WAIT;
+                end
+            end else begin
+                STATE_NEXT <= S_READ;
+            end
+        S_WAIT:
+            if (fifo_is_ok) begin
+                STATE_NEXT <= S_SETADDR;
+            end else begin
+                STATE_NEXT <= S_WAIT;
+            end
+    endcase
+end
 
 endmodule
