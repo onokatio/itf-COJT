@@ -58,7 +58,13 @@ fifo_48in24out_1024depth fifo_48in24out_1024depth(
   .wr_data_count(COUNT)
 );
 
-DSP_DE <= DSP_preDE;
+reg [1:0] DSP_DE_temp;
+
+always @( posedge DCLK ) begin
+  DSP_DE_temp <= {DSP_DE_temp[0],DSP_preDE}
+  DSP_DE <= DSP_DE_temp[1];
+end
+
 assign BUF_WREADY = COUNT ;
 
 endmodule
