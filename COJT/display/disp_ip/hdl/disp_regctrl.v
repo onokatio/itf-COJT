@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Title       : ƒŒƒWƒXƒ^§ŒäióuÒİŒv‘ÎÛj
+// Title       : ãƒ¬ã‚¸ã‚¹ã‚¿åˆ¶å¾¡ï¼ˆå—è¬›è€…è¨­è¨ˆå¯¾è±¡ï¼‰
 // Project     : display
 // Filename    : disp_regctrl.v
 //-----------------------------------------------------------------------------
@@ -11,6 +11,7 @@
 // 202?/??/??  1.00     ???????????   Created
 //-----------------------------------------------------------------------------
 
+
 module disp_regctrl
   (
     // System Signals
@@ -20,7 +21,7 @@ module disp_regctrl
     /* VSYNC */
     input               DSP_VSYNC_X,
 
-    /* ƒŒƒWƒXƒ^ƒoƒX */
+    /* ãƒ¬ã‚¸ã‚¹ã‚¿ãƒã‚¹ */
     input       [15:0]  WRADDR,
     input       [3:0]   BYTEEN,
     input               WREN,
@@ -29,27 +30,27 @@ module disp_regctrl
     input               RDEN,
     output      [31:0]  RDATA,
 
-    /* ƒŒƒWƒXƒ^o—Í */
+    /* ãƒ¬ã‚¸ã‚¹ã‚¿å‡ºåŠ› */
     output  reg         DISPON,
     output      [28:0]  DISPADDR,
 
-    /* Š„‚è‚İAFIFOƒtƒ‰ƒO */
+    /* å‰²ã‚Šè¾¼ã¿ã€FIFOãƒ•ãƒ©ã‚° */
     output              DSP_IRQ,
     input               BUF_UNDER,
     input               BUF_OVER
     ); 
 
 
-/* o—ÍM†‚ÌŒÅ’èi•\¦‰ñ˜H1‚Å‚ÍŒÅ’èA•\¦‰ñ˜H2‚Å‚ÍregéŒ¾‚µ‚Äg‚¤j */
+/* å‡ºåŠ›ä¿¡å·ã®å›ºå®šï¼ˆè¡¨ç¤ºå›è·¯1ã§ã¯å›ºå®šã€è¡¨ç¤ºå›è·¯2ã§ã¯regå®£è¨€ã—ã¦ä½¿ã†ï¼‰ */
 assign RDATA    = 32'b0;
 assign DISPADDR = 29'h0;
 assign DSP_IRQ  = 1'b0;
 
-/* ˆÈ‰º‚Ì‹Lq‚Í‚»‚Ì‚Ü‚Üg—p‰Â */
+/* ä»¥ä¸‹ã®è¨˜è¿°ã¯ãã®ã¾ã¾ä½¿ç”¨å¯ */
 wire    write_reg  = WREN && WRADDR[15:12]==4'h0;
 wire    ctrlreg_wr = (write_reg && WRADDR[11:2]==10'h001 && BYTEEN[0]);
 
-// ƒRƒ“ƒgƒ[ƒ‹ƒŒƒWƒXƒ^iDISPCTRLjEEDISPON
+// ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒ¬ã‚¸ã‚¹ã‚¿ï¼ˆDISPCTRLï¼‰ãƒ»ãƒ»DISPON
 always @( posedge ACLK ) begin
     if ( ARST )
         DISPON <= 1'b0;

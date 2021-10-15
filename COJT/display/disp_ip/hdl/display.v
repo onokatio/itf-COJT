@@ -132,8 +132,8 @@ assign M_AXI_BREADY = 0;
 // Read Address (AR)
 /* ★以下の3か所の???を、正しい設定値にしておく★ */
 assign M_AXI_ARID    = 'b0;
-assign M_AXI_ARLEN   = ???
-assign M_AXI_ARSIZE  = ???
+assign M_AXI_ARLEN   = 7'h10;
+assign M_AXI_ARSIZE  = 3'b011;
 assign M_AXI_ARBURST = 2'b01;
 assign M_AXI_ARLOCK  = 1'b0;
 assign M_AXI_ARCACHE = 4'b0011;
@@ -209,7 +209,7 @@ disp_buffer disp_buffer (
     .DSP_G      (DSP_G),
     .DSP_B      (DSP_B),
     .DSP_DE     (DSP_DE)
-); 
+);
 
 /* VRAM制御部のARADDRにVRAMCTRL_ARADDRを接続することで */
 /* アクセス範囲を0x20000000〜0x3FFFFFFFに限定する      */

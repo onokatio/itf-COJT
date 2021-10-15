@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Title       : FIFO‚¨‚æ‚Ñ‰æ‘œo—ÍióuÒİŒv‘ÎÛj
+// Title       : FIFOãŠã‚ˆã³ç”»åƒå‡ºåŠ›ï¼ˆå—è¬›è€…è¨­è¨ˆå¯¾è±¡ï¼‰
 // Project     : display
 // Filename    : disp_buffer.v
 //-----------------------------------------------------------------------------
@@ -17,11 +17,11 @@ module disp_buffer
     input               ACLK,
     input               ARST,
 
-    /* •\¦ƒNƒƒbƒNAƒŠƒZƒbƒg */
+    /* è¡¨ç¤ºã‚¯ãƒ­ãƒƒã‚¯ã€ãƒªã‚»ãƒƒãƒˆ */
     input               DCLK,
     input               DRST,
 
-    /* FIFOŠÖ˜AM† */
+    /* FIFOé–¢é€£ä¿¡å· */
     input               DISPON,
     input               FIFORST,
     input   [63:0]      FIFOIN,
@@ -31,27 +31,34 @@ module disp_buffer
     output              BUF_OVER,
     output              BUF_UNDER,
 
-    /* ‰æ‘œo—Í */
+    /* ç”»åƒå‡ºåŠ› */
     output  reg [7:0]   DSP_R, DSP_G, DSP_B,
     output  reg         DSP_DE
     ); 
 
+reg FULL;
+reg VALID;
+
+wire [7:0] COUNT;
 
 /* FIFO */
 fifo_48in24out_1024depth fifo_48in24out_1024depth(
-  .rst          (),
-  .wr_clk       (),
-  .rd_clk       (),
-  .din          (),
-  .wr_en        (),
-  .rd_en        (),
-  .dout         (),
-  .full         (),
-  .overflow     (),
+  .rst          (FIFORST),
+  .wr_clk       (ACLK),
+  .rd_clk       (DCLK),
+  .din          ({ FIFOIN[23:0], FIFOIN[55:32] }),
+  .wr_en        (FIFOWR),
+  .rd_en        (DSP_preDE),
+  .dout         ({DSP_R, DSP_G, DSP_B}),
+  .full         (FULL),
+  .overflow     (BUF_OVER),
   .empty        (),
   .valid        (),
-  .underflow    (),
-  .wr_data_count()
+  .underflow    (BUF_UNDER),
+  .wr_data_count(COUNT)
 );
+
+DSP_DE <= DSP_preDE;
+assign BUF_WREADY = COUNT ;
 
 endmodule
