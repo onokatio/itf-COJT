@@ -82,7 +82,7 @@ always @( posedge ACLK ) begin
                 if (VRAM_START - VRAM_ADDRESS > 28'h12C000) begin
                     //1画面終了時 4バイト * 640 * 480 = 1228800 = 0x12C000
                     STATE_NEXT <= S_IDLE;
-                end else if (fifo_is_ok) begin
+                end else if (BUF_WREADY) begin
                     STATE_NEXT <= S_SETADDR;
                 end else begin
                     STATE_NEXT <= S_WAIT; 
@@ -91,7 +91,7 @@ always @( posedge ACLK ) begin
                 STATE_NEXT <= S_READ;
             end
         S_WAIT:
-            if (fifo_is_ok) begin
+            if (BUF_WREADY) begin
                 STATE_NEXT <= S_SETADDR;
             end else begin
                 STATE_NEXT <= S_WAIT;
