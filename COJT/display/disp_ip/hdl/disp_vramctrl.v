@@ -44,7 +44,7 @@ parameter S_WAIT = 2'b11;
 reg [1:0] STATE;
 reg [1:0] STATE_NEXT;
 
-reg [28:0] VRAM_ADDRESS = DISPADDR;
+reg [28:0] VRAM_ADDRESS;
 
 always @(posedge ACLK) begin
     if (ARST) begin
@@ -99,10 +99,12 @@ always @( posedge ACLK ) begin
     endcase
 end
 
-assignARADDR = VRAM_ADDRESS;
+assign ARADDR = VRAM_ADDRESS;
 
 always @( posedge ACLK ) begin
-    if(STATE == S_SETADDR) begin
+    if (ARST) begin
+        VRAM_ADDRESS <= DISPADDR;
+    end else if(STATE == S_SETADDR) begin
         VRAM_ADDRESS <= VRAM_ADDRESS + 16'h80; //メモリアドレスを16バイト進める
     end
 end
