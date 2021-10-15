@@ -57,7 +57,7 @@ end
 reg [1:0] VRSTART_SYNC;
 
 always @( posedge ACLK ) begin
-    VRSTART_SYNC <= { VRSTART_SYNC[0], VRSTART}
+    VRSTART_SYNC <= { VRSTART_SYNC[0], VRSTART};
 end
 
 reg [28:0] VRAM_START;
