@@ -99,15 +99,12 @@ always @( posedge ACLK ) begin
     endcase
 end
 
+assignARADDR = VRAM_ADDRESS;
+
 always @( posedge ACLK ) begin
     if(STATE == S_SETADDR) begin
-        ARADDR <= VRAM_ADDRESS;
-        ARVALID <= 1'b1;
         VRAM_ADDRESS <= VRAM_ADDRESS + 16'h80; //メモリアドレスを16バイト進める
-    else
-        ARVALID <= 1'b0;
     end
-    // VRAM_ADDRESSから1画面終了をチェックする
 end
 
 //ビット幅  = 64bit;
@@ -116,9 +113,9 @@ end
 
 always @( posedge ACLK ) begin
     if(STATE == S_READ) begin
-        RREADY <= 1'b1;
+        assign RREADY = 1'b1;
     else
-        RREADY <= 1'b0;
+        assign RREADY = 1'b0;
     end
 end
 
