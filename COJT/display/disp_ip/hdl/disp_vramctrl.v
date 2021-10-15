@@ -113,12 +113,6 @@ end
 //バースト長 = 16;
 //64bit * 16 = 1024bit = 128byte
 
-always @( posedge ACLK ) begin
-    if(STATE == S_READ) begin
-        assign RREADY = 1'b1;
-    else
-        assign RREADY = 1'b0;
-    end
-end
+assign RREADY = BUF_WREADY;
 
 endmodule
