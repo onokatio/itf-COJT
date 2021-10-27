@@ -41,6 +41,8 @@ reg VALID;
 
 wire [7:0] COUNT;
 
+wire [23:0] fifo_out;
+
 /* FIFO */
 fifo_48in24out_1024depth fifo_48in24out_1024depth(
   .rst          (FIFORST),
@@ -49,8 +51,8 @@ fifo_48in24out_1024depth fifo_48in24out_1024depth(
   .din          ({ FIFOIN[23:0], FIFOIN[55:32] }),
   .wr_en        (FIFOWR),
   .rd_en        (DSP_preDE),
-  .dout         ({DSP_R, DSP_G, DSP_B}),
-  .full         (FULL),
+  .dout         (fifo_out),
+  .full         (),
   .overflow     (BUF_OVER),
   .empty        (),
   .valid        (),
@@ -59,6 +61,12 @@ fifo_48in24out_1024depth fifo_48in24out_1024depth(
 );
 
 reg [1:0] DSP_DE_temp;
+
+always @(posedge DCLK) begin
+    DSP_R <= fifo_out[7:0];
+    DSP_G <= fifo_out[15:8];
+    DSP_B <= fifo_out[23:16];
+end
 
 always @( posedge DCLK ) begin
   DSP_DE_temp <= {DSP_DE_temp[0],DSP_preDE};
