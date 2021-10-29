@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Title       : •\¦‰ñ˜H1‚ÌƒeƒXƒgƒxƒ“ƒ`idisplay‚ÆƒXƒŒ[ƒuBFM‚ğ’¼Œ‹j
+// Title       : ï¿½\ï¿½ï¿½ï¿½ï¿½H1ï¿½Ìƒeï¿½Xï¿½gï¿½xï¿½ï¿½ï¿½`ï¿½idisplayï¿½ÆƒXï¿½ï¿½ï¿½[ï¿½uBFMï¿½ğ’¼Œï¿½ï¿½j
 // Project     : display
 // Filename    : tb_disp1.v
 //-----------------------------------------------------------------------------
@@ -9,7 +9,7 @@
 // Revisions   :
 // Date        Version  Author        Description
 // 2015/12/23  1.00     M.Kobayashi   Created
-// 2020/04/13  1.10     M.Kobayashi   ARREADY‰Šú’l‚ğİ’è‰Â”\‚É
+// 2020/04/13  1.10     M.Kobayashi   ARREADYï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½İ’ï¿½Â”\ï¿½ï¿½
 //-----------------------------------------------------------------------------
 
 
@@ -17,7 +17,7 @@
 
 module tb_disp1;
 
-/* Šeí’è” */
+/* ï¿½eï¿½ï¿½è” */
 localparam integer C_AXI_DATA_WIDTH = 64;
 localparam integer STEP  = 8;
 localparam integer DSTEP = 40;
@@ -27,13 +27,13 @@ localparam P_RESOL_VGA  = 2'b00;
 localparam P_RESOL_XGA  = 2'b01;
 localparam P_RESOL_SXGA = 2'b10;
 
-localparam ARREADY_IS_USUALLY_HIGH = 1; /* 0‚Ìê‡‚àŒŸØ‚·‚é */
+localparam ARREADY_IS_USUALLY_HIGH = 1; /* 0ï¿½Ìê‡ï¿½ï¿½ï¿½ï¿½ï¿½Ø‚ï¿½ï¿½ï¿½ */
 
-/* ƒVƒXƒeƒ€ƒNƒƒbƒN‚¨‚æ‚ÑƒŠƒZƒbƒg */
+/* ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½Ñƒï¿½ï¿½Zï¿½bï¿½g */
 reg     ACLK;
 reg     ARESETN;
 
-/* •\¦‰ñ˜HŒÅ—LM† */
+/* ï¿½\ï¿½ï¿½ï¿½ï¿½Hï¿½Å—Lï¿½Mï¿½ï¿½ */
 reg             DCLK;
 wire            DSP_IRQ;
 reg   [1:0]     RESOL;
@@ -41,7 +41,7 @@ wire  [7:0]     DSP_R, DSP_G, DSP_B;
 wire            DSP_DE, DSP_HSYNC_X, DSP_VSYNC_X;
 wire            DSP_FIFO_OVER, DSP_FIFO_UNDER;
 
-/* ƒŒƒWƒXƒ^ƒoƒX */
+/* ï¿½ï¿½ï¿½Wï¿½Xï¿½^ï¿½oï¿½X */
 reg   [15:0]    WRADDR;
 reg   [3:0]     BYTEEN;
 reg             WREN;
@@ -51,10 +51,10 @@ reg             RDEN;
 wire  [31:0]    RDATA;
 
 
-/* ‹¤’Ê‰»‚µ‚½Ú‘±•”•ª‚Ì‹Lq‚ğ“Ç‚İ‚Ş */
+/* ï¿½ï¿½ï¿½Ê‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‹Lï¿½qï¿½ï¿½Ç‚İï¿½ï¿½ï¿½ */
 `include "disp_axibfm.vh"
 
-/* ŠeíƒNƒƒbƒN */
+/* ï¿½eï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½N */
 always begin
     ACLK = 0; #(STEP/2);
     ACLK = 1; #(STEP/2);
@@ -65,7 +65,7 @@ always begin
     DCLK = 1; #(DSTEP/2);
 end
 
-/* ƒŒƒWƒXƒ^‘‚«‚İ */
+/* ï¿½ï¿½ï¿½Wï¿½Xï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 task write_reg;
 input [15:0] addr;
 input [3:0]  byteen;
@@ -81,7 +81,7 @@ begin
 end
 endtask
 
-/* ‰æ‘œƒtƒ@ƒCƒ‹“Ç‚İ‚İ */
+/* ï¿½æ‘œï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ç‚İï¿½ï¿½ï¿½ */
 task fileread;
 input [1:0] resol;
 input [7:0] page;
@@ -93,15 +93,15 @@ begin
     loopnum = (resol==P_RESOL_VGA) ?  640*480/2:
               (resol==P_RESOL_XGA) ? 1024*768/2: 1280*1024/2;
     topaddr = loopnum*page;
-    for( i=0; i<loopnum; i=i+1 ) begin  /* ƒf[ƒ^ƒrƒbƒg•‚Í64ƒrƒbƒg */
-        axi_slave_bfm.ram_array[topaddr+i][31:25] = 8'h00;  // ƒ¿0
+    for( i=0; i<loopnum; i=i+1 ) begin  /* ï¿½fï¿½[ï¿½^ï¿½rï¿½bï¿½gï¿½ï¿½ï¿½ï¿½64ï¿½rï¿½bï¿½g */
+        axi_slave_bfm.ram_array[topaddr+i][31:25] = 8'h00;  // ï¿½ï¿½0
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][24:16] = c;      // R0
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][15:8]  = c;      // G0
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][7:0]   = c;      // B0
-        axi_slave_bfm.ram_array[topaddr+i][63:56] = 8'h00;  // ƒ¿1
+        axi_slave_bfm.ram_array[topaddr+i][63:56] = 8'h00;  // ï¿½ï¿½1
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][55:48] = c;      // R1
         c = $fgetc(fd);
@@ -113,7 +113,7 @@ begin
 end
 endtask
 
-/* ƒeƒXƒgƒxƒ“ƒ`–{‘Ì */
+/* ï¿½eï¿½Xï¿½gï¿½xï¿½ï¿½ï¿½`ï¿½{ï¿½ï¿½ */
 integer fd, vflag;
 
 initial begin
@@ -134,7 +134,7 @@ initial begin
     $stop;
 end
 
-/* ƒVƒ~ƒ…ƒŒ[ƒ“Œ‹‰Ê‰æ‘œ‚ğ•¶šƒtƒ@ƒCƒ‹‚Åo—Í */
+/* ï¿½Vï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Ê‰æ‘œï¿½ğ•¶ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Åoï¿½ï¿½ */
 always @(posedge DCLK) begin
     if ( DSP_DE ) begin
         $fdisplay(fd, "%06x", {DSP_R, DSP_G, DSP_B});

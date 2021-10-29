@@ -62,6 +62,8 @@ end
 
 reg [28:0] VRAM_START;
 
+assign ARVALID = BUF_WREADY;
+
 always @( posedge ACLK ) begin
     case(STATE)
         S_IDLE:
@@ -91,7 +93,7 @@ always @( posedge ACLK ) begin
                 STATE_NEXT <= S_READ;
             end
         S_WAIT:
-            if (BUF_WREADY) begin
+            if (RLAST) begin
                 STATE_NEXT <= S_SETADDR;
             end else begin
                 STATE_NEXT <= S_WAIT;

@@ -73,6 +73,6 @@ always @( posedge DCLK ) begin
   DSP_DE <= DSP_DE_temp[1];
 end
 
-assign BUF_WREADY = COUNT ;
+assign BUF_WREADY = COUNT < 8'h80; //1023
 
 endmodule

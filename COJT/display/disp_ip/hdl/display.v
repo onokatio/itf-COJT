@@ -200,7 +200,7 @@ disp_buffer disp_buffer (
     .DISPON     (DISPON),
     .FIFORST    (~DSP_VSYNC_X),
     .FIFOIN     (M_AXI_RDATA),
-    .FIFOWR     (M_AXI_RVALID),
+    .FIFOWR     (M_AXI_RVALID & M_AXI_RREADY),
     .DSP_preDE  (DSP_preDE),
     .BUF_WREADY (BUF_WREADY),
     .BUF_UNDER  (BUF_UNDER),
