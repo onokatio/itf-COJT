@@ -29,12 +29,10 @@ always @(posedge DCLK) begin
     if (DRST == 1) begin
         VRSTART <= 1'b0;
     end else begin
-        if (VCNT >= VFP + VPW + VBP - 1'd1 && VCNT <= VSC == 1'd1) begin
-            if (HCNT == 11'd1) begin
-		        VRSTART <= 1'b1;
-	        end else begin
-		        VRSTART <= 1'b0;
-            end
+        if (VCNT == VFP + VPW + VBP - 1'd1 ) begin
+		    VRSTART <= 1'b1;
+		end else begin
+		    VRSTART <= 1'b0;
 	    end
     end
 end

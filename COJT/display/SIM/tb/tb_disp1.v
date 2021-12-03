@@ -27,7 +27,7 @@ localparam P_RESOL_VGA  = 2'b00;
 localparam P_RESOL_XGA  = 2'b01;
 localparam P_RESOL_SXGA = 2'b10;
 
-localparam ARREADY_IS_USUALLY_HIGH = 1; /* 0�̏ꍇ�����؂��� */
+localparam ARREADY_IS_USUALLY_HIGH = 0; /* 0�̏ꍇ�����؂��� */
 
 /* �V�X�e���N���b�N����у��Z�b�g */
 reg     ACLK;
@@ -134,7 +134,6 @@ initial begin
     $stop;
 end
 
-/* �V�~�����[�����ʉ摜�𕶎��t�@�C���ŏo�� */
 always @(posedge DCLK) begin
     if ( DSP_DE ) begin
         $fdisplay(fd, "%06x", {DSP_R, DSP_G, DSP_B});

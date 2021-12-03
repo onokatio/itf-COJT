@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Dec  3 15:21:16 2021
+# Process ID: 2023527
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT/display/SIM
+# Command line: vivado
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/vivado.log
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/disp_tb.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp1_behav.wcfg
+source tb_disp1_dispon.tcl
+run all
+current_wave_config {tb_disp1_behav.wcfg}
+add_wave {{/tb_disp1_dispon/display/DISPON}} 
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp1_behav.wcfg}
+current_wave_config {tb_disp1_behav.wcfg}
+add_wave {{/tb_disp1_dispon/display/VRSTART}} 
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp1_behav.wcfg}
+current_wave_config {tb_disp1_behav.wcfg}
+add_wave {{/tb_disp1_dispon/display/syncgen/HCNT}} {{/tb_disp1_dispon/display/syncgen/VCNT}} 
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp1_behav.wcfg}
+relaunch_sim
+run all
+relaunch_sim

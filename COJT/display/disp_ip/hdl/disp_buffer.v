@@ -39,7 +39,7 @@ module disp_buffer
 reg FULL;
 reg VALID;
 
-wire [7:0] COUNT;
+wire [9:0] COUNT;
 
 wire [23:0] fifo_out;
 
@@ -63,9 +63,9 @@ fifo_48in24out_1024depth fifo_48in24out_1024depth(
 reg [1:0] DSP_DE_temp;
 
 always @(posedge DCLK) begin
-    DSP_R <= fifo_out[7:0];
+    DSP_B <= fifo_out[7:0];
     DSP_G <= fifo_out[15:8];
-    DSP_B <= fifo_out[23:16];
+    DSP_R <= fifo_out[23:16];
 end
 
 always @( posedge DCLK ) begin

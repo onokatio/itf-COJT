@@ -41,18 +41,10 @@ parameter S_SETADDR = 2'b01;
 parameter S_READ = 2'b10;
 parameter S_WAIT = 2'b11;
 
-reg [1:0] STATE;
+reg [1:0] STATE_CURRENT;
 reg [1:0] STATE_NEXT;
 
 reg [28:0] VRAM_ADDRESS;
-
-always @(posedge ACLK) begin
-    if (ARST) begin
-        STATE <= S_IDLE;
-    end else begin
-        STATE <= STATE_NEXT;
-    end
-end
 
 reg [1:0] VRSTART_SYNC;
 
@@ -60,61 +52,64 @@ always @( posedge ACLK ) begin
     VRSTART_SYNC <= { VRSTART_SYNC[0], VRSTART};
 end
 
-reg [28:0] VRAM_START;
+assign ARADDR = DISPADDR + VRAM_ADDRESS;
+assign ARVALID = (STATE_CURRENT==S_SETADDR);
 
-assign ARVALID = BUF_WREADY;
-
-always @( posedge ACLK ) begin
-    case(STATE)
-        S_IDLE:
-            if (VRSTART_SYNC[1]) begin //同期化
-                VRAM_START <= VRAM_ADDRESS;
-                STATE_NEXT <= S_SETADDR;
-            end else begin
-                STATE_NEXT <= S_IDLE;
-            end
-        S_SETADDR:
-            if (ARREADY) begin
-                STATE_NEXT <= S_READ;
-            end else begin
-                STATE_NEXT <= S_SETADDR;
-            end
-        S_READ:
-            if (RLAST & RVALID & RREADY) begin
-                if (VRAM_START - VRAM_ADDRESS > 28'h12C000) begin
-                    //1画面終了時 4バイト * 640 * 480 = 1228800 = 0x12C000
-                    STATE_NEXT <= S_IDLE;
-                end else if (BUF_WREADY) begin
-                    STATE_NEXT <= S_SETADDR;
-                end else begin
-                    STATE_NEXT <= S_WAIT; 
-                end
-            end else begin
-                STATE_NEXT <= S_READ;
-            end
-        S_WAIT:
-            if (RLAST) begin
-                STATE_NEXT <= S_SETADDR;
-            end else begin
-                STATE_NEXT <= S_WAIT;
-            end
-    endcase
-end
-
-assign ARADDR = VRAM_ADDRESS;
+assign RREADY = RVALID;
 
 always @( posedge ACLK ) begin
-    if (ARST) begin
-        VRAM_ADDRESS <= DISPADDR;
-    end else if(STATE == S_SETADDR) begin
+    if (ARST || STATE_CURRENT == S_IDLE ) begin
+        VRAM_ADDRESS <= 0;
+    end else if(STATE_CURRENT == S_SETADDR && ARREADY) begin
         VRAM_ADDRESS <= VRAM_ADDRESS + 16'h80; //メモリアドレスを16バイト進める
     end
+end
+
+always @(posedge ACLK) begin
+    if(ARST) begin
+        STATE_CURRENT <= S_IDLE;
+    end else begin
+        STATE_CURRENT <= STATE_NEXT;
+    end
+end
+
+always @( * ) begin
+        case(STATE_CURRENT)
+            S_IDLE:
+                if (VRSTART_SYNC[1] & DISPON) begin //同期化
+                    STATE_NEXT <= S_SETADDR;
+                end else begin
+                    STATE_NEXT <= S_IDLE;
+                end
+            S_SETADDR:
+                if (ARREADY) begin
+                    STATE_NEXT <= S_READ;
+                end else begin
+                    STATE_NEXT <= S_SETADDR;
+                end
+            S_READ:
+                if (RLAST & RVALID & RREADY) begin
+                    if (VRAM_ADDRESS > 28'h12C000) begin
+                        //1画面終了時 4バイト * 640 * 480 = 1228800 = 0x12C000
+                        STATE_NEXT <= S_IDLE;
+                    end else if (BUF_WREADY) begin
+                        STATE_NEXT <= S_SETADDR;
+                    end else begin
+                        STATE_NEXT <= S_WAIT; 
+                    end
+                end else begin
+                    STATE_NEXT <= S_READ;
+                end
+            S_WAIT:
+                if (BUF_WREADY) begin
+                    STATE_NEXT <= S_SETADDR;
+                end else begin
+                    STATE_NEXT <= S_WAIT;
+                end
+        endcase
 end
 
 //ビット幅  = 64bit;
 //バースト長 = 16;
 //64bit * 16 = 1024bit = 128byte
-
-assign RREADY = BUF_WREADY;
-
 endmodule
