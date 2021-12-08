@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# 
+# Start of session at: Wed Dec  8 13:05:34 2021
+# Process ID: 218430
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT/display/display/display.sdk/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/display/display/display.sdk/webtalk/webtalk.log
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/display/display/display.sdk/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

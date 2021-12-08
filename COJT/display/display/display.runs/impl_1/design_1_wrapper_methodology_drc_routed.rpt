@@ -1,0 +1,163 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Fri Dec  3 18:05:53 2021
+| Host         : archlinux running 64-bit Arch Linux
+| Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
+| Design       : design_1_wrapper
+| Device       : xc7z020clg484-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 24
++-----------+------------------+----------------------------------------------------+------------+
+| Rule      | Severity         | Description                                        | Violations |
++-----------+------------------+----------------------------------------------------+------------+
+| TIMING-2  | Critical Warning | Invalid primary clock source pin                   | 1          |
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree | 3          |
+| TIMING-6  | Critical Warning | No common primary clock between related clocks     | 2          |
+| TIMING-7  | Critical Warning | No common node between related clocks              | 2          |
+| TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 2          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                       | 1          |
+| TIMING-9  | Warning          | Unknown CDC Logic                                  | 1          |
+| TIMING-10 | Warning          | Missing property on synchronizer                   | 1          |
+| TIMING-18 | Warning          | Missing input or output delay                      | 11         |
++-----------+------------------+----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-2#1 Critical Warning
+Invalid primary clock source pin  
+A primary clock ACLK is created on an inappropriate pin design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O. It is recommended to create a primary clock only on a proper clock source (input port or primitive output pin with no timing arc)
+Related violations: <none>
+
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock ACLK is defined downstream of clock clk_fpga_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-4#2 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock rd_clk is defined downstream of clock clk0_bufgin and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-4#3 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock wr_clk is defined downstream of clock clk_fpga_0 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
+TIMING-6#1 Critical Warning
+No common primary clock between related clocks  
+The clocks rd_clk and clk0_bufgin are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks rd_clk] -to [get_clocks clk0_bufgin]
+Related violations: <none>
+
+TIMING-6#2 Critical Warning
+No common primary clock between related clocks  
+The clocks rd_clk and wr_clk are related (timed together) but they have no common primary clock. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks rd_clk] -to [get_clocks wr_clk]
+Related violations: <none>
+
+TIMING-7#1 Critical Warning
+No common node between related clocks  
+The clocks rd_clk and clk0_bufgin are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks rd_clk] -to [get_clocks clk0_bufgin]
+Related violations: <none>
+
+TIMING-7#2 Critical Warning
+No common node between related clocks  
+The clocks rd_clk and wr_clk are related (timed together) but they have no common node. The design could fail in hardware. To find a timing path between these clocks, run the following command: report_timing -from [get_clocks rd_clk] -to [get_clocks wr_clk]
+Related violations: <none>
+
+TIMING-27#1 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock rd_clk is created on an inappropriate internal pin design_1_i/display_0/inst/DCLK. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+TIMING-27#2 Critical Warning
+Invalid primary clock on hierarchical pin  
+A primary clock wr_clk is created on an inappropriate internal pin design_1_i/display_0/inst/ACLK. It is not recommended to create a primary clock on a hierarchical pin when its driver pin has a fanout connected to multiple clock pins
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell design_1_i/dispsub_0/inst/dclkgen/start[0]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_1_i/display_0/inst/disp_buffer/fifo_48in24out_1024depth/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst/arststages_ff_reg[0]/PRE, design_1_i/display_0/inst/disp_buffer/fifo_48in24out_1024depth/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.rst_rd_reg2_inst/arststages_ff_reg[1]/PRE, design_1_i/display_0/inst/disp_buffer/fifo_48in24out_1024depth/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[0]/PRE, design_1_i/display_0/inst/disp_buffer/fifo_48in24out_1024depth/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst/arststages_ff_reg[1]/PRE. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
+TIMING-10#1 Warning
+Missing property on synchronizer  
+One or more logic synchronizer has been detected between 2 clock domains but the synchronizer does not have the property ASYNC_REG defined on one or both registers. It is recommended to run report_cdc for a complete and detailed CDC coverage
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on DVI_scl_io relative to clock(s) ACLK
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on DVI_sda_io relative to clock(s) ACLK
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on DVI_RST relative to clock(s) ACLK
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on LED[0] relative to clock(s) rd_clk, wr_clk
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on LED[1] relative to clock(s) rd_clk, wr_clk
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on LED[2] relative to clock(s) rd_clk, wr_clk
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on LED[3] relative to clock(s) rd_clk, wr_clk
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on LED[4] relative to clock(s) rd_clk, wr_clk
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on LED[5] relative to clock(s) rd_clk, wr_clk
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An output delay is missing on LED[6] relative to clock(s) rd_clk, wr_clk
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An output delay is missing on LED[7] relative to clock(s) rd_clk, wr_clk
+Related violations: <none>
+
+

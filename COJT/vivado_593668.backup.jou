@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Apr 23 17:33:58 2021
+# Process ID: 593668
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT
+# Command line: vivado
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/vivado.log
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project kadai1 /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.4 [current_project]
+add_files -scan_for_includes {/home/katio/script/github.com/onokatio/itf/COJT/donyu/adder/half_adder.v /home/katio/script/github.com/onokatio/itf/COJT/donyu/adder/full_adder.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+export_ip_user_files -of_objects  [get_files /home/katio/script/github.com/onokatio/itf/COJT/donyu/adder/full_adder.v] -no_script -reset -force -quiet
+remove_files  /home/katio/script/github.com/onokatio/itf/COJT/donyu/adder/full_adder.v
+remove_files  /home/katio/script/github.com/onokatio/itf/COJT/donyu/adder/full_adder.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/katio/script/github.com/onokatio/itf/COJT/donyu/adder/half_adder.v] -no_script -reset -force -quiet
+remove_files  /home/katio/script/github.com/onokatio/itf/COJT/donyu/adder/half_adder.v
+file mkdir /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sim_1/new/tb_mult.v w ]
+add_files -fileset sim_1 /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sim_1/new/tb_mult.v
+file mkdir /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sources_1/new
+close [ open /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sources_1/new/mult.v w ]
+add_files /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sources_1/new/mult.v
+export_ip_user_files -of_objects  [get_files /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sim_1/new/tb_mult.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sim_1/new/tb_mult.v
+export_ip_user_files -of_objects  [get_files /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sources_1/new/mult.v] -no_script -reset -force -quiet
+remove_files  /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sources_1/new/mult.v
+file delete -force /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sources_1/new/mult.v
+remove_files  -fileset sim_1 /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sim_1/new/tb_mult.v
+file delete -force /home/katio/script/github.com/onokatio/itf/COJT/donyu/kadai1/Synth/kadai1.srcs/sim_1/new/tb_mult.v
+add_files -scan_for_includes {/home/katio/script/github.com/onokatio/itf/COJT/donyu/adder/half_adder.v /home/katio/script/github.com/onokatio/itf/COJT/donyu/adder/full_adder.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
