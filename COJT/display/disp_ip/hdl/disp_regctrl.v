@@ -32,30 +32,94 @@ module disp_regctrl
 
     /* レジスタ出力 */
     output  reg         DISPON,
-    output      [28:0]  DISPADDR,
+    output  reg [28:0]  DISPADDR,
 
     /* 割り込み、FIFOフラグ */
-    output              DSP_IRQ,
+    output  reg         DSP_IRQ,
     input               BUF_UNDER,
     input               BUF_OVER
     ); 
 
+reg FIFOOVER;
+reg FIFOUNDER;
+reg VBLANK;
+reg INTENBL;
+reg INTCLR;
 
-/* 出力信号の固定（表示回路1では固定、表示回路2ではreg宣言して使う） */
 assign RDATA    = 32'b0;
-assign DISPADDR = 29'h0;
-assign DSP_IRQ  = 1'b0;
 
-/* 以下の記述はそのまま使用可 */
+reg [1:0] DSP_VSYNC_X_fix;
+always @( posedge ACLK ) begin
+    DSP_VSYNC_X_fix[1:0] <= {DSP_VSYNC_X_fix[0],DSP_VSYNC_X};
+end
+
 wire    write_reg  = WREN && WRADDR[15:12]==4'h0;
-wire    ctrlreg_wr = (write_reg && WRADDR[11:2]==10'h001 && BYTEEN[0]);
+wire    read_reg   = RDEN && WRADDR[15:12]==4'h0;
 
-// コントロールレジスタ（DISPCTRL）・・DISPON
+wire    DISPADDR_w = (write_reg && WRADDR[11:2]==10'h000);
+wire    DISPCTRL_w = (write_reg && WRADDR[11:2]==10'h001 && BYTEEN[0]);
+wire    DISPINT_w = (write_reg && WRADDR[11:2]==10'h002 && BYTEEN[0]);
+wire    DISPFIFO_w = (write_reg && WRADDR[11:2]==10'h003 && BYTEEN[0]);
+
+//DISPADDR
+always @( posedge ACLK ) begin
+    if ( ARST )
+        DISPADDR <= 29'h0;
+    else if ( DISPADDR_w )
+        if (BYTEEN[0]) DISPADDR[0:7] <= WDATA[0:7];
+        if (BYTEEN[1]) DISPADDR[8:14] <= WDATA[8:14];
+        if (BYTEEN[2]) DISPADDR[15:21] <= WDATA[15:21];
+        if (BYTEEN[3]) DISPADDR[23:28] <= WDATA[23:28];
+end
+
+//DISPCTRL
+always @( posedge ACLK ) begin
+    if ( ARST )
+        VBLANK = 1'b0;
+    else if ( DSP_VSYNC_X_fix[1] == 1'b0)
+        VBLANK <= 1'b1;
+    else if ( DISPCTRL_w && WDATA[1])
+        VBLANK <= 1'b0;
+end
+
 always @( posedge ACLK ) begin
     if ( ARST )
         DISPON <= 1'b0;
-    else if ( ctrlreg_wr )
+    else if ( DISPCTRL_w )
         DISPON <= WDATA[0];
+end
+
+//DISPINT
+always @( posedge ACLK ) begin
+    if ( ARST )
+        INTCLR <= 1'b0;
+    else if ( DISPINT_w )
+        INTCLR <= WDATA[0];
+end
+
+always @( posedge ACLK ) begin
+    if ( ARST )
+        INTENBL <= 1'b0;
+    else if ( DISPINT_w )
+        INTENBL <= WDATA[0];
+end
+
+//DISPFIFO
+always @( posedge ACLK ) begin
+    if ( ARST )
+        FIFOOVER <= 1'b0;
+    else if ( BUF_OVER )
+        FIFOOVER <= 1'b1;
+    else if ( DISPFIFO_w && WDATA[1] )
+        FIFOOVER <= 1'b0;
+end
+always @( posedge ACLK ) begin
+    if ( ARST )
+        FIFOUNDER <= 1'b0;
+    else if ( BUF_UNDER )
+        FIFOUNDER <= 1'b1;
+    else if ( DISPFIFO_w && WDATA[0] )
+        FIFOUNDER <= 1'b0;
 end
 
 endmodule
