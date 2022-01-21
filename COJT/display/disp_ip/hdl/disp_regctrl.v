@@ -28,7 +28,7 @@ module disp_regctrl
     input       [31:0]  WDATA,
     input       [15:0]  RDADDR,
     input               RDEN,
-    output      [31:0]  RDATA,
+    output  reg [31:0]  RDATA,
 
     /* レジスタ出力 */
     output  reg         DISPON,
@@ -46,8 +46,6 @@ reg VBLANK;
 reg INTENBL;
 reg INTCLR;
 
-assign RDATA    = 32'b0;
-
 reg [1:0] DSP_VSYNC_X_fix;
 always @( posedge ACLK ) begin
     DSP_VSYNC_X_fix[1:0] <= {DSP_VSYNC_X_fix[0],DSP_VSYNC_X};
@@ -61,15 +59,21 @@ wire    DISPCTRL_w = (write_reg && WRADDR[11:2]==10'h001 && BYTEEN[0]);
 wire    DISPINT_w = (write_reg && WRADDR[11:2]==10'h002 && BYTEEN[0]);
 wire    DISPFIFO_w = (write_reg && WRADDR[11:2]==10'h003 && BYTEEN[0]);
 
+wire    DISPADDR_r = (read_reg && WRADDR[11:2]==10'h000);
+wire    DISPCTRL_r = (read_reg && WRADDR[11:2]==10'h001);
+wire    DISPINT_r = (read_reg && WRADDR[11:2]==10'h002);
+wire    DISPFIFO_r = (read_reg && WRADDR[11:2]==10'h003);
+
 //DISPADDR
 always @( posedge ACLK ) begin
     if ( ARST )
         DISPADDR <= 29'h0;
-    else if ( DISPADDR_w )
-        if (BYTEEN[0]) DISPADDR[0:7] <= WDATA[0:7];
-        if (BYTEEN[1]) DISPADDR[8:14] <= WDATA[8:14];
-        if (BYTEEN[2]) DISPADDR[15:21] <= WDATA[15:21];
-        if (BYTEEN[3]) DISPADDR[23:28] <= WDATA[23:28];
+    else if ( DISPADDR_w ) begin
+        if (BYTEEN[0]) DISPADDR[7:0] <= WDATA[7:0];
+        if (BYTEEN[1]) DISPADDR[14:8] <= WDATA[14:8];
+        if (BYTEEN[2]) DISPADDR[21:15] <= WDATA[21:15];
+        if (BYTEEN[3]) DISPADDR[28:23] <= WDATA[28:23];
+    end
 end
 
 //DISPCTRL
@@ -92,16 +96,18 @@ end
 //DISPINT
 always @( posedge ACLK ) begin
     if ( ARST )
-        INTCLR <= 1'b0;
-    else if ( DISPINT_w )
-        INTCLR <= WDATA[0];
-end
-
-always @( posedge ACLK ) begin
-    if ( ARST )
         INTENBL <= 1'b0;
     else if ( DISPINT_w )
         INTENBL <= WDATA[0];
+end
+
+always @( ACLK ) begin
+    if ( ARST )
+        DSP_IRQ <= 1'b0;
+    else if ( DSP_VSYNC_X_fix[1] == 1'b0 && INTENBL)
+        DSP_IRQ <= 1'b1;
+    else if ( DISPINT_w && WDATA[1]==1'b1 ) //INTCLR
+        DSP_IRQ <= 1'b0;
 end
 
 //DISPFIFO
@@ -120,6 +126,20 @@ always @( posedge ACLK ) begin
         FIFOUNDER <= 1'b1;
     else if ( DISPFIFO_w && WDATA[0] )
         FIFOUNDER <= 1'b0;
+end
+
+always @(posedge ACLK) begin
+    if (ARST) begin
+        RDATA[31:0] <= 32'b0;
+    end else if (DISPADDR_r) begin
+        RDATA[31:0] <= {3'b0, DISPADDR[28:0]};
+    end else if (DISPCTRL_r) begin
+        RDATA[31:0] <= {29'b0, VBLANK, DISPON};
+    end else if (DISPINT_r) begin
+        RDATA[31:0] <= {29'b0, INTCLR, INTENBL};
+    end else if (DISPFIFO_r) begin
+        RDATA[31:0] <= {29'b0, FIFOOVER, FIFOUNDER};
+    end
 end
 
 endmodule
