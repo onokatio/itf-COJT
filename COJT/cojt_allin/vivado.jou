@@ -84,3 +84,20 @@ launch_simulation
 open_wave_config /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg
 source tb_sha256_regtest.tcl
 run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+current_wave_config {tb_sha256_regtest_behav.wcfg}
+add_wave {{/tb_sha256_regtest/sha256/sha256_regctrl/write_reg}} {{/tb_sha256_regtest/sha256/sha256_regctrl/read_reg}} 
+restart
+run all
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg}
+relaunch_sim
+run all
+relaunch_sim
+run all
+relaunch_sim
+run all
+run all
+relaunch_sim

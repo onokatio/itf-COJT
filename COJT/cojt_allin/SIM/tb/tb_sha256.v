@@ -160,13 +160,13 @@ initial begin
     read_disp(i_G);
     write_reg(i_H, 4'b1111, 32'h5be0cd19);
     read_disp(i_H);
-    
-    $display("-- Waiting finish --");
-    #(STEP*100);
-    $display("-- All Registers --");
-    read_disp(i_A);
+    write_reg(W, 4'b1111, 32'h74686973);
+    read_disp(W);
+    write_reg(K, 4'b1111, 32'h428a2f98);
+    read_disp(K);
 
     #(STEP*100);
+
 
     $stop;
 end

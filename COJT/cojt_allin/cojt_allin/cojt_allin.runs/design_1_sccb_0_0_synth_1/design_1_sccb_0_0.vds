@@ -1,0 +1,434 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Feb  2 04:38:30 2022
+# Process ID: 882658
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.runs/design_1_sccb_0_0_synth_1
+# Command line: vivado -log design_1_sccb_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_sccb_0_0.tcl
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.runs/design_1_sccb_0_0_synth_1/design_1_sccb_0_0.vds
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.runs/design_1_sccb_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_sccb_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/katio/script/github.com/onokatio/itf/COJT/COMMON_IP'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cap_ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/disp_ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/snd_ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/katio/Xilinx-bin/Vivado/2019.1/data/ip'.
+Command: synth_design -top design_1_sccb_0_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 883777 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1661.797 ; gain = 154.719 ; free physical = 1481 ; free virtual = 22480
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_sccb_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/ip/design_1_sccb_0_0/synth/design_1_sccb_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'sccb_v1_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/ipshared/fefd/hdl/sccb_v1_0.v:4]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'sccb_v1_0_S00_AXI' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/ipshared/fefd/hdl/sccb_v1_0_S00_AXI.v:4]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 1 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/ipshared/fefd/hdl/sccb_v1_0_S00_AXI.v:313]
+INFO: [Synth 8-6157] synthesizing module 'SCCB' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/ipshared/fefd/hdl/sccb.v:4]
+	Parameter HALT bound to: 2'b00 
+	Parameter STBIT bound to: 2'b01 
+	Parameter SEND bound to: 2'b10 
+	Parameter POSDLY bound to: 2'b11 
+	Parameter CNTMAX bound to: 10'b1111101000 
+	Parameter BUSYCNTMAX bound to: 20 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/ipshared/fefd/hdl/sccb.v:146]
+INFO: [Synth 8-6155] done synthesizing module 'SCCB' (1#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/ipshared/fefd/hdl/sccb.v:4]
+WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/ipshared/fefd/hdl/sccb_v1_0_S00_AXI.v:162]
+INFO: [Synth 8-6155] done synthesizing module 'sccb_v1_0_S00_AXI' (2#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/ipshared/fefd/hdl/sccb_v1_0_S00_AXI.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'sccb_v1_0' (3#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/ipshared/fefd/hdl/sccb_v1_0.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_sccb_0_0' (4#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/ip/design_1_sccb_0_0/synth/design_1_sccb_0_0.v:58]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[3]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[2]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[1]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[0]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WDATA[31]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WDATA[30]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WDATA[29]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WDATA[28]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WDATA[27]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WDATA[26]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WDATA[25]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WDATA[24]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[3]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[2]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[1]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[0]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design sccb_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1719.516 ; gain = 212.438 ; free physical = 1541 ; free virtual = 22392
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1722.484 ; gain = 215.406 ; free physical = 1571 ; free virtual = 22423
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1722.484 ; gain = 215.406 ; free physical = 1572 ; free virtual = 22424
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1884.266 ; gain = 0.000 ; free physical = 1515 ; free virtual = 22291
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.17 . Memory (MB): peak = 1884.266 ; gain = 0.000 ; free physical = 1525 ; free virtual = 22301
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 1505 ; free virtual = 22186
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 1503 ; free virtual = 22184
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 1496 ; free virtual = 22177
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'cur_reg' in module 'SCCB'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    HALT |                               00 |                               00
+                   STBIT |                               01 |                               01
+                    SEND |                               10 |                               10
+                  POSDLY |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'cur_reg' using encoding 'sequential' in module 'SCCB'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 1635 ; free virtual = 22317
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               30 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     30 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 16    
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module SCCB 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               30 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     30 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 12    
+Module sccb_v1_0_S00_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[31] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[30] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[29] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[28] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[27] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[26] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[25] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[24] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[23] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[22] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[21] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[20] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[19] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[18] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[17] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[16] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[15] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[14] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[13] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[12] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[11] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[10] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[9] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[8] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[7] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[6] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[5] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[4] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[3] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[2] driven by constant 0
+INFO: [Synth 8-3917] design design_1_sccb_0_0 has port s00_axi_rdata[1] driven by constant 0
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_awaddr[3]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_awaddr[2]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_awaddr[1]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_awaddr[0]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_awprot[2]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_awprot[1]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_awprot[0]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wdata[31]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wdata[30]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wdata[29]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wdata[28]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wdata[27]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wdata[26]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wdata[25]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wdata[24]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wstrb[3]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wstrb[2]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wstrb[1]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_wstrb[0]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_arprot[2]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_arprot[1]
+WARNING: [Synth 8-3331] design design_1_sccb_0_0 has unconnected port s00_axi_arprot[0]
+INFO: [Synth 8-3886] merging instance 'inst/sccb_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'inst/sccb_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/sccb_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'inst/sccb_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'inst/sccb_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/sccb_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 1795 ; free virtual = 22480
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 2472 ; free virtual = 23154
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 2471 ; free virtual = 23153
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 2463 ; free virtual = 23147
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 2386 ; free virtual = 23126
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 2381 ; free virtual = 23121
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 2377 ; free virtual = 23118
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 2377 ; free virtual = 23117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 2375 ; free virtual = 23115
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 2374 ; free virtual = 23114
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     3|
+|2     |LUT2 |     7|
+|3     |LUT3 |    12|
+|4     |LUT4 |    13|
+|5     |LUT5 |    14|
+|6     |LUT6 |    44|
+|7     |FDRE |    36|
+|8     |FDSE |    30|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------------------------+------------------+------+
+|      |Instance                   |Module            |Cells |
++------+---------------------------+------------------+------+
+|1     |top                        |                  |   159|
+|2     |  inst                     |sccb_v1_0         |   159|
+|3     |    sccb_v1_0_S00_AXI_inst |sccb_v1_0_S00_AXI |   159|
+|4     |      i_SCCB               |SCCB              |   143|
++------+---------------------------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 2373 ; free virtual = 23113
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 1884.266 ; gain = 215.406 ; free physical = 2431 ; free virtual = 23172
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 1884.266 ; gain = 377.188 ; free physical = 2442 ; free virtual = 23184
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1890.203 ; gain = 0.000 ; free physical = 3015 ; free virtual = 23702
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+63 Infos, 46 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 1890.203 ; gain = 528.758 ; free physical = 3114 ; free virtual = 23801
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1890.203 ; gain = 0.000 ; free physical = 3114 ; free virtual = 23801
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.runs/design_1_sccb_0_0_synth_1/design_1_sccb_0_0.dcp' has been generated.
+WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_sccb_0_0, cache-ID = 35e406997d9fd32f
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1914.215 ; gain = 0.000 ; free physical = 3127 ; free virtual = 23822
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.runs/design_1_sccb_0_0_synth_1/design_1_sccb_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_sccb_0_0_utilization_synth.rpt -pb design_1_sccb_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Feb  2 04:39:18 2022...

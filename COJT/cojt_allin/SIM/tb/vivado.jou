@@ -1,0 +1,116 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Feb  2 04:06:11 2022
+# Process ID: 859047
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb
+# Command line: vivado
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb/vivado.log
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg
+source tb_sha256_regtest.tcl
+run all
+relaunch_sim
+run all
+current_wave_config {tb_sha256_regtest_behav.wcfg}
+add_wave {{/tb_sha256_regtest/sha256/sha256_regctrl/W}} {{/tb_sha256_regtest/sha256/sha256_regctrl/K}} 
+restart
+run all
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg}
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg}
+current_wave_config {tb_sha256_regtest_behav.wcfg}
+add_wave {{/tb_sha256_regtest/sha256/sha256_regctrl/W}} 
+current_wave_config {tb_sha256_regtest_behav.wcfg}
+add_wave {{/tb_sha256_regtest/sha256/sha256_regctrl/o_A}} {{/tb_sha256_regtest/sha256/sha256_regctrl/o_B}} {{/tb_sha256_regtest/sha256/sha256_regctrl/o_C}} {{/tb_sha256_regtest/sha256/sha256_regctrl/o_D}} {{/tb_sha256_regtest/sha256/sha256_regctrl/o_E}} {{/tb_sha256_regtest/sha256/sha256_regctrl/o_F}} {{/tb_sha256_regtest/sha256/sha256_regctrl/o_G}} {{/tb_sha256_regtest/sha256/sha256_regctrl/o_H}} 
+restart
+run all
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg}
+current_wave_config {tb_sha256_regtest_behav.wcfg}
+add_wave {{/tb_sha256_regtest/sha256/sha256_regctrl/sha256_round/T1}} {{/tb_sha256_regtest/sha256/sha256_regctrl/sha256_round/T2}} 
+restart
+run all
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg}
+restart
+relaunch_sim
+run all
+current_wave_config {tb_sha256_regtest_behav.wcfg}
+add_wave {{/tb_sha256_regtest/sha256/sha256_regctrl/finish}} 
+restart
+run all
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg}
+restart
+run all
+create_project cojt_allin /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.4 [current_project]
+set_property  ip_repo_paths  /home/katio/script/github.com/onokatio/itf/COJT/COMMON_IP [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {/home/katio/script/github.com/onokatio/itf/COJT/COMMON_IP /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cap_ip} [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {/home/katio/script/github.com/onokatio/itf/COJT/COMMON_IP /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cap_ip /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/disp_ip} [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {/home/katio/script/github.com/onokatio/itf/COJT/COMMON_IP /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cap_ip /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/disp_ip /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip} [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {/home/katio/script/github.com/onokatio/itf/COJT/COMMON_IP /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cap_ip /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/disp_ip /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/snd_ip} [current_project]
+update_ip_catalog
+source /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.tcl
+update_compile_order -fileset sources_1
+make_wrapper -files [get_files /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+add_files -fileset constrs_1 -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+upgrade_ip [get_ips  {design_1_sound_0_0 design_1_capture_0_0}] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips {design_1_sound_0_0 design_1_capture_0_0}] -no_script -sync -force -quiet
+generate_target all [get_files  /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd]
+report_ip_status -name ip_status 
+current_project tb_sha
+close_sim
+close_project
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+ipx::edit_ip_in_project -upgrade true -name sound_v1_0_project -directory /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.tmp/sound_v1_0_project /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/snd_ip/component.xml
+update_compile_order -fileset sources_1
+set_property core_revision 3 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/snd_ip
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:sound:1.0 [get_ips  design_1_sound_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_sound_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd]
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:draw:1.0 [get_ips  design_1_draw_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_draw_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd]
+catch { config_ip_cache -export [get_ips -all design_1_axi_gpio_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_axi_iic_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_axi_smc_0] }
+catch { config_ip_cache -export [get_ips -all design_1_axi_smc_1_0] }
+catch { config_ip_cache -export [get_ips -all design_1_capture_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_display_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_dispsub_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_draw_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_processing_system7_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_ps2if_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_xbar_0] }
+catch { config_ip_cache -export [get_ips -all design_1_regbus_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_rst_ps7_0_125M_0] }
+catch { config_ip_cache -export [get_ips -all design_1_sccb_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_sound_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_util_reduced_logic_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_auto_pc_0] }
+export_ip_user_files -of_objects [get_files /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs -jobs 8 {design_1_axi_gpio_0_0_synth_1 design_1_ps2if_0_0_synth_1 design_1_axi_smc_1_0_synth_1 design_1_processing_system7_0_0_synth_1 design_1_util_reduced_logic_0_0_synth_1 design_1_display_0_0_synth_1 design_1_dispsub_0_0_synth_1 design_1_axi_smc_0_synth_1 design_1_axi_iic_0_0_synth_1 design_1_xbar_0_synth_1 design_1_regbus_0_0_synth_1 design_1_rst_ps7_0_125M_0_synth_1 design_1_sccb_0_0_synth_1 design_1_capture_0_0_synth_1 design_1_draw_0_0_synth_1 design_1_sound_0_0_synth_1 design_1_auto_pc_0_synth_1}
+export_simulation -of_objects [get_files /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.ip_user_files/sim_scripts -ip_user_files_dir /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.ip_user_files -ipstatic_source_dir /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/modelsim} {questa=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/questa} {ies=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/ies} {xcelium=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/xcelium} {vcs=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/vcs} {riviera=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet

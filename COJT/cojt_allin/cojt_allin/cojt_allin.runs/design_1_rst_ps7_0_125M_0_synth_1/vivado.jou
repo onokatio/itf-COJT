@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Feb  2 04:38:29 2022
+# Process ID: 882590
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.runs/design_1_rst_ps7_0_125M_0_synth_1
+# Command line: vivado -log design_1_rst_ps7_0_125M_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_rst_ps7_0_125M_0.tcl
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.runs/design_1_rst_ps7_0_125M_0_synth_1/design_1_rst_ps7_0_125M_0.vds
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.runs/design_1_rst_ps7_0_125M_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_rst_ps7_0_125M_0.tcl -notrace

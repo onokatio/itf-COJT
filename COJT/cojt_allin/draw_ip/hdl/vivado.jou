@@ -1,0 +1,46 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Feb  2 04:39:56 2022
+# Process ID: 886694
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl
+# Command line: vivado
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/vivado.log
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd}
+ipx::edit_ip_in_project -upgrade true -name draw_v1_0_project -directory /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.tmp/draw_v1_0_project /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/component.xml
+update_compile_order -fileset sources_1
+set_property core_revision 3 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip
+report_ip_status -name ip_status 
+upgrade_ip -vlnv xilinx.com:user:draw:1.0 [get_ips  design_1_draw_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_draw_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd]
+catch { config_ip_cache -export [get_ips -all design_1_draw_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_auto_pc_0] }
+export_ip_user_files -of_objects [get_files /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd]
+reset_run design_1_axi_smc_1_0_synth_1
+launch_runs -jobs 8 {design_1_axi_smc_1_0_synth_1 design_1_draw_0_0_synth_1}
+export_simulation -of_objects [get_files /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.ip_user_files/sim_scripts -ip_user_files_dir /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.ip_user_files -ipstatic_source_dir /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/modelsim} {questa=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/questa} {ies=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/ies} {xcelium=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/xcelium} {vcs=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/vcs} {riviera=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+ipx::edit_ip_in_project -upgrade true -name draw_v1_0_project -directory /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.tmp/draw_v1_0_project /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/component.xml
+update_compile_order -fileset sources_1
+current_project cojt_allin
+ipx::edit_ip_in_project -upgrade true -name display_v1_0_project -directory /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.tmp/display_v1_0_project /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/disp_ip/component.xml
+update_compile_order -fileset sources_1
+ipx::add_file_group -type synthesis {} [ipx::current_core]
+current_project draw_v1_0_project
+undo
+current_project draw_v1_0_project
+ipx::remove_file_group xilinx_anylanguagesynthesis_1 [ipx::current_core]

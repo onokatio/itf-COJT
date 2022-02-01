@@ -21,12 +21,12 @@ module sha256_round
   output [31:0] o_H
   );
 
-  wire T1;
-  wire T2;
-  wire Ch_result;
-  wire Maj_result;
-  wire Usigma1_result;
-  wire Usigma0_result;
+  wire [31:0] T1;
+  wire [31:0] T2;
+  wire [31:0] Ch_result;
+  wire [31:0] Maj_result;
+  wire [31:0] Usigma1_result;
+  wire [31:0] Usigma0_result;
   
   Ch Ch (
     .x (i_E),

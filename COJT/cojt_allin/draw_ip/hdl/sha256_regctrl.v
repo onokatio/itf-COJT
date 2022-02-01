@@ -68,15 +68,27 @@ sha256_round sha256_round(
 );
 
 always @(posedge ACLK) begin
-  o_A <= tmp_A;
-  o_B <= tmp_B;
-  o_C <= tmp_C;
-  o_D <= tmp_D;
-  o_E <= tmp_E;
-  o_F <= tmp_F;
-  o_G <= tmp_G;
-  o_H <= tmp_H;
-  finish <= 1'b1;
+    if (ARST) begin
+        o_A <= 32'h0;
+        o_B <= 32'h0;
+        o_C <= 32'h0;
+        o_D <= 32'h0;
+        o_E <= 32'h0;
+        o_F <= 32'h0;
+        o_G <= 32'h0;
+        o_H <= 32'h0;
+        finish <= 1'b0;
+    end else begin
+      o_A <= tmp_A;
+      o_B <= tmp_B;
+      o_C <= tmp_C;
+      o_D <= tmp_D;
+      o_E <= tmp_E;
+      o_F <= tmp_F;
+      o_G <= tmp_G;
+      o_H <= tmp_H;
+      finish <= 1'b1;
+    end
 end
 
 always @(posedge ACLK) begin
@@ -92,39 +104,39 @@ always @(posedge ACLK) begin
         W <=   32'h0;
         K <=   32'h0;
     end else if (read_reg) begin
-        if (WRADDR[11:2] == 10'h000) i_A <= WDATA[31:0];
-        if (WRADDR[11:2] == 10'h001) i_B <= WDATA[31:0];
-        if (WRADDR[11:2] == 10'h002) i_C <= WDATA[31:0];
-        if (WRADDR[11:2] == 10'h003) i_D <= WDATA[31:0];
-        if (WRADDR[11:2] == 10'h004) i_E <= WDATA[31:0];
-        if (WRADDR[11:2] == 10'h005) i_F <= WDATA[31:0];
-        if (WRADDR[11:2] == 10'h006) i_G <= WDATA[31:0];
-        if (WRADDR[11:2] == 10'h007) i_H <= WDATA[31:0];
-        if (WRADDR[11:2] == 10'h011) W <= WDATA[31:0];
-        if (WRADDR[11:2] == 10'h012) K <= WDATA[31:0];
+        if (WRADDR[11:2] == 10'h000) i_A <= WDATA;
+        if (WRADDR[11:2] == 10'h001) i_B <= WDATA;
+        if (WRADDR[11:2] == 10'h002) i_C <= WDATA;
+        if (WRADDR[11:2] == 10'h003) i_D <= WDATA;
+        if (WRADDR[11:2] == 10'h004) i_E <= WDATA;
+        if (WRADDR[11:2] == 10'h005) i_F <= WDATA;
+        if (WRADDR[11:2] == 10'h006) i_G <= WDATA;
+        if (WRADDR[11:2] == 10'h007) i_H <= WDATA;
+        if (WRADDR[11:2] == 10'h011) W <= WDATA;
+        if (WRADDR[11:2] == 10'h012) K <= WDATA;
     end
 end
 
 always @(posedge ACLK) begin
   if (ARST)
-    RDATA[31:0] <= 32'h0;
+    RDATA <= 32'h0;
   else begin
-    if (RDADDR[11:2] == 10'h000) RDATA[31:0] <= i_A;
-    if (RDADDR[11:2] == 10'h001) RDATA[31:0] <= i_B;
-    if (RDADDR[11:2] == 10'h002) RDATA[31:0] <= i_C;
-    if (RDADDR[11:2] == 10'h003) RDATA[31:0] <= i_D;
-    if (RDADDR[11:2] == 10'h004) RDATA[31:0] <= i_E;
-    if (RDADDR[11:2] == 10'h005) RDATA[31:0] <= i_F;
-    if (RDADDR[11:2] == 10'h006) RDATA[31:0] <= i_G;
-    if (RDADDR[11:2] == 10'h007) RDATA[31:0] <= i_H;
-    if (RDADDR[11:2] == 10'h008) RDATA[31:0] <= o_A;
-    if (RDADDR[11:2] == 10'h009) RDATA[31:0] <= o_B;
-    if (RDADDR[11:2] == 10'h00a) RDATA[31:0] <= o_C;
-    if (RDADDR[11:2] == 10'h00b) RDATA[31:0] <= o_D;
-    if (RDADDR[11:2] == 10'h00c) RDATA[31:0] <= o_E;
-    if (RDADDR[11:2] == 10'h00d) RDATA[31:0] <= o_F;
-    if (RDADDR[11:2] == 10'h00e) RDATA[31:0] <= o_G;
-    if (RDADDR[11:2] == 10'h00f) RDATA[31:0] <= o_H;
+    if (RDADDR[11:2] == 10'h000) RDATA <= i_A;
+    if (RDADDR[11:2] == 10'h001) RDATA <= i_B;
+    if (RDADDR[11:2] == 10'h002) RDATA <= i_C;
+    if (RDADDR[11:2] == 10'h003) RDATA <= i_D;
+    if (RDADDR[11:2] == 10'h004) RDATA <= i_E;
+    if (RDADDR[11:2] == 10'h005) RDATA <= i_F;
+    if (RDADDR[11:2] == 10'h006) RDATA <= i_G;
+    if (RDADDR[11:2] == 10'h007) RDATA <= i_H;
+    if (RDADDR[11:2] == 10'h008) RDATA <= o_A;
+    if (RDADDR[11:2] == 10'h009) RDATA <= o_B;
+    if (RDADDR[11:2] == 10'h00a) RDATA <= o_C;
+    if (RDADDR[11:2] == 10'h00b) RDATA <= o_D;
+    if (RDADDR[11:2] == 10'h00c) RDATA <= o_E;
+    if (RDADDR[11:2] == 10'h00d) RDATA <= o_F;
+    if (RDADDR[11:2] == 10'h00e) RDATA <= o_G;
+    if (RDADDR[11:2] == 10'h00f) RDATA <= o_H;
   end
 end
 
