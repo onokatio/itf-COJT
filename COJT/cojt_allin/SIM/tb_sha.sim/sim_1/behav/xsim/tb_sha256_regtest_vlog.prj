@@ -5,7 +5,7 @@ verilog xil_defaultlib  --include "../../../../tb" \
 "../../../../../draw_ip/hdl/Usigma0.v" \
 "../../../../../draw_ip/hdl/Usigma1.v" \
 "../../../../../../sim_model/axi_slave_BMF/axi_slave_BFM.v" \
-"../../../../../draw_ip/hdl/sha256.v" \
+"../../../../../draw_ip/hdl/draw.v" \
 "../../../../../draw_ip/hdl/sha256_regctrl.v" \
 "../../../../../draw_ip/hdl/sha256_round.v" \
 "../../../../../../sim_model/axi_slave_BMF/sync_fifo.v" \

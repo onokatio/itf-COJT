@@ -118,3 +118,24 @@ file mkdir /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin
 file copy -force /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.runs/impl_1/design_1_wrapper.sysdef /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.sdk/design_1_wrapper.hdf
 
 launch_sdk -workspace /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.sdk -hwspec /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.sdk/design_1_wrapper.hdf
+open_project /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/sha256.v] -no_script -reset -force -quiet
+remove_files  /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/sha256.v
+update_compile_order -fileset sources_1
+add_files -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/draw.v
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top draw [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg
+source tb_sha256_regtest.tcl
+relaunch_sim
+run all
+current_wave_config {tb_sha256_regtest_behav.wcfg}
+add_wave {{/tb_sha256_regtest/draw/sha256_regctrl/i_A}} {{/tb_sha256_regtest/draw/sha256_regctrl/i_B}} {{/tb_sha256_regtest/draw/sha256_regctrl/i_C}} {{/tb_sha256_regtest/draw/sha256_regctrl/i_D}} {{/tb_sha256_regtest/draw/sha256_regctrl/i_E}} {{/tb_sha256_regtest/draw/sha256_regctrl/i_F}} {{/tb_sha256_regtest/draw/sha256_regctrl/i_G}} {{/tb_sha256_regtest/draw/sha256_regctrl/i_H}} {{/tb_sha256_regtest/draw/sha256_regctrl/o_A}} {{/tb_sha256_regtest/draw/sha256_regctrl/o_B}} {{/tb_sha256_regtest/draw/sha256_regctrl/o_C}} {{/tb_sha256_regtest/draw/sha256_regctrl/o_D}} {{/tb_sha256_regtest/draw/sha256_regctrl/o_E}} {{/tb_sha256_regtest/draw/sha256_regctrl/o_F}} {{/tb_sha256_regtest/draw/sha256_regctrl/o_G}} {{/tb_sha256_regtest/draw/sha256_regctrl/o_H}} {{/tb_sha256_regtest/draw/sha256_regctrl/W}} {{/tb_sha256_regtest/draw/sha256_regctrl/K}} 
+restart

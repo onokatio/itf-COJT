@@ -67,9 +67,9 @@ wire                            M_AXI_RREADY;
 
 
 /* �\����H�ڑ� */
-sha256 #(
+draw #(
     .C_M_AXI_DATA_WIDTH (C_AXI_DATA_WIDTH) )
-   sha256 
+   draw 
    (
     // System Signals
     .ACLK           (ACLK),

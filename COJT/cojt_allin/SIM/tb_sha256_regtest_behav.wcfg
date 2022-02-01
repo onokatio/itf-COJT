@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="401333333fs"></ZoomStartTime>
-      <ZoomEndTime time="2809333334fs"></ZoomEndTime>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="2408000001fs"></ZoomEndTime>
       <Cursor1Time time="2408000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="233"></NameColumnWidth>
-      <ValueColumnWidth column_width="76"></ValueColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="32" />
+   <WVObjectSize size="25" />
    <wvobject type="logic" fp_name="/tb_sha256_regtest/ACLK">
       <obj_property name="ElementShortName">ACLK</obj_property>
       <obj_property name="ObjectShortName">ACLK</obj_property>
@@ -56,96 +56,68 @@
       <obj_property name="ElementShortName">RDATA[31:0]</obj_property>
       <obj_property name="ObjectShortName">RDATA[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/i_A">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/i_A">
       <obj_property name="ElementShortName">i_A[31:0]</obj_property>
       <obj_property name="ObjectShortName">i_A[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/i_B">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/i_B">
       <obj_property name="ElementShortName">i_B[31:0]</obj_property>
       <obj_property name="ObjectShortName">i_B[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/i_C">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/i_C">
       <obj_property name="ElementShortName">i_C[31:0]</obj_property>
       <obj_property name="ObjectShortName">i_C[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/i_D">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/i_D">
       <obj_property name="ElementShortName">i_D[31:0]</obj_property>
       <obj_property name="ObjectShortName">i_D[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/i_E">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/i_E">
       <obj_property name="ElementShortName">i_E[31:0]</obj_property>
       <obj_property name="ObjectShortName">i_E[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/i_F">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/i_F">
       <obj_property name="ElementShortName">i_F[31:0]</obj_property>
       <obj_property name="ObjectShortName">i_F[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/i_G">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/i_G">
       <obj_property name="ElementShortName">i_G[31:0]</obj_property>
       <obj_property name="ObjectShortName">i_G[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/i_H">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/i_H">
       <obj_property name="ElementShortName">i_H[31:0]</obj_property>
       <obj_property name="ObjectShortName">i_H[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/W">
-      <obj_property name="ElementShortName">W[31:0]</obj_property>
-      <obj_property name="ObjectShortName">W[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/K">
-      <obj_property name="ElementShortName">K[31:0]</obj_property>
-      <obj_property name="ObjectShortName">K[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/write_reg">
-      <obj_property name="ElementShortName">write_reg</obj_property>
-      <obj_property name="ObjectShortName">write_reg</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/read_reg">
-      <obj_property name="ElementShortName">read_reg</obj_property>
-      <obj_property name="ObjectShortName">read_reg</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/o_A">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/o_A">
       <obj_property name="ElementShortName">o_A[31:0]</obj_property>
       <obj_property name="ObjectShortName">o_A[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/o_B">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/o_B">
       <obj_property name="ElementShortName">o_B[31:0]</obj_property>
       <obj_property name="ObjectShortName">o_B[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/o_C">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/o_C">
       <obj_property name="ElementShortName">o_C[31:0]</obj_property>
       <obj_property name="ObjectShortName">o_C[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/o_D">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/o_D">
       <obj_property name="ElementShortName">o_D[31:0]</obj_property>
       <obj_property name="ObjectShortName">o_D[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/o_E">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/o_E">
       <obj_property name="ElementShortName">o_E[31:0]</obj_property>
       <obj_property name="ObjectShortName">o_E[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/o_F">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/o_F">
       <obj_property name="ElementShortName">o_F[31:0]</obj_property>
       <obj_property name="ObjectShortName">o_F[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/o_G">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/o_G">
       <obj_property name="ElementShortName">o_G[31:0]</obj_property>
       <obj_property name="ObjectShortName">o_G[31:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/o_H">
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/o_H">
       <obj_property name="ElementShortName">o_H[31:0]</obj_property>
       <obj_property name="ObjectShortName">o_H[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/sha256_round/T1">
-      <obj_property name="ElementShortName">T1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">T1[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/sha256_round/T2">
-      <obj_property name="ElementShortName">T2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">T2[31:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_sha256_regtest/sha256/sha256_regctrl/finish">
-      <obj_property name="ElementShortName">finish</obj_property>
-      <obj_property name="ObjectShortName">finish</obj_property>
    </wvobject>
 </wave_config>

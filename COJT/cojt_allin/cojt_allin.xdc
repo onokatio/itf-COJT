@@ -5,7 +5,7 @@
 # Revisions   :
 # Date        Version  Author        Description
 # 2016/02/09  1.00     M.Kobayashi   Created
-# 2020/03/02  1.01     M.Kobayashi   ˆê•”M†–¼‚Ì‘å•¶š‰»
+# 2020/03/02  1.01     M.Kobayashi   ä¸€éƒ¨ä¿¡å·åã®å¤§æ–‡å­—åŒ–
 #-----------------------------------------------------------------------------
 
 # Display
@@ -162,7 +162,7 @@ set_property IOSTANDARD LVCMOS25 [get_ports LED[4]]
 set_property PACKAGE_PIN W10 [get_ports LED[5]]
 set_property IOSTANDARD LVCMOS25 [get_ports LED[5]]
 
-# ˆÈ‰º‚ÍÁ“”
+# ä»¥ä¸‹ã¯æ¶ˆç¯
 set_property PACKAGE_PIN P18 [get_ports LED[6]]
 set_property IOSTANDARD LVCMOS25 [get_ports LED[6]]
 
@@ -170,24 +170,24 @@ set_property PACKAGE_PIN P17 [get_ports LED[7]]
 set_property IOSTANDARD LVCMOS25 [get_ports LED[7]]
 
 
-# ƒJƒƒ‰ƒNƒƒbƒN‚Ì’è‹`@36MHz max.
+# ã‚«ãƒ¡ãƒ©ã‚¯ãƒ­ãƒƒã‚¯ã®å®šç¾©ã€€36MHz max.
 create_clock -period 27.700 -name CAM_PCLK [get_ports CAM_PCLK]
 
-# ƒ^ƒCƒ~ƒ“ƒO§–ñ
+# ã‚¿ã‚¤ãƒŸãƒ³ã‚°åˆ¶ç´„
 set_clock_groups -asynchronous -group [get_clocks clk_fpga_0] -group [get_clocks clk_fpga_1]
 set_clock_groups -asynchronous -group [get_clocks CAM_PCLK] -group [get_clocks clk_fpga_0]
 
 
-# ƒTƒEƒ“ƒh‰ñ˜H‚ÌƒNƒƒbƒN’è‹`
+# ã‚µã‚¦ãƒ³ãƒ‰å›è·¯ã®ã‚¯ãƒ­ãƒƒã‚¯å®šç¾©
 
 # BCLK
-create_clock -period 354.3 -name invBCLK \
+create_clock -period 354.3 -name invBCLK Â¥
                [get_nets design_1_i/sound_0/inst/snd_buffer/invBCLK]
 
 # MCLK
 create_clock -period 88.6 -name MCLK [get_nets design_1_i/sound_0/SND_MCLK]
 
-# ƒ^ƒCƒ~ƒ“ƒO§–ñ
+# ã‚¿ã‚¤ãƒŸãƒ³ã‚°åˆ¶ç´„
 set_clock_groups -asynchronous -group [get_clocks clk_fpga_0] -group [get_clocks invBCLK]
 set_clock_groups -asynchronous -group [get_clocks clk_fpga_0] -group [get_clocks MCLK]
 set_clock_groups -asynchronous -group [get_clocks invBCLK]    -group [get_clocks MCLK]
