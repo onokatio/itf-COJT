@@ -44,3 +44,77 @@ current_project draw_v1_0_project
 undo
 current_project draw_v1_0_project
 ipx::remove_file_group xilinx_anylanguagesynthesis_1 [ipx::current_core]
+ipx::add_file hdl/Ch.v [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/Ch.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/Ch.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+ipx::add_file hdl/Usigma0.v [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/Usigma0.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/Usigma0.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+ipx::add_file hdl/Maj.v [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/Maj.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/Maj.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+ipx::add_file hdl/Usigma1.v [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/Usigma1.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/Usigma1.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+ipx::add_file hdl/sha256_regctrl.v [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/sha256_regctrl.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/sha256_regctrl.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+ipx::add_file hdl/sha256_round.v [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/sha256_round.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/sha256_round.v -of_objects [ipx::get_file_groups xilinx_anylanguagesynthesis -of_objects [ipx::current_core]]]
+ipx::add_file_group -type simulation {} [ipx::current_core]
+ipx::remove_file_group xilinx_anylanguagebehavioralsimulation_1 [ipx::current_core]
+ipx::add_file hdl/Ch.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/Ch.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/Ch.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+ipx::add_file hdl/Usigma0.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/Usigma0.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/Usigma0.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+ipx::add_file hdl/Maj.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/Maj.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/Maj.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+ipx::add_file hdl/Usigma1.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/Usigma1.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/Usigma1.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+ipx::add_file hdl/sha256_regctrl.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/sha256_regctrl.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/sha256_regctrl.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+ipx::add_file hdl/sha256_round.v [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]
+set_property type verilogSource [ipx::get_files hdl/sha256_round.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property library_name xil_defaultlib [ipx::get_files hdl/sha256_round.v -of_objects [ipx::get_file_groups xilinx_anylanguagebehavioralsimulation -of_objects [ipx::current_core]]]
+set_property core_revision 4 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project -delete
+update_ip_catalog -rebuild -repo_path /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip
+current_project cojt_allin
+update_ip_catalog -rebuild -scan_changes
+report_ip_status -name ip_status
+current_project display_v1_0_project
+current_project cojt_allin
+upgrade_ip -vlnv xilinx.com:user:draw:1.0 [get_ips  design_1_draw_0_0] -log ip_upgrade.log
+export_ip_user_files -of_objects [get_ips design_1_draw_0_0] -no_script -sync -force -quiet
+generate_target all [get_files  /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd]
+catch { config_ip_cache -export [get_ips -all design_1_draw_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_auto_pc_0] }
+export_ip_user_files -of_objects [get_files /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd]
+launch_runs -jobs 8 design_1_draw_0_0_synth_1
+export_simulation -of_objects [get_files /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.srcs/sources_1/bd/design_1/design_1.bd] -directory /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.ip_user_files/sim_scripts -ip_user_files_dir /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.ip_user_files -ipstatic_source_dir /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/modelsim} {questa=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/questa} {ies=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/ies} {xcelium=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/xcelium} {vcs=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/vcs} {riviera=/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+report_ip_status -name ip_status 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_bd_design [get_bd_designs design_1]
+current_project display_v1_0_project
+close_project
+add_files -fileset constrs_1 -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/pmod_sw.xdc
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+file mkdir /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.sdk
+file copy -force /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.runs/impl_1/design_1_wrapper.sysdef /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.sdk -hwspec /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin/cojt_allin.sdk/design_1_wrapper.hdf

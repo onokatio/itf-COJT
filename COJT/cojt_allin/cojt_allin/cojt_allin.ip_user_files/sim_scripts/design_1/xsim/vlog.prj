@@ -77,7 +77,13 @@ verilog xil_defaultlib --include "../../../../cojt_allin.srcs/sources_1/bd/desig
 "../../../bd/design_1/ipshared/cd1e/hdl/dclkgen/mmcme2_drp.v" \
 "../../../bd/design_1/ipshared/cd1e/hdl/dclkgen/top_mmcme2.v" \
 "../../../bd/design_1/ip/design_1_dispsub_0_0/sim/design_1_dispsub_0_0.v" \
-"../../../bd/design_1/ipshared/ccb9/hdl/draw.v" \
+"../../../bd/design_1/ipshared/4141/hdl/draw.v" \
+"../../../../cojt_allin.srcs/sources_1/bd/design_1/ipshared/4141/hdl/Ch.v" \
+"../../../../cojt_allin.srcs/sources_1/bd/design_1/ipshared/4141/hdl/Usigma0.v" \
+"../../../../cojt_allin.srcs/sources_1/bd/design_1/ipshared/4141/hdl/Maj.v" \
+"../../../../cojt_allin.srcs/sources_1/bd/design_1/ipshared/4141/hdl/Usigma1.v" \
+"../../../../cojt_allin.srcs/sources_1/bd/design_1/ipshared/4141/hdl/sha256_regctrl.v" \
+"../../../../cojt_allin.srcs/sources_1/bd/design_1/ipshared/4141/hdl/sha256_round.v" \
 "../../../bd/design_1/ip/design_1_draw_0_0/sim/design_1_draw_0_0.v" \
 "../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
 "../../../bd/design_1/ipshared/bd1d/hdl/ps2if_v1_0_S00_AXI.v" \
