@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../tb" \
+"../../../../../draw_ip/hdl/Ch.v" \
+"../../../../../draw_ip/hdl/Maj.v" \
+"../../../../../draw_ip/hdl/Usigma0.v" \
+"../../../../../draw_ip/hdl/Usigma1.v" \
+"../../../../../../sim_model/axi_slave_BMF/axi_slave_BFM.v" \
+"../../../../../draw_ip/hdl/sha256.v" \
+"../../../../../draw_ip/hdl/sha256_regctrl.v" \
+"../../../../../draw_ip/hdl/sha256_round.v" \
+"../../../../../../sim_model/axi_slave_BMF/sync_fifo.v" \
+"../../../../tb/tb_sha256.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

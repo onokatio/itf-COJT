@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Title       : •`‰æ‰ñ˜HÅãˆÊŠK‘w‚Ìƒ_ƒ~[‰ñ˜H
+// Title       : æç”»å›è·¯æœ€ä¸Šä½éšå±¤ã®ãƒ€ãƒŸãƒ¼å›è·¯
 // Project     : cojt_allin
 // Filename    : draw.v
 //-----------------------------------------------------------------------------
@@ -9,21 +9,21 @@
 // Revisions   :
 // Date        Version  Author        Description
 // 2016/02/09  1.00     M.Kobayashi   Created
-// 2020/03/03  1.01     M.Kobayashi   Critical Warning‘Îô‚ÅWUSER‚ÆRUSER‚ğ4bit‚É
+// 2020/03/03  1.01     M.Kobayashi   Critical Warningå¯¾ç­–ã§WUSERã¨RUSERã‚’4bitã«
 //-----------------------------------------------------------------------------
 
-module draw #
+module sha256 #
   (
     parameter integer C_M_AXI_THREAD_ID_WIDTH       = 1,
     parameter integer C_M_AXI_ADDR_WIDTH            = 32,
     parameter integer C_M_AXI_DATA_WIDTH            = 32,
     parameter integer C_M_AXI_AWUSER_WIDTH          = 1,
     parameter integer C_M_AXI_ARUSER_WIDTH          = 1,
-    parameter integer C_M_AXI_WUSER_WIDTH           = 4,    // Warning‘Îô
-    parameter integer C_M_AXI_RUSER_WIDTH           = 4,    // Warning‘Îô
+    parameter integer C_M_AXI_WUSER_WIDTH           = 4,    // Warningå¯¾ç­–
+    parameter integer C_M_AXI_RUSER_WIDTH           = 4,    // Warningå¯¾ç­–
     parameter integer C_M_AXI_BUSER_WIDTH           = 1,
 
-    /* ˆÈ‰º‚Í–¢‘Î‰‚¾‚¯‚ÇƒRƒ“ƒpƒCƒ‹ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß•t‰Á‚µ‚Ä‚¨‚­ */
+    /* ä»¥ä¸‹ã¯æœªå¯¾å¿œã ã‘ã©ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ä»˜åŠ ã—ã¦ãŠã */
     parameter integer C_INTERCONNECT_M_AXI_WRITE_ISSUING = 0,
     parameter integer C_M_AXI_SUPPORTS_READ              = 1,
     parameter integer C_M_AXI_SUPPORTS_WRITE             = 1,
@@ -91,12 +91,12 @@ module draw #
     input  wire                                  M_AXI_RVALID,
     output wire                                  M_AXI_RREADY,
 
-    /* ‰ğ‘œ“xØ‚è‘Ö‚¦ */
+    /* è§£åƒåº¦åˆ‡ã‚Šæ›¿ãˆ */
     input   [1:0]       RESOL,
-    /* Š„‚è‚İ */
+    /* å‰²ã‚Šè¾¼ã¿ */
     output              DRW_IRQ,
 
-    /* ƒŒƒWƒXƒ^ƒoƒX */
+    /* ãƒ¬ã‚¸ã‚¹ã‚¿ãƒã‚¹ */
     input   [15:0]      WRADDR,
     input   [3:0]       BYTEEN,
     input               WREN,
@@ -150,5 +150,17 @@ assign M_AXI_RREADY = 1'b0;
 /* regbus */
 assign RDATA   = 32'b0;
 assign DRW_IRQ = 1'b0;
+
+sha256_regctrl sha256_regctrl (
+    .ACLK       (ACLK),
+    .ARST       (ARST),
+    .WRADDR     (WRADDR),
+    .BYTEEN     (BYTEEN),
+    .WREN       (WREN),
+    .WDATA      (WDATA),
+    .RDADDR     (RDADDR),
+    .RDEN       (RDEN),
+    .RDATA      (RDATA)
+);
 
 endmodule

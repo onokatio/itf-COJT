@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Feb  2 01:10:30 2022
+# Process ID: 435272
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin
+# Command line: vivado
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/vivado.log
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project tb_sha /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.4 [current_project]
+add_files -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/sha256.v
+update_compile_order -fileset sources_1
+add_files -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/sha256_regctrl.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/sha256_round.v
+update_compile_order -fileset sources_1
+add_files -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/disp_vramctrl.v
+update_compile_order -fileset sources_1
