@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Dec  3 15:36:03 2021
+# Process ID: 2027236
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT/display/SIM
+# Command line: vivado
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/vivado.log
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/disp_tb.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp1_behav.wcfg
+source tb_disp1_dispon.tcl
+run all
+close_sim
+close_project
+create_project display /home/katio/script/github.com/onokatio/itf/COJT/display/display -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.4 [current_project]
+set_property  ip_repo_paths  /home/katio/script/github.com/onokatio/itf/COJT/COMMON_IP [current_project]
+update_ip_catalog
+set_property  ip_repo_paths  {/home/katio/script/github.com/onokatio/itf/COJT/COMMON_IP /home/katio/script/github.com/onokatio/itf/COJT/display/disp_ip} [current_project]
+update_ip_catalog
+source /home/katio/script/github.com/onokatio/itf/COJT/display/display.tcl

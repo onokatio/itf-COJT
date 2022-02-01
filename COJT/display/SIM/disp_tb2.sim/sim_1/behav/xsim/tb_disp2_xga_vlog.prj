@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../disp_ip/hdl" --include "../../../../tb" \
+"../../../../../disp_ip/src/fifo_48in24out_1024depth/sim/fifo_48in24out_1024depth.v" \
+"../../../../../../sim_model/axi_slave_BMF/axi_slave_BFM.v" \
+"../../../../../disp_ip/hdl/disp_buffer.v" \
+"../../../../../disp_ip/hdl/disp_regctrl.v" \
+"../../../../../disp_ip/hdl/disp_vramctrl.v" \
+"../../../../../disp_ip/hdl/display.v" \
+"../../../../../../sim_model/axi_slave_BMF/sync_fifo.v" \
+"../../../../../disp_ip/hdl/syncgen.v" \
+"../../../../tb/tb_disp2_xga.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

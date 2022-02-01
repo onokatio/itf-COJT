@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Title       : •\¦‰ñ˜H2‚ÌƒeƒXƒgƒxƒ“ƒ`iXGA•\¦‚ÌƒeƒXƒgj
+// Title       : ï¿½\ï¿½ï¿½ï¿½ï¿½H2ï¿½Ìƒeï¿½Xï¿½gï¿½xï¿½ï¿½ï¿½`ï¿½iXGAï¿½\ï¿½ï¿½ï¿½Ìƒeï¿½Xï¿½gï¿½j
 // Project     : display
 // Filename    : tb_disp2_xga.v
 //-----------------------------------------------------------------------------
@@ -9,7 +9,7 @@
 // Revisions   :
 // Date        Version  Author        Description
 // 2015/12/23  1.00     M.Kobayashi   Created
-// 2020/04/13  1.10     M.Kobayashi   ARREADY‰Šú’l‚ğİ’è‰Â”\‚É
+// 2020/04/13  1.10     M.Kobayashi   ARREADYï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½İ’ï¿½Â”\ï¿½ï¿½
 //-----------------------------------------------------------------------------
 
 
@@ -17,23 +17,23 @@
 
 module tb_disp2_xga;
 
-/* Šeí’è” */
+/* ï¿½eï¿½ï¿½è” */
 localparam integer C_AXI_DATA_WIDTH = 64;
 localparam integer STEP  = 8;
-localparam integer DSTEP = 15;  /* 65MHz‚ÌüŠúiŒë·‚ ‚èj */
+localparam integer DSTEP = 15;  /* 65MHzï¿½Ìï¿½ï¿½ï¿½ï¿½iï¿½ë·ï¿½ï¿½ï¿½ï¿½j */
 localparam integer C_OFFSET_WIDTH = 24;
 
 localparam P_RESOL_VGA  = 2'b00;
 localparam P_RESOL_XGA  = 2'b01;
 localparam P_RESOL_SXGA = 2'b10;
 
-localparam ARREADY_IS_USUALLY_HIGH = 1; /* 0‚Ìê‡‚àŒŸØ‚·‚é */
+localparam ARREADY_IS_USUALLY_HIGH = 0; /* 0ï¿½Ìê‡ï¿½ï¿½ï¿½ï¿½ï¿½Ø‚ï¿½ï¿½ï¿½ */
 
-/* ƒVƒXƒeƒ€ƒNƒƒbƒN‚¨‚æ‚ÑƒŠƒZƒbƒg */
+/* ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½Ñƒï¿½ï¿½Zï¿½bï¿½g */
 reg ACLK;
 reg ARESETN;
 
-/* •\¦‰ñ˜HŒÅ—LM† */
+/* ï¿½\ï¿½ï¿½ï¿½ï¿½Hï¿½Å—Lï¿½Mï¿½ï¿½ */
 reg             DCLK;
 wire            DSP_IRQ;
 reg   [1:0]     RESOL;
@@ -41,7 +41,7 @@ wire  [7:0]     DSP_R, DSP_G, DSP_B;
 wire            DSP_DE, DSP_HSYNC_X, DSP_VSYNC_X;
 wire            DSP_FIFO_OVER, DSP_FIFO_UNDER;
 
-/* ƒŒƒWƒXƒ^ƒoƒX */
+/* ï¿½ï¿½ï¿½Wï¿½Xï¿½^ï¿½oï¿½X */
 reg   [15:0]    WRADDR;
 reg   [3:0]     BYTEEN;
 reg             WREN;
@@ -51,10 +51,10 @@ reg             RDEN;
 wire  [31:0]    RDATA;
 
 
-/* ‹¤’Ê‰»‚µ‚½Ú‘±•”•ª‚Ì‹Lq‚ğ“Ç‚İ‚Ş */
+/* ï¿½ï¿½ï¿½Ê‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‹Lï¿½qï¿½ï¿½Ç‚İï¿½ï¿½ï¿½ */
 `include "disp_axibfm.vh"
 
-/* ŠeíƒNƒƒbƒN */
+/* ï¿½eï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½N */
 always begin
     ACLK = 0; #(STEP/2);
     ACLK = 1; #(STEP/2);
@@ -65,14 +65,14 @@ always begin
     DCLK = 1; #(DSTEP/2);
 end
 
-/* ƒŒƒWƒXƒ^ƒAƒhƒŒƒX */
+/* ï¿½ï¿½ï¿½Wï¿½Xï¿½^ï¿½Aï¿½hï¿½ï¿½ï¿½X */
 localparam DISPADDR = 16'h0000;
 localparam DISPCTRL = 16'h0004;
 localparam DISPINT  = 16'h0008;
 localparam DISPFIFO = 16'h000c;
 localparam VBLANK = 32'h2;
 
-/* ƒŒƒWƒXƒ^‘‚«‚İ */
+/* ï¿½ï¿½ï¿½Wï¿½Xï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 task write_reg;
 input [15:0] addr;
 input [3:0]  byteen;
@@ -88,7 +88,7 @@ begin
 end
 endtask
 
-/* ƒŒƒWƒXƒ^“Ç‚İo‚µi2ƒNƒƒbƒNj*/
+/* ï¿½ï¿½ï¿½Wï¿½Xï¿½^ï¿½Ç‚İoï¿½ï¿½ï¿½i2ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½j*/
 task read_reg;
 input  [15:0] addr;
 output [31:0] rdata;
@@ -103,7 +103,7 @@ begin
 end
 endtask
 
-/* ‰æ‘œƒtƒ@ƒCƒ‹“Ç‚İ‚İ */
+/* ï¿½æ‘œï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ç‚İï¿½ï¿½ï¿½ */
 task fileread;
 input [1:0] resol;
 input [7:0] page;
@@ -115,15 +115,15 @@ begin
     loopnum = (resol==P_RESOL_VGA) ?  640*480/2:
               (resol==P_RESOL_XGA) ? 1024*768/2: 1280*1024/2;
     topaddr = loopnum*page;
-    for( i=0; i<loopnum; i=i+1 ) begin  /* ƒf[ƒ^ƒrƒbƒg•‚Í64ƒrƒbƒg */
-        axi_slave_bfm.ram_array[topaddr+i][31:25] = 8'h00;  // ƒ¿0
+    for( i=0; i<loopnum; i=i+1 ) begin  /* ï¿½fï¿½[ï¿½^ï¿½rï¿½bï¿½gï¿½ï¿½ï¿½ï¿½64ï¿½rï¿½bï¿½g */
+        axi_slave_bfm.ram_array[topaddr+i][31:25] = 8'h00;  // ï¿½ï¿½0
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][24:16] = c;      // R0
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][15:8]  = c;      // G0
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][7:0]   = c;      // B0
-        axi_slave_bfm.ram_array[topaddr+i][63:56] = 8'h00;  // ƒ¿1
+        axi_slave_bfm.ram_array[topaddr+i][63:56] = 8'h00;  // ï¿½ï¿½1
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][55:48] = c;      // R1
         c = $fgetc(fd);
@@ -135,7 +135,7 @@ begin
 end
 endtask
 
-/* ƒŒƒWƒXƒ^‚Ì“Ç‚İo‚µ‚Æ•\¦ */
+/* ï¿½ï¿½ï¿½Wï¿½Xï¿½^ï¿½Ì“Ç‚İoï¿½ï¿½ï¿½Æ•\ï¿½ï¿½ */
 task read_disp;
 input  [15:0] addr;
 reg [31:0] readdata;
@@ -146,12 +146,12 @@ begin
 end
 endtask
 
-/* VBLANK‘Ò‚¿ */
+/* VBLANKï¿½Ò‚ï¿½ */
 task wait_vblank;
 reg [31:0] readdata;
 begin
     read_reg(DISPCTRL, readdata);
-    write_reg(DISPCTRL, 4'b0001, readdata | 32'h00000002); // VBLANKƒNƒŠƒA
+    write_reg(DISPCTRL, 4'b0001, readdata | 32'h00000002); // VBLANKï¿½Nï¿½ï¿½ï¿½A
     read_reg(DISPCTRL, readdata);
     while ((readdata & VBLANK)==0) begin
         read_reg(DISPCTRL, readdata);
@@ -160,12 +160,12 @@ begin
 end
 endtask
 
-/* ƒeƒXƒgƒxƒ“ƒ`–{‘Ì */
+/* ï¿½eï¿½Xï¿½gï¿½xï¿½ï¿½ï¿½`ï¿½{ï¿½ï¿½ */
 integer fd, vflag;
 
 initial begin
     RESOL = P_RESOL_XGA; 
-    fileread(RESOL, 1, "wcup2002_XGA.raw"); // ƒy[ƒW#1‚É“Ç‚İ‚Ş
+    fileread(RESOL, 1, "wcup2002_XGA.raw"); // ï¿½yï¿½[ï¿½W#1ï¿½É“Ç‚İï¿½ï¿½ï¿½
     vflag = 0;
     fd = $fopen("imagedata.txt");
     ARESETN = 1; WRADDR = 0; BYTEEN = 0; WDATA = 0; WREN = 0; RDADDR = 0; RDEN = 0;
@@ -177,23 +177,24 @@ initial begin
 
     $display("-- Waiting VBLANK --");
     wait_vblank;
-    write_reg(DISPADDR, 4'b1111, 32'h20000000+1024*768*4); // ƒy[ƒW#1‚ÌƒAƒhƒŒƒX‚ğİ’è
+    write_reg(DISPADDR, 4'b1111, 32'h20000000+1024*768*4); // ï¿½yï¿½[ï¿½W#1ï¿½ÌƒAï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½İ’ï¿½
     read_disp(DISPADDR);
 
     $display("DISPON");
     write_reg(DISPCTRL, 4'b0001, 32'h00000001); // DISPON
     write_reg(DISPINT,  4'b0001, 32'h00000003); // INTCLR, INTENBL
-    write_reg(DISPFIFO, 4'b0001, 32'h00000003); // FIFOƒtƒ‰ƒO‚ğƒNƒŠƒA
+    write_reg(DISPFIFO, 4'b0001, 32'h00000003); // FIFOï¿½tï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½A
 
     $display("-- Waiting VBLANK --");
     wait_vblank;
     #(STEP*10000);
 
     $fclose(fd);
+
     $stop;
 end
 
-/* ƒVƒ~ƒ…ƒŒ[ƒ“Œ‹‰Ê‰æ‘œ‚ğ•¶šƒtƒ@ƒCƒ‹‚Åo—Í */
+/* ï¿½Vï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Ê‰æ‘œï¿½ğ•¶ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Åoï¿½ï¿½ */
 always @(posedge DCLK) begin
     if ( DSP_DE ) begin
         $fdisplay(fd, "%06x", {DSP_R, DSP_G, DSP_B});

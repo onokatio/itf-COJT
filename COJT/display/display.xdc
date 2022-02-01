@@ -100,7 +100,8 @@ set_property IOSTANDARD LVCMOS25 [get_ports {LED[7]}]
 ## クロック制約
 
 # -addの付加によりSynthで発生するCritical Warning「FCLK_CLK0に対する複数クロック定義」を防ぐ
-create_clock -period 8.0 -add -name ACLK [get_nets {design_1_i/processing_system7_0_FCLK_CLK0}]
+create_clock -period 8.000 -name ACLK -add [get_nets design_1_i/processing_system7_0_FCLK_CLK0]
 
 # ACLK以外のクロック間でのタイミング制約を制限する
 set_clock_groups -asynchronous -group [get_clocks ACLK]
+

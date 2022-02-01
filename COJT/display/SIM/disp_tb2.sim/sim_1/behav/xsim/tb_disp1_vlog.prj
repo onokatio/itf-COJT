@@ -1,8 +1,4 @@
 # compile verilog/system verilog design source files
-verilog fifo_generator_v13_2_4  --include "../../../../../disp_ip/hdl" --include "../../../../tb" \
-"../../../../disp_tb.ip_user_files/ipstatic/simulation/fifo_generator_vlog_beh.v" \
-"../../../../disp_tb.ip_user_files/ipstatic/hdl/fifo_generator_v13_2_rfs.v" \
-
 verilog xil_defaultlib  --include "../../../../../disp_ip/hdl" --include "../../../../tb" \
 "../../../../../disp_ip/src/fifo_48in24out_1024depth/sim/fifo_48in24out_1024depth.v" \
 "../../../../../../sim_model/axi_slave_BMF/axi_slave_BFM.v" \

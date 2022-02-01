@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jan 28 17:04:55 2022
+# Process ID: 2871943
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT/display/SIM
+# Command line: vivado
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/vivado.log
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/disp_tb2.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp1_behav.wcfg
+open_wave_config /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_xga_behav.wcfg
+source tb_disp2_xga.tcl
+run all
+close_sim

@@ -1,0 +1,163 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Jan 28 18:00:20 2022
+# Process ID: 2988447
+# Current directory: /home/katio/script/github.com/onokatio/itf/COJT/display
+# Command line: vivado
+# Log file: /home/katio/script/github.com/onokatio/itf/COJT/display/vivado.log
+# Journal file: /home/katio/script/github.com/onokatio/itf/COJT/display/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/disp_tb2.xpr
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_disp2_regtest [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp1_behav.wcfg
+open_wave_config /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_xga_behav.wcfg
+source tb_disp2_regtest.tcl
+create_wave_config; add_wave /; set_property needs_save false [current_wave_config]
+restart
+run all
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_regtest_behav1.wcfg}
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_regtest_behav.wcfg
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_regtest_behav1.wcfg}
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_regtest_behav1.wcfg}
+restart
+run all
+current_wave_config {tb_disp2_regtest_behav1.wcfg}
+add_wave {{/tb_disp2_regtest/display/disp_regctrl/DSP_IRQ}} 
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_regtest_behav1.wcfg}
+restart
+run all
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_regtest_behav1.wcfg}
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_regtest_behav1.wcfg}
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_regtest_behav1.wcfg}
+current_wave_config {tb_disp2_regtest_behav1.wcfg}
+add_wave {{/tb_disp2_regtest/display/disp_regctrl/DISPADDR_w}} {{/tb_disp2_regtest/display/disp_regctrl/DISPCTRL_w}} {{/tb_disp2_regtest/display/disp_regctrl/DISPINT_w}} {{/tb_disp2_regtest/display/disp_regctrl/DISPFIFO_w}} {{/tb_disp2_regtest/display/disp_regctrl/DISPADDR_r}} {{/tb_disp2_regtest/display/disp_regctrl/DISPCTRL_r}} {{/tb_disp2_regtest/display/disp_regctrl/DISPINT_r}} {{/tb_disp2_regtest/display/disp_regctrl/DISPFIFO_r}} 
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_regtest_behav1.wcfg}
+restart
+run all
+current_wave_config {tb_disp2_regtest_behav1.wcfg}
+add_wave {{/tb_disp2_regtest/display/disp_regctrl/INTENBL}} 
+restart
+run all
+save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/display/SIM/tb_disp2_regtest_behav1.wcfg}
+close_sim
+close_project
+open_project /home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.xpr
+update_compile_order -fileset sources_1
+open_bd_design {/home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.srcs/sources_1/bd/design_1/design_1.bd}
+open_run synth_1 -name synth_1
+show_objects -name NET_ONLY [get_nets -hierarchical -top_net_of_hierarchical_group "*DISP*" ]
+show_objects -name NET_ONLY [get_nets -hierarchical -top_net_of_hierarchical_group "*" ]
+show_objects -name NET_ONLY [get_nets -hierarchical -regexp -top_net_of_hierarchical_group {.*_w.*} ]
+open_bd_design {/home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.srcs/sources_1/bd/design_1/design_1.bd}
+open_bd_design {/home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.srcs/sources_1/bd/design_1/design_1.bd}
+set_property HDL_ATTRIBUTE.DEBUG true [get_bd_nets {regbus_0_WREN regbus_0_RDEN regbus_0_WRADDR display_0_DSP_FIFO_OVER regbus_0_WDATA display_0_DSP_B display_0_DSP_HSYNC_X regbus_0_RDADDR dispsub_0_DCLK display_0_DSP_DE display_0_DSP_R processing_system7_0_FCLK_CLK0 regbus_0_BYTEEN display_0_DSP_G display_0_DSP_IRQ display_0_DSP_FIFO_UNDER display_0_DSP_VSYNC_X display_0_RDATA }]
+save_bd_design
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+open_bd_design {/home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.srcs/sources_1/bd/design_1/design_1.bd}
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.srcs/sources_1/bd/design_1/design_1.bd]
+refresh_design
+create_debug_core u_ila_0 ila
+set_property C_DATA_DEPTH 8192 [get_debug_cores u_ila_0]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
+set_property C_EN_STRG_QUAL false [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
+set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_0]
+create_debug_core u_ila_1 ila
+set_property C_DATA_DEPTH 8192 [get_debug_cores u_ila_1]
+set_property C_TRIGIN_EN false [get_debug_cores u_ila_1]
+set_property C_TRIGOUT_EN false [get_debug_cores u_ila_1]
+set_property C_ADV_TRIGGER false [get_debug_cores u_ila_1]
+set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_1]
+set_property C_EN_STRG_QUAL false [get_debug_cores u_ila_1]
+set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_1]
+set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_1]
+connect_debug_port u_ila_0/clk [get_nets [list design_1_i/dispsub_0/inst/dclkgen/top_mmcme2/CLK ]]
+connect_debug_port u_ila_1/clk [get_nets [list design_1_i/processing_system7_0/inst/FCLK_CLK0 ]]
+set_property port_width 8 [get_debug_ports u_ila_0/probe0]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
+connect_debug_port u_ila_0/probe0 [get_nets [list {design_1_i/display_0_DSP_R[0]} {design_1_i/display_0_DSP_R[1]} {design_1_i/display_0_DSP_R[2]} {design_1_i/display_0_DSP_R[3]} {design_1_i/display_0_DSP_R[4]} {design_1_i/display_0_DSP_R[5]} {design_1_i/display_0_DSP_R[6]} {design_1_i/display_0_DSP_R[7]} ]]
+create_debug_port u_ila_0 probe
+set_property port_width 8 [get_debug_ports u_ila_0/probe1]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
+connect_debug_port u_ila_0/probe1 [get_nets [list {design_1_i/display_0_DSP_G[0]} {design_1_i/display_0_DSP_G[1]} {design_1_i/display_0_DSP_G[2]} {design_1_i/display_0_DSP_G[3]} {design_1_i/display_0_DSP_G[4]} {design_1_i/display_0_DSP_G[5]} {design_1_i/display_0_DSP_G[6]} {design_1_i/display_0_DSP_G[7]} ]]
+create_debug_port u_ila_0 probe
+set_property port_width 8 [get_debug_ports u_ila_0/probe2]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
+connect_debug_port u_ila_0/probe2 [get_nets [list {design_1_i/display_0_DSP_B[0]} {design_1_i/display_0_DSP_B[1]} {design_1_i/display_0_DSP_B[2]} {design_1_i/display_0_DSP_B[3]} {design_1_i/display_0_DSP_B[4]} {design_1_i/display_0_DSP_B[5]} {design_1_i/display_0_DSP_B[6]} {design_1_i/display_0_DSP_B[7]} ]]
+create_debug_port u_ila_0 probe
+set_property port_width 1 [get_debug_ports u_ila_0/probe3]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
+connect_debug_port u_ila_0/probe3 [get_nets [list design_1_i/display_0_DSP_DE ]]
+create_debug_port u_ila_0 probe
+set_property port_width 1 [get_debug_ports u_ila_0/probe4]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
+connect_debug_port u_ila_0/probe4 [get_nets [list design_1_i/display_0_DSP_FIFO_UNDER ]]
+create_debug_port u_ila_0 probe
+set_property port_width 1 [get_debug_ports u_ila_0/probe5]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
+connect_debug_port u_ila_0/probe5 [get_nets [list design_1_i/display_0_DSP_HSYNC_X ]]
+create_debug_port u_ila_0 probe
+set_property port_width 1 [get_debug_ports u_ila_0/probe6]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe6]
+connect_debug_port u_ila_0/probe6 [get_nets [list design_1_i/display_0_DSP_VSYNC_X ]]
+set_property port_width 4 [get_debug_ports u_ila_1/probe0]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe0]
+connect_debug_port u_ila_1/probe0 [get_nets [list {design_1_i/regbus_0_BYTEEN[0]} {design_1_i/regbus_0_BYTEEN[1]} {design_1_i/regbus_0_BYTEEN[2]} {design_1_i/regbus_0_BYTEEN[3]} ]]
+create_debug_port u_ila_1 probe
+set_property port_width 16 [get_debug_ports u_ila_1/probe1]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe1]
+connect_debug_port u_ila_1/probe1 [get_nets [list {design_1_i/regbus_0_RDADDR[0]} {design_1_i/regbus_0_RDADDR[1]} {design_1_i/regbus_0_RDADDR[2]} {design_1_i/regbus_0_RDADDR[3]} {design_1_i/regbus_0_RDADDR[4]} {design_1_i/regbus_0_RDADDR[5]} {design_1_i/regbus_0_RDADDR[6]} {design_1_i/regbus_0_RDADDR[7]} {design_1_i/regbus_0_RDADDR[8]} {design_1_i/regbus_0_RDADDR[9]} {design_1_i/regbus_0_RDADDR[10]} {design_1_i/regbus_0_RDADDR[11]} {design_1_i/regbus_0_RDADDR[12]} {design_1_i/regbus_0_RDADDR[13]} {design_1_i/regbus_0_RDADDR[14]} {design_1_i/regbus_0_RDADDR[15]} ]]
+create_debug_port u_ila_1 probe
+set_property port_width 16 [get_debug_ports u_ila_1/probe2]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe2]
+connect_debug_port u_ila_1/probe2 [get_nets [list {design_1_i/regbus_0_WRADDR[0]} {design_1_i/regbus_0_WRADDR[1]} {design_1_i/regbus_0_WRADDR[2]} {design_1_i/regbus_0_WRADDR[3]} {design_1_i/regbus_0_WRADDR[4]} {design_1_i/regbus_0_WRADDR[5]} {design_1_i/regbus_0_WRADDR[6]} {design_1_i/regbus_0_WRADDR[7]} {design_1_i/regbus_0_WRADDR[8]} {design_1_i/regbus_0_WRADDR[9]} {design_1_i/regbus_0_WRADDR[10]} {design_1_i/regbus_0_WRADDR[11]} {design_1_i/regbus_0_WRADDR[12]} {design_1_i/regbus_0_WRADDR[13]} {design_1_i/regbus_0_WRADDR[14]} {design_1_i/regbus_0_WRADDR[15]} ]]
+create_debug_port u_ila_1 probe
+set_property port_width 32 [get_debug_ports u_ila_1/probe3]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe3]
+connect_debug_port u_ila_1/probe3 [get_nets [list {design_1_i/regbus_0_WDATA[0]} {design_1_i/regbus_0_WDATA[1]} {design_1_i/regbus_0_WDATA[2]} {design_1_i/regbus_0_WDATA[3]} {design_1_i/regbus_0_WDATA[4]} {design_1_i/regbus_0_WDATA[5]} {design_1_i/regbus_0_WDATA[6]} {design_1_i/regbus_0_WDATA[7]} {design_1_i/regbus_0_WDATA[8]} {design_1_i/regbus_0_WDATA[9]} {design_1_i/regbus_0_WDATA[10]} {design_1_i/regbus_0_WDATA[11]} {design_1_i/regbus_0_WDATA[12]} {design_1_i/regbus_0_WDATA[13]} {design_1_i/regbus_0_WDATA[14]} {design_1_i/regbus_0_WDATA[15]} {design_1_i/regbus_0_WDATA[16]} {design_1_i/regbus_0_WDATA[17]} {design_1_i/regbus_0_WDATA[18]} {design_1_i/regbus_0_WDATA[19]} {design_1_i/regbus_0_WDATA[20]} {design_1_i/regbus_0_WDATA[21]} {design_1_i/regbus_0_WDATA[22]} {design_1_i/regbus_0_WDATA[23]} {design_1_i/regbus_0_WDATA[24]} {design_1_i/regbus_0_WDATA[25]} {design_1_i/regbus_0_WDATA[26]} {design_1_i/regbus_0_WDATA[27]} {design_1_i/regbus_0_WDATA[28]} {design_1_i/regbus_0_WDATA[29]} {design_1_i/regbus_0_WDATA[30]} {design_1_i/regbus_0_WDATA[31]} ]]
+create_debug_port u_ila_1 probe
+set_property port_width 1 [get_debug_ports u_ila_1/probe4]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe4]
+connect_debug_port u_ila_1/probe4 [get_nets [list design_1_i/display_0_DSP_FIFO_OVER ]]
+create_debug_port u_ila_1 probe
+set_property port_width 1 [get_debug_ports u_ila_1/probe5]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe5]
+connect_debug_port u_ila_1/probe5 [get_nets [list design_1_i/display_0_DSP_IRQ ]]
+create_debug_port u_ila_1 probe
+set_property port_width 1 [get_debug_ports u_ila_1/probe6]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe6]
+connect_debug_port u_ila_1/probe6 [get_nets [list design_1_i/regbus_0_RDEN ]]
+create_debug_port u_ila_1 probe
+set_property port_width 1 [get_debug_ports u_ila_1/probe7]
+set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_1/probe7]
+connect_debug_port u_ila_1/probe7 [get_nets [list design_1_i/regbus_0_WREN ]]
+file mkdir /home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.srcs/constrs_1/new
+close [ open /home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.srcs/constrs_1/new/display2-debug.xdc w ]
+add_files -fileset constrs_1 /home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.srcs/constrs_1/new/display2-debug.xdc
+set_property target_constrs_file /home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.srcs/constrs_1/new/display2-debug.xdc [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+close_design
+file copy -force /home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.runs/impl_1/design_1_wrapper.sysdef /home/katio/script/github.com/onokatio/itf/COJT/display/display2/display2.sdk/design_1_wrapper.hdf
+

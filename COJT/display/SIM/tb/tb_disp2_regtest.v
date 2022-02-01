@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Title       : •\¦‰ñ˜H2‚ÌƒeƒXƒgƒxƒ“ƒ`iƒŒƒWƒXƒ^‚ÌƒeƒXƒgj
+// Title       : è¡¨ç¤ºå›è·¯2ã®ãƒ†ã‚¹ãƒˆãƒ™ãƒ³ãƒï¼ˆãƒ¬ã‚¸ã‚¹ã‚¿ã®ãƒ†ã‚¹ãƒˆï¼‰
 // Project     : display
 // Filename    : tb_disp2_regtest.v
 //-----------------------------------------------------------------------------
@@ -9,7 +9,7 @@
 // Revisions   :
 // Date        Version  Author        Description
 // 2015/12/23  1.00     M.Kobayashi   Created
-// 2020/04/13  1.10     M.Kobayashi   ARREADY‰Šú’l‚ğİ’è‰Â”\‚É
+// 2020/04/13  1.10     M.Kobayashi   ARREADYåˆæœŸå€¤ã‚’è¨­å®šå¯èƒ½ã«
 //-----------------------------------------------------------------------------
 
 
@@ -17,7 +17,7 @@
 
 module tb_disp2_regtest;
 
-/* Šeí’è” */
+/* å„ç¨®å®šæ•° */
 localparam integer C_AXI_DATA_WIDTH = 64;
 localparam integer STEP  = 8;
 localparam integer DSTEP = 40;
@@ -27,13 +27,13 @@ localparam P_RESOL_VGA  = 2'b00;
 localparam P_RESOL_XGA  = 2'b01;
 localparam P_RESOL_SXGA = 2'b10;
 
-localparam ARREADY_IS_USUALLY_HIGH = 1; /* 0‚Ìê‡‚àŒŸØ‚·‚é */
+localparam ARREADY_IS_USUALLY_HIGH = 1; /* 0ã®å ´åˆã‚‚æ¤œè¨¼ã™ã‚‹ */
 
-/* ƒVƒXƒeƒ€ƒNƒƒbƒN‚¨‚æ‚ÑƒŠƒZƒbƒg */
+/* ã‚·ã‚¹ãƒ†ãƒ ã‚¯ãƒ­ãƒƒã‚¯ãŠã‚ˆã³ãƒªã‚»ãƒƒãƒˆ */
 reg ACLK;
 reg ARESETN;
 
-/* •\¦‰ñ˜HŒÅ—LM† */
+/* è¡¨ç¤ºå›è·¯å›ºæœ‰ä¿¡å· */
 reg             DCLK;
 wire            DSP_IRQ;
 reg   [1:0]     RESOL;
@@ -41,7 +41,7 @@ wire  [7:0]     DSP_R, DSP_G, DSP_B;
 wire            DSP_DE, DSP_HSYNC_X, DSP_VSYNC_X;
 wire            DSP_FIFO_OVER, DSP_FIFO_UNDER;
 
-/* ƒŒƒWƒXƒ^ƒoƒX */
+/* ãƒ¬ã‚¸ã‚¹ã‚¿ãƒã‚¹ */
 reg   [15:0]    WRADDR;
 reg   [3:0]     BYTEEN;
 reg             WREN;
@@ -51,10 +51,10 @@ reg             RDEN;
 wire  [31:0]    RDATA;
 
 
-/* ‹¤’Ê‰»‚µ‚½Ú‘±•”•ª‚Ì‹Lq‚ğ“Ç‚İ‚Ş */
+/* å…±é€šåŒ–ã—ãŸæ¥ç¶šéƒ¨åˆ†ã®è¨˜è¿°ã‚’èª­ã¿è¾¼ã‚€ */
 `include "disp_axibfm.vh"
 
-/* ŠeíƒNƒƒbƒN */
+/* å„ç¨®ã‚¯ãƒ­ãƒƒã‚¯ */
 always begin
     ACLK = 0; #(STEP/2);
     ACLK = 1; #(STEP/2);
@@ -65,14 +65,14 @@ always begin
     DCLK = 1; #(DSTEP/2);
 end
 
-/* ƒŒƒWƒXƒ^ƒAƒhƒŒƒX */
+/* ãƒ¬ã‚¸ã‚¹ã‚¿ã‚¢ãƒ‰ãƒ¬ã‚¹ */
 localparam DISPADDR = 16'h0000;
 localparam DISPCTRL = 16'h0004;
 localparam DISPINT  = 16'h0008;
 localparam DISPFIFO = 16'h000c;
 localparam VBLANK = 32'h2;
 
-/* ƒŒƒWƒXƒ^‘‚«‚İ */
+/* ãƒ¬ã‚¸ã‚¹ã‚¿æ›¸ãè¾¼ã¿ */
 task write_reg;
 input [15:0] addr;
 input [3:0]  byteen;
@@ -88,7 +88,7 @@ begin
 end
 endtask
 
-/* ƒŒƒWƒXƒ^“Ç‚İo‚µi2ƒNƒƒbƒNj*/
+/* ãƒ¬ã‚¸ã‚¹ã‚¿èª­ã¿å‡ºã—ï¼ˆ2ã‚¯ãƒ­ãƒƒã‚¯ï¼‰*/
 task read_reg;
 input  [15:0] addr;
 output [31:0] rdata;
@@ -103,7 +103,7 @@ begin
 end
 endtask
 
-/* ‰æ‘œƒtƒ@ƒCƒ‹“Ç‚İ‚İ */
+/* ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿ */
 task fileread;
 input [1:0] resol;
 input [7:0] page;
@@ -115,15 +115,15 @@ begin
     loopnum = (resol==P_RESOL_VGA) ?  640*480/2:
               (resol==P_RESOL_XGA) ? 1024*768/2: 1280*1024/2;
     topaddr = loopnum*page;
-    for( i=0; i<loopnum; i=i+1 ) begin  /* ƒf[ƒ^ƒrƒbƒg•‚Í64ƒrƒbƒg */
-        axi_slave_bfm.ram_array[topaddr+i][31:25] = 8'h00;  // ƒ¿0
+    for( i=0; i<loopnum; i=i+1 ) begin  /* ãƒ‡ãƒ¼ã‚¿ãƒ“ãƒƒãƒˆå¹…ã¯64ãƒ“ãƒƒãƒˆ */
+        axi_slave_bfm.ram_array[topaddr+i][31:25] = 8'h00;  // Î±0
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][24:16] = c;      // R0
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][15:8]  = c;      // G0
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][7:0]   = c;      // B0
-        axi_slave_bfm.ram_array[topaddr+i][63:56] = 8'h00;  // ƒ¿1
+        axi_slave_bfm.ram_array[topaddr+i][63:56] = 8'h00;  // Î±1
         c = $fgetc(fd);
         axi_slave_bfm.ram_array[topaddr+i][55:48] = c;      // R1
         c = $fgetc(fd);
@@ -135,7 +135,7 @@ begin
 end
 endtask
 
-/* ƒŒƒWƒXƒ^‚Ì“Ç‚İo‚µ‚Æ•\¦ */
+/* ãƒ¬ã‚¸ã‚¹ã‚¿ã®èª­ã¿å‡ºã—ã¨è¡¨ç¤º */
 task read_disp;
 input  [15:0] addr;
 reg [31:0] readdata;
@@ -146,12 +146,12 @@ begin
 end
 endtask
 
-/* VBLANK‘Ò‚¿ */
+/* VBLANKå¾…ã¡ */
 task wait_vblank;
 reg [31:0] readdata;
 begin
     read_reg(DISPCTRL, readdata);
-    write_reg(DISPCTRL, 4'b0001, readdata | 32'h00000002); // VBLANKƒNƒŠƒA
+    write_reg(DISPCTRL, 4'b0001, readdata | 32'h00000002); // VBLANKã‚¯ãƒªã‚¢
     read_reg(DISPCTRL, readdata);
     while ((readdata & VBLANK)==0) begin
         read_reg(DISPCTRL, readdata);
@@ -160,12 +160,12 @@ begin
 end
 endtask
 
-/* ƒeƒXƒgƒxƒ“ƒ`–{‘Ì */
+/* ãƒ†ã‚¹ãƒˆãƒ™ãƒ³ãƒæœ¬ä½“ */
 integer fd, vflag;
 
 initial begin
     RESOL = P_RESOL_VGA;
-    fileread(RESOL, 1, "wcup2002_VGA.raw"); // ƒy[ƒW#1‚É“Ç‚İ‚Ş
+    fileread(RESOL, 1, "wcup2002_VGA.raw"); // ãƒšãƒ¼ã‚¸#1ã«èª­ã¿è¾¼ã‚€
     vflag = 0;
     fd = $fopen("imagedata.txt");
     ARESETN = 1; WRADDR = 0; BYTEEN = 0; WDATA = 0; WREN = 0; RDADDR = 0; RDEN = 0;
@@ -176,29 +176,29 @@ initial begin
     #(STEP*100);
 
     $display("-- DISPADDR write/read --");
-    write_reg(DISPADDR, 4'b0001, 32'h12345678); // [7:0]‚É‘‚«‚İ
+    write_reg(DISPADDR, 4'b0001, 32'h12345678); // [7:0]ã«æ›¸ãè¾¼ã¿
     read_disp(DISPADDR);
-    write_reg(DISPADDR, 4'b0010, 32'h00005600); // [15:8]‚É‘‚«‚İ
+    write_reg(DISPADDR, 4'b0010, 32'h00005600); // [15:8]ã«æ›¸ãè¾¼ã¿
     read_disp(DISPADDR);
-    write_reg(DISPADDR, 4'b0100, 32'h00340000); // [23:16]‚É‘‚«‚İ
+    write_reg(DISPADDR, 4'b0100, 32'h00340000); // [23:16]ã«æ›¸ãè¾¼ã¿
     read_disp(DISPADDR);
-    write_reg(DISPADDR, 4'b1000, 32'h12000000); // [31:24]‚É‘‚«‚İ
+    write_reg(DISPADDR, 4'b1000, 32'h12000000); // [31:24]ã«æ›¸ãè¾¼ã¿
     read_disp(DISPADDR);
 
     $display("-- Waiting VBLANK --");
     wait_vblank;
-    write_reg(DISPADDR, 4'b1111, 32'h20000000+640*480*4); // ƒy[ƒW#1‚ÌƒAƒhƒŒƒX‚ğİ’è
+    write_reg(DISPADDR, 4'b1111, 32'h20000000+640*480*4); // ãƒšãƒ¼ã‚¸#1ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’è¨­å®š
     read_disp(DISPADDR);
 
     $display("DISPON");
     write_reg(DISPCTRL, 4'b0001, 32'h00000001); // DISPON
     write_reg(DISPINT,  4'b0001, 32'h00000003); // INTCLR, INTENBL
-    write_reg(DISPFIFO, 4'b0001, 32'h00000003); // FIFOƒtƒ‰ƒO‚ğƒNƒŠƒA
+    write_reg(DISPFIFO, 4'b0001, 32'h00000003); // FIFOãƒ•ãƒ©ã‚°ã‚’ã‚¯ãƒªã‚¢
 
     $display("-- Waiting VBLANK --");
     wait_vblank;
     #(STEP*100);
-    write_reg(DISPINT,  4'b0001, 32'h00000003); // DSP_IRQ‚ğƒNƒŠƒA
+    write_reg(DISPINT,  4'b0001, 32'h00000003); // DSP_IRQã‚’ã‚¯ãƒªã‚¢
     #(STEP*100);
     $display("-- All Registers --");
     read_disp(DISPADDR);
@@ -211,7 +211,6 @@ initial begin
     $stop;
 end
 
-/* ƒVƒ~ƒ…ƒŒ[ƒ“Œ‹‰Ê‰æ‘œ‚ğ•¶šƒtƒ@ƒCƒ‹‚Åo—Í */
 always @(posedge DCLK) begin
     if ( DSP_DE ) begin
         $fdisplay(fd, "%06x", {DSP_R, DSP_G, DSP_B});

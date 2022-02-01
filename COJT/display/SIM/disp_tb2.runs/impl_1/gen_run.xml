@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1643171171">
+  <File Type="BG-BIT" Name="display.bit"/>
+  <File Type="PLACE-DCP" Name="display_placed.dcp"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="display_incremental_reuse_pre_placed.rpt"/>
+  <File Type="OPT-DCP" Name="display_opt.dcp"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="display_postplace_pwropt.dcp"/>
+  <File Type="ROUTE-TIMING-PB" Name="display_timing_summary_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="display.msk"/>
+  <File Type="PA-TCL" Name="display.tcl"/>
+  <File Type="BG-BIN" Name="display.bin"/>
+  <File Type="BG-BGN" Name="display.bgn"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="display_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="display_routed.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="display_physopt.dcp"/>
+  <File Type="REPORTS-TCL" Name="display_reports.tcl"/>
+  <File Type="BITSTR-RBT" Name="display.rbt"/>
+  <File Type="OPT-DRC" Name="display_drc_opted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="display_routed_error.dcp"/>
+  <File Type="BG-DRC" Name="display.drc"/>
+  <File Type="OPT-HWDEF" Name="display.hwdef"/>
+  <File Type="PWROPT-DCP" Name="display_pwropt.dcp"/>
+  <File Type="BITSTR-NKY" Name="display.nky"/>
+  <File Type="BITSTR-BMM" Name="display_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="display.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="display.sysdef"/>
+  <File Type="BITSTR-LTX" Name="display.ltx"/>
+  <File Type="RDI-RDI" Name="display.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="display_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="display_postroute_physopt.dcp"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../disp_ip/src/fifo_48in24out_1024depth/fifo_48in24out_1024depth.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../disp_ip/hdl/disp_buffer.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../disp_ip/hdl/disp_regctrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../disp_ip/hdl/syncgen_param.vh">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../disp_ip/hdl/disp_vramctrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../disp_ip/hdl/syncgen.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../disp_ip/hdl/display.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="display"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

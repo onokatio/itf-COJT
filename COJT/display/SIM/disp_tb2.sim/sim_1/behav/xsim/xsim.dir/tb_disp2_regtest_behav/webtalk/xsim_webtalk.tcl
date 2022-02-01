@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/disp_tb2.sim/sim_1/behav/xsim/xsim.dir/tb_disp2_regtest_behav/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Fri Jan 21 15:32:59 2022" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Wed Feb  2 00:35:49 2022" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2019.1 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2552052" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "LIN64" -context "software_version_and_target_device"
@@ -14,7 +14,7 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "acdaed82-eaf8-48c5-b9e8-774e0be09562" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "2af6a9a7d5584c0bb7d72ca0aa592f4c" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "6" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "21" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Arch" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "Arch Linux" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz" -context "user_environment"
@@ -25,9 +25,9 @@ webtalk_register_client -client xsim
 webtalk_add_data -client xsim -key runall -value "true" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command_line_options"
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
-webtalk_add_data -client xsim -key runtime -value "402232 ns" -context "xsim\\usage"
+webtalk_add_data -client xsim -key runtime -value "17202040 ns" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "0" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "0.51_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "148736_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 2250316393 -regid "" -xml /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/disp_tb2.sim/sim_1/behav/xsim/xsim.dir/tb_disp2_regtest_behav/webtalk/usage_statistics_ext_xsim.xml -html /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/disp_tb2.sim/sim_1/behav/xsim/xsim.dir/tb_disp2_regtest_behav/webtalk/usage_statistics_ext_xsim.html -wdm /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/disp_tb2.sim/sim_1/behav/xsim/xsim.dir/tb_disp2_regtest_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "23.38_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "148744_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 624368096 -regid "" -xml /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/disp_tb2.sim/sim_1/behav/xsim/xsim.dir/tb_disp2_regtest_behav/webtalk/usage_statistics_ext_xsim.xml -html /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/disp_tb2.sim/sim_1/behav/xsim/xsim.dir/tb_disp2_regtest_behav/webtalk/usage_statistics_ext_xsim.html -wdm /home/katio/script/github.com/onokatio/itf/COJT/display/SIM/disp_tb2.sim/sim_1/behav/xsim/xsim.dir/tb_disp2_regtest_behav/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate
