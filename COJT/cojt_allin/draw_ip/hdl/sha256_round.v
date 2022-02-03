@@ -21,8 +21,6 @@ module sha256_round
   output [31:0] o_H
   );
 
-  wire [31:0] T1;
-  wire [31:0] T2;
   wire [31:0] Ch_result;
   wire [31:0] Maj_result;
   wire [31:0] Usigma1_result;
@@ -49,17 +47,28 @@ module sha256_round
     .result (Usigma1_result)
   );
   
-  assign T1 = W + K + i_H + Ch_result + Usigma1_result;
-  assign T2 = Maj_result + Usigma0_result;
+  wire [31:0] U1;
+  wire [31:0] U2;
+  wire [31:0] U3;
+  wire [31:0] U4;
+  wire [31:0] U5;
+  wire [31:0] U6;
+  
+  assign U1 = W + K;
+  assign U2 = i_H + Ch_result;
+  assign U3 = U1 + U2;
+  assign U4 = i_D + Usigma1_result;
+  assign U5 = Maj_result + Usigma1_result;
+  assign U6 = U5 + Usigma0_result;
   
   assign o_H = i_G;
   assign o_G = i_F;
   assign o_F = i_E;
-  assign o_E = i_D + T1;
+  assign o_E = U3 + U4;
   assign o_D = i_C;
   assign o_C = i_B;
   assign o_B = i_A;
-  assign o_A = T1 + T2;
+  assign o_A = U6 + U3;
 
   
 endmodule

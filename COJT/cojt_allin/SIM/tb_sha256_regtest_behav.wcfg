@@ -12,17 +12,22 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="2408000001fs"></ZoomEndTime>
+      <ZoomEndTime time="70200001fs"></ZoomEndTime>
       <Cursor1Time time="2408000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="233"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="231"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="25" />
+   <WVObjectSize size="26" />
    <wvobject type="logic" fp_name="/tb_sha256_regtest/ACLK">
       <obj_property name="ElementShortName">ACLK</obj_property>
       <obj_property name="ObjectShortName">ACLK</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sha256_regtest/draw/sha256_regctrl/NACLK">
+      <obj_property name="ElementShortName">NACLK[1:0]</obj_property>
+      <obj_property name="ObjectShortName">NACLK[1:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/tb_sha256_regtest/ARESETN">
       <obj_property name="ElementShortName">ARESETN</obj_property>

@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:draw:1.0
-// IP Revision: 6
+// IP Revision: 7
 
 (* X_CORE_INFO = "draw,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "design_1_draw_0_0,draw,{}" *)
-(* CORE_GENERATION_INFO = "design_1_draw_0_0,draw,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=draw,x_ipVersion=1.0,x_ipCoreRevision=6,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_M_AXI_THREAD_ID_WIDTH=1,C_M_AXI_ADDR_WIDTH=32,C_M_AXI_DATA_WIDTH=32,C_M_AXI_AWUSER_WIDTH=1,C_M_AXI_ARUSER_WIDTH=1,C_M_AXI_WUSER_WIDTH=4,C_M_AXI_RUSER_WIDTH=4,C_M_AXI_BUSER_WIDTH=1,C_INTERCONNECT_M_AXI_WRITE_ISSUING=0,C_M_AXI_SUPPORTS_READ=1,C_M_AXI_SUPPORTS_WRITE=1,C_M_AXI_TARGET=0,C_M_AXI_BURST_LEN=0,C_OFFSET_WIDTH\
+(* CORE_GENERATION_INFO = "design_1_draw_0_0,draw,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=draw,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_M_AXI_THREAD_ID_WIDTH=1,C_M_AXI_ADDR_WIDTH=32,C_M_AXI_DATA_WIDTH=32,C_M_AXI_AWUSER_WIDTH=1,C_M_AXI_ARUSER_WIDTH=1,C_M_AXI_WUSER_WIDTH=4,C_M_AXI_RUSER_WIDTH=4,C_M_AXI_BUSER_WIDTH=1,C_INTERCONNECT_M_AXI_WRITE_ISSUING=0,C_M_AXI_SUPPORTS_READ=1,C_M_AXI_SUPPORTS_WRITE=1,C_M_AXI_TARGET=0,C_M_AXI_BURST_LEN=0,C_OFFSET_WIDTH\
 =0}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)

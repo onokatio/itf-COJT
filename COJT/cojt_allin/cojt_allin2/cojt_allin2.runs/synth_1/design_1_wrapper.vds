@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Feb  2 06:11:26 2022
-# Process ID: 1196945
+# Start of session at: Wed Feb  2 11:07:21 2022
+# Process ID: 1791722
 # Current directory: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/design_1_wrapper.vds
@@ -23,9 +23,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1197878 
+INFO: Helper process launched with PID 1792213 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1703.785 ; gain = 153.719 ; free physical = 5932 ; free virtual = 27761
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1704.695 ; gain = 153.719 ; free physical = 4169 ; free virtual = 26566
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [/home/katio/Xilinx-bin/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115]
@@ -35,30 +35,30 @@ INFO: [Synth 8-6157] synthesizing module 'IOBUF' [/home/katio/Xilinx-bin/Vivado/
 	Parameter SLEW bound to: SLOW - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (1#1) [/home/katio/Xilinx-bin/Vivado/2019.1/scripts/rt/data/unisim_comp.v:36115]
 INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_0' (2#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_iic_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_axi_iic_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_iic_0_0' (3#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_axi_iic_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_0' (2#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_iic_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_axi_iic_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_iic_0_0' (3#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_axi_iic_0_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'axi_iic_0' of module 'design_1_axi_iic_0_0' has 27 connections declared, but only 26 given [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:596]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (4#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (4#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_axi_smc_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'axi_smc' of module 'design_1_axi_smc_0' has 80 connections declared, but only 78 given [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:623]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_1_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_axi_smc_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_1_0' (5#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_axi_smc_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_1_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_axi_smc_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_1_0' (5#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_axi_smc_1_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'axi_smc_1' of module 'design_1_axi_smc_1_0' has 164 connections declared, but only 162 given [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:702]
-INFO: [Synth 8-6157] synthesizing module 'design_1_capture_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_capture_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_capture_0_0' (6#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_capture_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_display_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_display_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_display_0_0' (7#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_display_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_dispsub_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_dispsub_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_dispsub_0_0' (8#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_dispsub_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_draw_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_draw_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_draw_0_0' (9#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_draw_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (10#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_capture_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_capture_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_capture_0_0' (6#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_capture_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_display_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_display_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_display_0_0' (7#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_display_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_dispsub_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_dispsub_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_dispsub_0_0' (8#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_dispsub_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_draw_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_draw_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_draw_0_0' (9#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_draw_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (10#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_processing_system7_0_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_1_processing_system7_0_0' has 160 connections declared, but only 143 given [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:1058]
-INFO: [Synth 8-6157] synthesizing module 'design_1_ps2if_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_ps2if_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_ps2if_0_0' (11#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_ps2if_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ps2if_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_ps2if_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ps2if_0_0' (11#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_ps2if_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'design_1_ps7_0_axi_periph_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:1519]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_15SPJYW' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:2494]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_15SPJYW' (12#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:2494]
@@ -71,23 +71,23 @@ INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_YFYJ3U' (15#1) [
 INFO: [Synth 8-6157] synthesizing module 'm04_couplers_imp_17KQ732' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:3050]
 INFO: [Synth 8-6155] done synthesizing module 'm04_couplers_imp_17KQ732' (16#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:3050]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_UYSKKA' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:3196]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (17#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (17#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_auto_pc_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_UYSKKA' (18#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:3196]
-INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (19#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (19#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_xbar_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_ps7_0_axi_periph_0' (20#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:1519]
-INFO: [Synth 8-6157] synthesizing module 'design_1_regbus_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_regbus_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_regbus_0_0' (21#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_regbus_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_125M_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_rst_ps7_0_125M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_125M_0' (22#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_rst_ps7_0_125M_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_regbus_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_regbus_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_regbus_0_0' (21#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_regbus_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_ps7_0_125M_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_rst_ps7_0_125M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_ps7_0_125M_0' (22#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_rst_ps7_0_125M_0_stub.v:6]
 WARNING: [Synth 8-7023] instance 'rst_ps7_0_125M' of module 'design_1_rst_ps7_0_125M_0' has 10 connections declared, but only 6 given [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/synth/design_1.v:1406]
-INFO: [Synth 8-6157] synthesizing module 'design_1_sccb_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_sccb_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_sccb_0_0' (23#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_sccb_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_sound_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_sound_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_sound_0_0' (24#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_sound_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_util_reduced_logic_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_util_reduced_logic_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_util_reduced_logic_0_0' (25#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1196945-archlinux/realtime/design_1_util_reduced_logic_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_sccb_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_sccb_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_sccb_0_0' (23#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_sccb_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_sound_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_sound_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_sound_0_0' (24#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_sound_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_util_reduced_logic_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_util_reduced_logic_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_util_reduced_logic_0_0' (25#1) [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/.Xil/Vivado-1791722-archlinux/realtime/design_1_util_reduced_logic_0_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'design_1_xlconcat_0_0' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/synth/design_1_xlconcat_0_0.v:58]
 INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
 	Parameter IN0_WIDTH bound to: 1 - type: integer 
@@ -267,7 +267,7 @@ WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port 
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port S00_ACLK
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port S00_ARESETN
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1764.473 ; gain = 214.406 ; free physical = 5943 ; free virtual = 27773
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1765.383 ; gain = 214.406 ; free physical = 4167 ; free virtual = 26565
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -280,10 +280,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1768.441 ; gain = 218.375 ; free physical = 5945 ; free virtual = 27774
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1771.320 ; gain = 220.344 ; free physical = 4171 ; free virtual = 26569
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1768.441 ; gain = 218.375 ; free physical = 5945 ; free virtual = 27774
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1771.320 ; gain = 220.344 ; free physical = 4171 ; free virtual = 26569
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -313,8 +313,6 @@ Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/coj
 Finished Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_ps2if_0_0/design_1_ps2if_0_0/design_1_ps2if_0_0_in_context.xdc] for cell 'design_1_i/ps2if_0'
 Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0/design_1_xbar_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/xbar'
 Finished Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0/design_1_xbar_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/xbar'
-Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
-Finished Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
 Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_regbus_0_0/design_1_regbus_0_0/design_1_regbus_0_0_in_context.xdc] for cell 'design_1_i/regbus_0'
 Finished Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_regbus_0_0/design_1_regbus_0_0/design_1_regbus_0_0_in_context.xdc] for cell 'design_1_i/regbus_0'
 Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_125M_0/design_1_rst_ps7_0_125M_0/design_1_rst_ps7_0_125M_0_in_context.xdc] for cell 'design_1_i/rst_ps7_0_125M'
@@ -325,72 +323,28 @@ Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/coj
 Finished Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_sound_0_0/design_1_sound_0_0/design_1_sound_0_0_in_context.xdc] for cell 'design_1_i/sound_0'
 Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_util_reduced_logic_0_0/design_1_util_reduced_logic_0_0/design_1_util_reduced_logic_0_0_in_context.xdc] for cell 'design_1_i/util_reduced_logic_0'
 Finished Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_util_reduced_logic_0_0/design_1_util_reduced_logic_0_0/design_1_util_reduced_logic_0_0_in_context.xdc] for cell 'design_1_i/util_reduced_logic_0'
-Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc]
-WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_0'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:177]
-INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:177]
-WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_1'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:177]
-INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:177]
-CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks clk_fpga_0]'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:177]
-Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks clk_fpga_1]'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:177]
-Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_0'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:178]
-INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:178]
-CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks clk_fpga_0]'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:178]
-Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-WARNING: [Vivado 12-663] port, pin or net '¥' not found. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:184]
-WARNING: [Vivado 12-507] No nets matched 'design_1_i/sound_0/inst/snd_buffer/invBCLK'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:185]
-WARNING: [Vivado 12-507] No nets matched 'design_1_i/sound_0/inst/snd_buffer/invBCLK'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:185]
-CRITICAL WARNING: [Designutils 20-1307] Command '[get_nets design_1_i/sound_0/inst/snd_buffer/invBCLK]' is not supported in the xdc constraint file. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:185]
-WARNING: [Vivado 12-507] No nets matched 'design_1_i/sound_0/SND_MCLK'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:188]
-WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_0'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:191]
-INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:191]
-WARNING: [Vivado 12-627] No clocks matched 'invBCLK'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:191]
-INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:191]
-CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks clk_fpga_0]'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:191]
-Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks invBCLK]'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:191]
-Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-WARNING: [Vivado 12-627] No clocks matched 'clk_fpga_0'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:192]
-INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:192]
-WARNING: [Vivado 12-627] No clocks matched 'MCLK'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:192]
-INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:192]
-CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks clk_fpga_0]'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:192]
-Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks MCLK]'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:192]
-Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-WARNING: [Vivado 12-627] No clocks matched 'invBCLK'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:193]
-INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:193]
-WARNING: [Vivado 12-627] No clocks matched 'MCLK'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:193]
-INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:193]
-CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks invBCLK]'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:193]
-Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-CRITICAL WARNING: [Vivado 12-4739] set_clock_groups:No valid object(s) found for '-group [get_clocks MCLK]'. [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc:193]
-Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
-Finished Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc]
-WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/design_1_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
 Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1927.941 ; gain = 0.000 ; free physical = 5850 ; free virtual = 27680
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1918.945 ; gain = 0.000 ; free physical = 4081 ; free virtual = 26478
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1927.941 ; gain = 0.000 ; free physical = 5850 ; free virtual = 27680
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1918.945 ; gain = 0.000 ; free physical = 4081 ; free virtual = 26478
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'design_1_i/axi_gpio_0' at clock pin 's_axi_aclk' is different from the actual clock period '8.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5927 ; free virtual = 27756
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4151 ; free virtual = 26549
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5927 ; free virtual = 27756
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4151 ; free virtual = 26549
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -671,7 +625,6 @@ Applied set_property DONT_TOUCH = true for design_1_i/draw_0. (constraint file  
 Applied set_property DONT_TOUCH = true for design_1_i/processing_system7_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ps2if_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/regbus_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/rst_ps7_0_125M. (constraint file  auto generated constraint, line ).
@@ -682,11 +635,12 @@ Applied set_property DONT_TOUCH = true for design_1_i/xlconcat_0. (constraint fi
 Applied set_property DONT_TOUCH = true for design_1_i/xlconcat_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/xlconstant_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/xlconstant_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5927 ; free virtual = 27756
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4151 ; free virtual = 26549
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5927 ; free virtual = 27757
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4151 ; free virtual = 26550
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -735,7 +689,7 @@ WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port 
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port S00_ARESETN
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5919 ; free virtual = 27753
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4144 ; free virtual = 26546
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -752,13 +706,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/processing_sys
 INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/processing_system7_0/FCLK_CLK1' to pin 'design_1_i/processing_system7_0/bbstub_FCLK_CLK1/O'
 INFO: [Synth 8-5819] Moved 4 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5796 ; free virtual = 27629
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4024 ; free virtual = 26426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5796 ; free virtual = 27629
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4024 ; free virtual = 26426
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -770,7 +724,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5789 ; free virtual = 27622
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4014 ; free virtual = 26416
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -794,7 +748,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5786 ; free virtual = 27619
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4016 ; free virtual = 26418
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -807,7 +761,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5786 ; free virtual = 27619
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4016 ; free virtual = 26418
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -819,25 +773,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5786 ; free virtual = 27619
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4016 ; free virtual = 26418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5786 ; free virtual = 27619
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4016 ; free virtual = 26418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5786 ; free virtual = 27619
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4016 ; free virtual = 26418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5786 ; free virtual = 27619
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4016 ; free virtual = 26418
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -906,28 +860,28 @@ Report Instance Areas:
 |8     |    xlconstant_1     |design_1_xlconstant_1_0     |     0|
 +------+---------------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5786 ; free virtual = 27619
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4016 ; free virtual = 26418
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1927.941 ; gain = 218.375 ; free physical = 5840 ; free virtual = 27674
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1927.941 ; gain = 377.875 ; free physical = 5847 ; free virtual = 27681
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1924.883 ; gain = 220.344 ; free physical = 4074 ; free virtual = 26476
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1924.883 ; gain = 373.906 ; free physical = 4081 ; free virtual = 26483
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1927.941 ; gain = 0.000 ; free physical = 5793 ; free virtual = 27626
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1924.883 ; gain = 0.000 ; free physical = 4023 ; free virtual = 26425
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-106 Infos, 120 Warnings, 10 Critical Warnings and 0 Errors encountered.
+96 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1927.941 ; gain = 563.531 ; free physical = 5876 ; free virtual = 27709
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1927.941 ; gain = 0.000 ; free physical = 5876 ; free virtual = 27709
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1924.883 ; gain = 560.469 ; free physical = 4107 ; free virtual = 26509
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1924.883 ; gain = 0.000 ; free physical = 4107 ; free virtual = 26509
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Feb  2 06:11:54 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Feb  2 11:07:49 2022...

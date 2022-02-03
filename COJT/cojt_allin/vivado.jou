@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Feb  2 02:06:40 2022
-# Process ID: 589794
+# Start of session at: Wed Feb  2 11:48:43 2022
+# Process ID: 1860303
 # Current directory: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin
 # Command line: vivado
 # Log file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/vivado.log
@@ -12,92 +12,15 @@
 start_gui
 open_project /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha.xpr
 update_compile_order -fileset sources_1
-add_files -norecurse {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/Ch.v /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/Usigma0.v /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/Maj.v /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/Usigma1.v}
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-add_files -fileset sim_1 -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb/tb_disp1.v
-update_compile_order -fileset sim_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-add_files -fileset sim_1 -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb/disp_axibfm.vh
-update_compile_order -fileset sim_1
-export_ip_user_files -of_objects  [get_files /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/disp_vramctrl.v] -no_script -reset -force -quiet
-remove_files  /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/draw_ip/hdl/disp_vramctrl.v
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top tb_sha256_regtest [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-add_files -fileset sim_1 -norecurse {/home/katio/script/github.com/onokatio/itf/COJT/sim_model/axi_slave_BMF/sync_fifo.v /home/katio/script/github.com/onokatio/itf/COJT/sim_model/axi_slave_BMF/axi_slave_BFM.v}
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
-export_ip_user_files -of_objects  [get_files /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb/tb_disp1.v] -no_script -reset -force -quiet
-remove_files  -fileset sim_1 /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb/tb_disp1.v
-update_compile_order -fileset sim_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-add_files -fileset sim_1 -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb/tb_sha256.v
-update_compile_order -fileset sim_1
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top tb_sha256_regtest [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-launch_simulation
-launch_simulation
-launch_simulation
-source tb_sha256_regtest.tcl
-run all
-save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg}
-relaunch_sim
-run all
-current_wave_config {tb_sha256_regtest_behav.wcfg}
-add_wave {{/tb_sha256_regtest/sha256/sha256_regctrl/i_A}} {{/tb_sha256_regtest/sha256/sha256_regctrl/i_B}} {{/tb_sha256_regtest/sha256/sha256_regctrl/i_C}} {{/tb_sha256_regtest/sha256/sha256_regctrl/i_D}} {{/tb_sha256_regtest/sha256/sha256_regctrl/i_E}} {{/tb_sha256_regtest/sha256/sha256_regctrl/i_F}} {{/tb_sha256_regtest/sha256/sha256_regctrl/i_G}} {{/tb_sha256_regtest/sha256/sha256_regctrl/i_H}} 
-restart
-run all
-relaunch_sim
-run all
-relaunch_sim
-run all
-relaunch_sim
-run all
-save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg}
-relaunch_sim
-close_sim
-launch_simulation
-source tb_sha256_regtest.tcl
-close_sim
-launch_simulation
-source tb_sha256_regtest.tcl
-close_sim
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-add_files -fileset sim_1 -norecurse /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg
 launch_simulation
 open_wave_config /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg
 source tb_sha256_regtest.tcl
 run all
-relaunch_sim
-run all
-relaunch_sim
-run all
 current_wave_config {tb_sha256_regtest_behav.wcfg}
-add_wave {{/tb_sha256_regtest/sha256/sha256_regctrl/write_reg}} {{/tb_sha256_regtest/sha256/sha256_regctrl/read_reg}} 
+add_wave {{/tb_sha256_regtest/draw/sha256_regctrl/NACLK}} 
 restart
 run all
 save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha256_regtest_behav.wcfg}
 relaunch_sim
-run all
 relaunch_sim
 run all
-relaunch_sim
-run all
-run all
-relaunch_sim

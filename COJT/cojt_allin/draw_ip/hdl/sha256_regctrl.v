@@ -13,6 +13,17 @@ module sha256_regctrl
     input               RDEN,
     output  reg [31:0]  RDATA
     );
+    
+    reg [1:0] NACLK;
+    wire NNACLK = NACLK[1];
+    
+always @(posedge ACLK)begin
+    if(ARST) 
+        NACLK <= 2'b0;
+    else begin
+        NACLK <= NACLK + 2'b1;
+    end
+end
 
 reg [31:0] i_A;
 reg [31:0] i_B;

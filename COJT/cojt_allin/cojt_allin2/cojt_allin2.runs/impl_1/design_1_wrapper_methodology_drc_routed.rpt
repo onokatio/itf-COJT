@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Wed Feb  2 06:14:08 2022
+| Date         : Wed Feb  2 11:10:04 2022
 | Host         : archlinux running 64-bit Arch Linux
 | Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
 | Design       : design_1_wrapper
@@ -23,7 +23,7 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 41
+             Violations found: 35
 +-----------+------------------+----------------------------------------------------+------------+
 | Rule      | Severity         | Description                                        | Violations |
 +-----------+------------------+----------------------------------------------------+------------+
@@ -33,7 +33,7 @@ Table of Contents
 | TIMING-27 | Critical Warning | Invalid primary clock on hierarchical pin          | 2          |
 | LUTAR-1   | Warning          | LUT drives async reset alert                       | 1          |
 | TIMING-10 | Warning          | Missing property on synchronizer                   | 1          |
-| TIMING-16 | Warning          | Large setup violation                              | 8          |
+| TIMING-16 | Warning          | Large setup violation                              | 2          |
 | TIMING-18 | Warning          | Missing input or output delay                      | 15         |
 +-----------+------------------+----------------------------------------------------+------------+
 
@@ -131,42 +131,12 @@ Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.034 ns between design_1_i/draw_0/inst/sha256_regctrl/i_E_reg[18]/C (clocked by clk_fpga_0) and design_1_i/draw_0/inst/sha256_regctrl/o_A_reg[27]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.533 ns between design_1_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[1]/C (clocked by clk_fpga_0) and design_1_i/display_0/inst/disp_vramctrl/STATE_CURRENT_reg[0]/D (clocked by wr_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -1.055 ns between design_1_i/draw_0/inst/sha256_regctrl/i_E_reg[18]/C (clocked by clk_fpga_0) and design_1_i/draw_0/inst/sha256_regctrl/o_A_reg[25]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#3 Warning
-Large setup violation  
-There is a large setup violation of -1.056 ns between design_1_i/draw_0/inst/sha256_regctrl/i_E_reg[18]/C (clocked by clk_fpga_0) and design_1_i/draw_0/inst/sha256_regctrl/o_A_reg[28]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#4 Warning
-Large setup violation  
-There is a large setup violation of -1.072 ns between design_1_i/draw_0/inst/sha256_regctrl/i_E_reg[18]/C (clocked by clk_fpga_0) and design_1_i/draw_0/inst/sha256_regctrl/o_A_reg[30]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#5 Warning
-Large setup violation  
-There is a large setup violation of -1.146 ns between design_1_i/draw_0/inst/sha256_regctrl/i_E_reg[18]/C (clocked by clk_fpga_0) and design_1_i/draw_0/inst/sha256_regctrl/o_A_reg[31]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#6 Warning
-Large setup violation  
-There is a large setup violation of -1.167 ns between design_1_i/draw_0/inst/sha256_regctrl/i_E_reg[18]/C (clocked by clk_fpga_0) and design_1_i/draw_0/inst/sha256_regctrl/o_A_reg[29]/D (clocked by clk_fpga_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#7 Warning
-Large setup violation  
-There is a large setup violation of -1.430 ns between design_1_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and design_1_i/display_0/inst/disp_vramctrl/STATE_CURRENT_reg[0]/D (clocked by wr_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#8 Warning
-Large setup violation  
-There is a large setup violation of -1.778 ns between design_1_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[0]/C (clocked by clk_fpga_0) and design_1_i/display_0/inst/disp_vramctrl/STATE_CURRENT_reg[1]/D (clocked by wr_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.801 ns between design_1_i/axi_gpio_0/U0/gpio_core_1/Not_Dual.gpio_Data_Out_reg[1]/C (clocked by clk_fpga_0) and design_1_i/display_0/inst/disp_vramctrl/STATE_CURRENT_reg[1]/D (clocked by wr_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

@@ -94,3 +94,15 @@ file mkdir /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin
 file copy -force /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.runs/impl_1/design_1_wrapper.sysdef /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.sdk/design_1_wrapper.hdf
 
 launch_sdk -workspace /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.sdk -hwspec /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin2/cojt_allin2.sdk/design_1_wrapper.hdf
+set_property used_in_synthesis false [get_files  /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/cojt_allin.xdc]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+current_project tb_sha
+current_project cojt_allin2
+open_run synth_1 -name synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+current_project tb_sha
+current_project cojt_allin2
+current_project tb_sha
+relaunch_sim
