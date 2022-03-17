@@ -24,3 +24,4 @@ save_wave_config {/home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM
 relaunch_sim
 relaunch_sim
 run all
+close_sim

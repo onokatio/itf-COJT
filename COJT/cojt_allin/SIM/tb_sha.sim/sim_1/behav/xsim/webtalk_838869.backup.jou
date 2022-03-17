@@ -2,8 +2,8 @@
 # Webtalk v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Feb  8 15:19:27 2022
-# Process ID: 3764139
+# Start of session at: Wed Feb  2 03:38:05 2022
+# Process ID: 838869
 # Current directory: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha.sim/sim_1/behav/xsim
 # Command line: wbtcv -mode batch -source /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha.sim/sim_1/behav/xsim/xsim.dir/tb_sha256_regtest_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/katio/script/github.com/onokatio/itf/COJT/cojt_allin/SIM/tb_sha.sim/sim_1/behav/xsim/webtalk.log
